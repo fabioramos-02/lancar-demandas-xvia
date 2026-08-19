@@ -1,0 +1,74 @@
+{
+  "_leia_isto": "Mapa curado keyword -> Feature. O skill /tfs cruza 'titulo' com dicionario/backlog-xvia.json para resolver o id em runtime. Adicione aliases sem medo; ids nunca ficam aqui.",
+  "epic": 1335269,
+  "features": [
+    {
+      "titulo": "[CS] X-Forms",
+      "modulo": "X-Forms",
+      "aliases": [
+        "xforms", "x-forms", "x forms",
+        "formulario", "formularios", "form",
+        "formflow", "form flow", "form-flow",
+        "campo de formulario", "validacao de formulario",
+        "migracao de formularios"
+      ]
+    },
+    {
+      "titulo": "[CS] X-Flows",
+      "modulo": "X-Flows",
+      "aliases": [
+        "xflows", "x-flows", "x flows",
+        "fluxo", "fluxos", "workflow",
+        "bpm", "esteira", "processo"
+      ]
+    },
+    {
+      "titulo": "[CS] Orquestrador",
+      "modulo": "Orquestrador",
+      "aliases": [
+        "orquestrador", "orquestracao",
+        "integrador", "integracao", "integracoes",
+        "n8n", "webhook", "api externa",
+        "barramento"
+      ]
+    },
+    {
+      "titulo": "[CDI] Portal",
+      "modulo": "Portal",
+      "aliases": [
+        "portal", "portal logado", "portal nao logado",
+        "meu painel", "central de notificacoes",
+        "fale conosco", "termo de consentimento",
+        "lgpd", "site do cidadao"
+      ]
+    },
+    {
+      "titulo": "[CDI] Aplicativo",
+      "modulo": "App",
+      "aliases": [
+        "aplicativo", "app", "mobile",
+        "android", "ios", "app do cidadao"
+      ]
+    },
+    {
+      "titulo": "[CDI] CMS",
+      "modulo": "CMS",
+      "aliases": [
+        "cms", "conteudo", "publicacao",
+        "cartao de servico", "carta de servico",
+        "editor de conteudo"
+      ]
+    },
+    {
+      "titulo": "[INFRA] Instalação e configuração dos ambientes",
+      "modulo": "Infra",
+      "aliases": [
+        "infra", "infraestrutura",
+        "ambiente", "ambientes",
+        "servidor", "kubernetes", "k8s",
+        "deploy", "helm", "cluster",
+        "dns", "certificado", "tls"
+      ]
+    }
+  ]
+}
