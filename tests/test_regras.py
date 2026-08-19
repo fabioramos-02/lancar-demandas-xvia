@@ -12,9 +12,9 @@ import pytest
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from src.xvia import (  # noqa: E402
-    PBI, Erro, montar_descricao, montar_patch, normalizar_tipo,
+    PBI, Erro, _criar_item, montar_descricao, montar_patch, normalizar_tipo,
     normalizar_titulo, resolver_responsavel, texto_para_html, validar_estado,
-    validar_pai,
+    validar_pai, validar_atividade,
 )
 
 PESSOAS = {"maycon": "MS\\maycon", "fabio": "MS\\framos"}
@@ -127,16 +127,19 @@ def _campos(patch):
 
 
 def test_patch_minimo():
-    patch = montar_patch(tipo="Task", titulo="Instalação do CMS", pai_id=1337789)
+    patch = montar_patch(tipo="Task", titulo="Instalação do CMS", pai_id=1337789,
+                         atividade="Development")
     campos = _campos(patch)
     assert campos["/fields/System.Title"] == "Instalação do CMS"
     assert campos["/fields/System.AreaPath"] == "XVIA"
     assert campos["/fields/System.IterationPath"] == "XVIA"
     assert campos["/fields/System.State"] == "To Do"
+    assert campos["/fields/Microsoft.VSTS.Common.Activity"] == "Development"
 
 
 def test_patch_liga_no_pai_com_hierarchy_reverse():
-    patch = montar_patch(tipo="Task", titulo="X", pai_id=1337789)
+    patch = montar_patch(tipo="Task", titulo="X", pai_id=1337789,
+                         atividade="Development")
     relacoes = [p for p in patch if p["path"] == "/relations/-"]
     assert len(relacoes) == 1
     valor = relacoes[0]["value"]
@@ -150,7 +153,8 @@ def test_patch_sem_pai_nao_tem_relacao():
 
 
 def test_esforco_vai_para_campo_diferente_por_tipo():
-    task = _campos(montar_patch(tipo="Task", titulo="X", pai_id=1, esforco=4))
+    task = _campos(montar_patch(tipo="Task", titulo="X", pai_id=1, esforco=4,
+                                atividade="Development"))
     pbi = _campos(montar_patch(tipo=PBI, titulo="X", pai_id=1, esforco=8))
     assert task["/fields/Microsoft.VSTS.Scheduling.RemainingWork"] == 4
     assert pbi["/fields/Microsoft.VSTS.Scheduling.Effort"] == 8
@@ -158,7 +162,66 @@ def test_esforco_vai_para_campo_diferente_por_tipo():
 
 def test_estado_invalido_aborta_na_montagem():
     with pytest.raises(Erro):
-        montar_patch(tipo="Task", titulo="X", pai_id=1, estado="Committed")
+        montar_patch(tipo="Task", titulo="X", pai_id=1, estado="Committed",
+                     atividade="Development")
+
+
+# --------------------------------------------------------------------- activity
+
+def test_task_sem_activity_aborta():
+    with pytest.raises(Erro):
+        montar_patch(tipo="Task", titulo="X", pai_id=1)
+
+
+def test_task_com_activity_invalida_aborta():
+    with pytest.raises(Erro):
+        validar_atividade("Task", "Coding")
+
+
+@pytest.mark.parametrize("valor", [
+    "Deployment", "Design", "Development",
+    "Documentation", "Requirements", "Testing",
+])
+def test_activity_valida_para_task(valor):
+    assert validar_atividade("Task", valor) == valor
+
+
+def test_activity_nao_aceito_fora_de_task():
+    for tipo in ("Feature", PBI, "Epic"):
+        with pytest.raises(Erro):
+            validar_atividade(tipo, "Development")
+
+
+# ---------------------------------------------- herança SGD Task -> PBI pai
+
+class _FakeTfs:
+    """Mock enxuto: só o que _criar_item chama em dry-run."""
+    def __init__(self, pai_titulo, pai_tipo=PBI):
+        self._pai = {"fields": {"System.WorkItemType": pai_tipo,
+                                "System.Title": pai_titulo}}
+
+    def work_item(self, _id):
+        return self._pai
+
+
+def _titulo(patch):
+    return next(p["value"] for p in patch if p["path"] == "/fields/System.Title")
+
+
+def test_task_herda_sgd_do_pbi_pai():
+    spec = {"tipo": "Task", "titulo": "Protótipos (Templates)",
+            "pai": 1337784, "activity": "Design"}
+    tfs = _FakeTfs("[SGD] - Portal Não Logado")
+    patch, _ = _criar_item(tfs, spec, aplicar=False)
+    assert _titulo(patch) == "[SGD] - Protótipos (Templates)"
+
+
+def test_task_sem_pai_sgd_nao_ganha_prefixo():
+    spec = {"tipo": "Task", "titulo": "Instalação do CMS",
+            "pai": 1337789, "activity": "Development"}
+    tfs = _FakeTfs("Configuração do CMS")
+    patch, _ = _criar_item(tfs, spec, aplicar=False)
+    assert _titulo(patch) == "Instalação do CMS"
 
 
 # ---------------------------------------------------------------- descrição

@@ -26,12 +26,15 @@ O CLI aborta se o pai for do tipo errado. Task nunca pendura direto em Feature.
 
 | Regra | Valor |
 |---|---|
-| Título de PBI da SGD | `[SGD] - Título` (hífen cercado de espaços) |
+| Título de PBI criado pelo SGD | `[SGD] - Título` (padrão — nós somos SGD, sempre passar `--sgd`) |
+| Título de Task filha de PBI SGD | herda `[SGD] - Título` automaticamente (CLI aplica) |
+| Título de Task — forma | verbo no infinitivo (`Integrar…`, `Levantar…`, `Configurar…`), nunca só substantivo ou nome de ambiente |
 | Título dos demais | livre; prefixo de módulo entre colchetes (`[CDI]`, `[INFRA]`) |
 | Responsável de Feature | `maycon` |
 | Responsável de PBI e Task | `fabio` |
 | Estado inicial de PBI | `New` |
 | Estado inicial de Task | `To Do` |
+| Activity (Task) | obrigatório — `Deployment` \| `Design` \| `Development` \| `Documentation` \| `Requirements` \| `Testing` |
 | Area / Iteration | `XVIA` |
 
 Responsáveis vivem em `dicionario/pessoas.json` (apelido → identidade), preenchido por `quem`.

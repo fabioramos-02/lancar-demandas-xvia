@@ -47,6 +47,11 @@ ESTADOS_VALIDOS = {
 }
 ESTADO_PADRAO = {"Epic": "New", "Feature": "New", PBI: "New", "Task": "To Do"}
 
+ATIVIDADES_TASK = {
+    "Deployment", "Design", "Development",
+    "Documentation", "Requirements", "Testing",
+}
+
 CAMPOS_EXPORT = [
     "System.Id", "System.WorkItemType", "System.Title", "System.State",
     "System.AreaPath", "System.IterationPath", "System.Tags",
@@ -144,11 +149,31 @@ def montar_descricao(corpo, links=None, data_original=None):
     return "\n\n".join(p for p in partes if p)
 
 
+def validar_atividade(tipo, atividade):
+    """Activity é obrigatório para Task e só aceito para Task."""
+    if tipo == "Task":
+        if not atividade:
+            raise Erro(
+                "Task exige --activity. Válidos: "
+                + " | ".join(sorted(ATIVIDADES_TASK))
+            )
+        if atividade not in ATIVIDADES_TASK:
+            raise Erro(
+                f"activity {atividade!r} inválido. "
+                f"Válidos: {' | '.join(sorted(ATIVIDADES_TASK))}"
+            )
+        return atividade
+    if atividade:
+        raise Erro(f"--activity só se aplica a Task, não a {tipo}")
+    return None
+
+
 def montar_patch(*, tipo, titulo, pai_id=None, descricao="", responsavel=None,
                  estado=None, area=AREA_PADRAO, iteration=ITERATION_PADRAO,
-                 esforco=None, tags=None, base=BASE):
+                 esforco=None, tags=None, atividade=None, base=BASE):
     """Monta o corpo JSON-Patch de criação. Função pura — testável sem rede."""
     estado = validar_estado(tipo, estado or ESTADO_PADRAO[tipo])
+    atividade = validar_atividade(tipo, atividade)
     patch = [
         {"op": "add", "path": "/fields/System.Title", "value": titulo},
         {"op": "add", "path": "/fields/System.AreaPath", "value": area},
@@ -168,6 +193,10 @@ def montar_patch(*, tipo, titulo, pai_id=None, descricao="", responsavel=None,
         campo = ("Microsoft.VSTS.Scheduling.RemainingWork" if tipo == "Task"
                  else "Microsoft.VSTS.Scheduling.Effort")
         patch.append({"op": "add", "path": f"/fields/{campo}", "value": esforco})
+    if atividade:
+        patch.append({"op": "add",
+                      "path": "/fields/Microsoft.VSTS.Common.Activity",
+                      "value": atividade})
     if pai_id:
         patch.append({"op": "add", "path": "/relations/-", "value": {
             "rel": "System.LinkTypes.Hierarchy-Reverse",
@@ -384,14 +413,22 @@ def gerar_dicionario(epic_id, itens):
 def _criar_item(tfs, spec, aplicar):
     """spec -> (patch, criado|None). Valida tudo antes de qualquer escrita."""
     tipo = normalizar_tipo(spec["tipo"])
-    titulo = normalizar_titulo(spec["titulo"], sgd=bool(spec.get("sgd")))
     pai_id = spec.get("pai")
+    sgd = bool(spec.get("sgd"))
 
     tipo_do_pai = None
+    titulo_do_pai = ""
     if pai_id:
         pai = tfs.work_item(pai_id)
-        tipo_do_pai = pai.get("fields", {}).get("System.WorkItemType")
+        campos_pai = pai.get("fields", {})
+        tipo_do_pai = campos_pai.get("System.WorkItemType")
+        titulo_do_pai = campos_pai.get("System.Title", "")
     validar_pai(tipo, tipo_do_pai)
+
+    # Task herda [SGD] do PBI pai. Cadeia SGD é convenção do backlog XVIA.
+    if tipo == "Task" and SGD_RE.match(titulo_do_pai):
+        sgd = True
+    titulo = normalizar_titulo(spec["titulo"], sgd=sgd)
 
     for caminho in spec.get("anexos", []) or []:
         if not pathlib.Path(caminho).is_file():
@@ -409,6 +446,7 @@ def _criar_item(tfs, spec, aplicar):
         iteration=spec.get("iteration", ITERATION_PADRAO),
         esforco=spec.get("esforco"),
         tags=spec.get("tags"),
+        atividade=spec.get("activity") or spec.get("atividade"),
     )
     if not aplicar:
         return patch, None
@@ -425,7 +463,7 @@ def cmd_novo(args):
         "sgd": args.sgd, "descricao": args.descricao or "",
         "responsavel": args.responsavel, "estado": args.estado,
         "esforco": args.esforco, "links": args.link, "anexos": args.anexo,
-        "data_original": args.data_original,
+        "data_original": args.data_original, "activity": args.activity,
     }
     patch, criado = _criar_item(tfs, spec, args.apply)
     if criado:
@@ -518,6 +556,9 @@ def montar_parser():
     n.add_argument("--responsavel", help="apelido de pessoas.json ou identidade completa")
     n.add_argument("--estado")
     n.add_argument("--esforco", type=float, help="Effort (PBI) ou Remaining Work (Task)")
+    n.add_argument("--activity", choices=sorted(ATIVIDADES_TASK),
+                   help="obrigatório para Task: Deployment | Design | "
+                        "Development | Documentation | Requirements | Testing")
     n.add_argument("--link", action="append", help="URL de material (repetível)")
     n.add_argument("--anexo", action="append", help="arquivo a anexar (repetível)")
     n.add_argument("--data-original", dest="data_original",

@@ -41,8 +41,12 @@ O separador aceito é `—`, `-` ou `:`. Se o usuário só passar o título, pe�
 
 ### 3. Título
 
-- Não adicione prefixo `[CS]`/`[CDI]`/`[INFRA]` automaticamente. O usuário decide se quer. O CLI (`src/xvia.py:75`) só normaliza `[SGD] - ...`.
-- Se o texto de entrada mencionar `SGD`, passe `--sgd` ao CLI.
+- **PBI criado pelo `/tfs` sempre leva `--sgd`.** A gente (SGD) é quem cria; portanto o prefixo `[SGD] - ` é padrão, não exceção. Só omita se o usuário disser explicitamente "sem SGD".
+- Task filha de PBI `[SGD] - ...`: o CLI aplica `[SGD] - ` automaticamente. Não duplique o prefixo no `--titulo`.
+- **Título de Task começa com verbo no infinitivo** (Integrar, Levantar, Configurar, Documentar, Validar, Publicar). Nunca só substantivo ou nome de ambiente.
+  - Ruim: `"Desenvolvimento"` · Bom: `"Integrar sistemas ao SmartPass no ambiente de Desenvolvimento"`
+  - Ruim: `"Homologação"` · Bom: `"Validar integração dos sistemas em Homologação"`
+- Não adicione prefixo `[CS]`/`[CDI]`/`[INFRA]` automaticamente. O usuário decide.
 
 ### 4. Descrição — linguagem simples (Lei 15.263/2025)
 
@@ -100,9 +104,28 @@ A saída do `--apply` contém:
 
 Devolva ao usuário: `id`, `título`, `Feature-pai`, `link clicável`. Uma linha por item, sem enfeite.
 
+## Activity — obrigatório quando criar Task
+
+Task no XVIA exige o campo `Microsoft.VSTS.Common.Activity`. Valores válidos:
+`Deployment | Design | Development | Documentation | Requirements | Testing`.
+
+Regras de inferência (aplicar por ordem — primeira que casa vence):
+
+| Sinal no título/descrição | Activity |
+|---|---|
+| levantamento, mapeamento, análise, especificação, requisito | **Requirements** |
+| protótipo, wireframe, design, UI, UX, layout | **Design** |
+| teste, validação, homologação, QA | **Testing** |
+| deploy, publicar, subir para produção, ambiente | **Deployment** |
+| documentar, tutorial, manual, guia | **Documentation** |
+| desenvolver, implementar, codificar, instalar, integrar, configurar | **Development** |
+| nenhum casou | **perguntar via AskUserQuestion** — nunca chutar |
+
+Passe `--activity <Valor>` ao criar Task. O CLI aborta se faltar.
+
 ## O que este skill NÃO faz
 
-- Não cria Feature nem Task (só PBI). Para Task, use o CLI direto com `--tipo Task --pai <PBI_ID>`.
+- Não cria Feature (só PBI e Task). Para Task, use `--tipo Task --pai <PBI_ID> --activity <Valor>`.
 - Não edita item existente. Divergência de título vira nota no `DICIONARIO.md`, correção é manual na UI.
 - Não fecha nem deleta.
 - Não inventa aliases: se a Feature-alvo não estiver no `features-xvia.json`, pare e peça pra atualizar o mapa.
