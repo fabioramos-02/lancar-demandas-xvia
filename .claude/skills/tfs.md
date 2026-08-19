@@ -88,9 +88,10 @@ Se o usuário narra trabalho **já feito** ("eu fiz", "levantei", "documentei", 
 
 - **Todas as Tasks nascem `--estado Done`** (herda para as filhas do PBI).
 - PBI segue padrão `Approved` (do CLI). Se o trabalho todo já está pronto, marcar o PBI também como `--estado Done`.
+- **Anexos/artefatos vão no PBI, não na Task.** Task retroativa é `Done` e fica "fechada" no radar — artefato disperso lá some. Concentrar tudo no PBI, que é o cartão que os stakeholders abrem.
 - Se possível, passar `--data-original DD-MM-YYYY` quando o usuário sabe a data em que fez o trabalho.
 
-Prospectivo (padrão): PBI = `Approved`, Task = `To Do`.
+Prospectivo (padrão): PBI = `Approved`, Task = `To Do`. Anexo pode ir na própria Task quando é insumo específico daquela etapa.
 
 ### 6. Executar
 

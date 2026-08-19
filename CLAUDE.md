@@ -82,6 +82,8 @@ Como identificar retroativo:
 - Referência a arquivos/repos que já existem no disco com o material.
 - Uso do `--data-original` no CLI ou entrada em `lote/*.json`.
 
+**Anexos em Task retroativa vão no PBI pai.** Quando a Task nasce `Done` (retroativa), qualquer artefato/anexo/evidência é vinculado ao **PBI** (agregador da entrega), nunca na Task. Motivo: o PBI é o cartão que os stakeholders abrem; artefato disperso em Task fechada some do radar. Se houver várias Tasks retroativas sob o mesmo PBI, todos os anexos ficam concentrados no PBI. Em Task prospectiva (`To Do`), o anexo pode ir na própria Task quando é insumo daquela etapa específica.
+
 ## Saída ao usuário — sempre com link
 
 Toda vez que um work item for criado ou atualizado, o retorno no chat inclui o link clicável do item (`https://tfs.sgi.ms.gov.br/tfs/Global/XVIA/_workitems/edit/<id>`), não só o id. Vale para PBI, Task, Feature, comentário, anexo — qualquer ação que aponte para um item específico. Formato preferido: tabela `| # | Título | Link |` ou linha `#NNNN — Título — <URL>`.
