@@ -45,7 +45,7 @@ ESTADOS_VALIDOS = {
     PBI: {"New", "Approved", "Committed", "Done", "Removed"},
     "Task": {"To Do", "In Progress", "Done", "Removed"},
 }
-ESTADO_PADRAO = {"Epic": "New", "Feature": "New", PBI: "New", "Task": "To Do"}
+ESTADO_PADRAO = {"Epic": "New", "Feature": "New", PBI: "Approved", "Task": "To Do"}
 
 ATIVIDADES_TASK = {
     "Deployment", "Design", "Development",

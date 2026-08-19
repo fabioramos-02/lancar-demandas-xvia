@@ -32,8 +32,8 @@ O CLI aborta se o pai for do tipo errado. Task nunca pendura direto em Feature.
 | Título dos demais | livre; prefixo de módulo entre colchetes (`[CDI]`, `[INFRA]`) |
 | Responsável de Feature | `maycon` |
 | Responsável de PBI e Task | `fabio` |
-| Estado inicial de PBI | `New` |
-| Estado inicial de Task | `To Do` |
+| Estado inicial de PBI | `Approved` (padrão do CLI — SGD já triou; nasce liberado pra puxar) |
+| Estado inicial de Task | `To Do` (ou `Done` se lançamento retroativo — ver regra abaixo) |
 | Activity (Task) | obrigatório — `Deployment` \| `Design` \| `Development` \| `Documentation` \| `Requirements` \| `Testing` |
 | Area / Iteration | `XVIA` |
 
@@ -72,6 +72,19 @@ repita com `--apply`.
 
 Demandas retroativas vão por lote (`lote/*.json`), com `data_original` e `anexos`.
 Ver `lote/exemplo-retroativas.json`.
+
+## Lançamento retroativo — Task já nasce `Done`
+
+Se o usuário narra trabalho **já executado** ("eu fiz", "levantei", "documentei", "criei", "estudei", material pronto no repositório, `--data-original` presente), o CLI/skill trata como lançamento retroativo: **todas as Tasks criadas nesse fluxo nascem com `--estado Done`**. O PBI segue o padrão (`Approved`); se o trabalho todo já está pronto, o PBI vai para `Done` explicitamente.
+
+Como identificar retroativo:
+- Verbos no passado descrevendo o próprio trabalho.
+- Referência a arquivos/repos que já existem no disco com o material.
+- Uso do `--data-original` no CLI ou entrada em `lote/*.json`.
+
+## Saída ao usuário — sempre com link
+
+Toda vez que um work item for criado ou atualizado, o retorno no chat inclui o link clicável do item (`https://tfs.sgi.ms.gov.br/tfs/Global/XVIA/_workitems/edit/<id>`), não só o id. Vale para PBI, Task, Feature, comentário, anexo — qualquer ação que aponte para um item específico. Formato preferido: tabela `| # | Título | Link |` ou linha `#NNNN — Título — <URL>`.
 
 ## O que o CLI não faz — por design
 

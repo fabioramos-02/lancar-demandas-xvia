@@ -82,6 +82,16 @@ Responsável:  fabio (default)
 
 Pergunte via `AskUserQuestion` com opções: **Criar**, **Editar descrição**, **Trocar Feature**, **Cancelar**. Pule esta etapa apenas se o usuário já disse "cria direto" na mensagem inicial.
 
+### 5b. Detectar lançamento retroativo
+
+Se o usuário narra trabalho **já feito** ("eu fiz", "levantei", "documentei", "criei", "estudei"), ou aponta arquivos/repos que já existem com o material, é lançamento retroativo:
+
+- **Todas as Tasks nascem `--estado Done`** (herda para as filhas do PBI).
+- PBI segue padrão `Approved` (do CLI). Se o trabalho todo já está pronto, marcar o PBI também como `--estado Done`.
+- Se possível, passar `--data-original DD-MM-YYYY` quando o usuário sabe a data em que fez o trabalho.
+
+Prospectivo (padrão): PBI = `Approved`, Task = `To Do`.
+
 ### 6. Executar
 
 Dry-run primeiro:
@@ -93,7 +103,7 @@ python -m src.xvia novo --tipo PBI --pai <ID_FEATURE> \
 
 Se a saída for limpa (código 0 e payload coerente), rode com `--apply`. Escape aspas duplas do texto no shell do Windows (PowerShell) trocando `"` internas por `""` dentro do argumento, ou use here-strings (`@'...'@`).
 
-### 7. Devolver o link
+### 7. Devolver o link — sempre
 
 A saída do `--apply` contém:
 
@@ -102,7 +112,17 @@ A saída do `--apply` contém:
          https://tfs.sgi.ms.gov.br/tfs/Global/XVIA/_workitems/edit/1339123
 ```
 
-Devolva ao usuário: `id`, `título`, `Feature-pai`, `link clicável`. Uma linha por item, sem enfeite.
+**Toda mensagem de conclusão deve trazer o link clicável de cada item criado ou atualizado.** Nunca listar só o id — o usuário precisa navegar direto no navegador. Vale para PBI, Task, Feature, comentário, anexo.
+
+Formato preferido quando há mais de um item: tabela
+
+```
+| # | Tipo | Título | Link |
+|---|---|---|---|
+| 1339123 | PBI | ... | https://tfs.sgi.ms.gov.br/tfs/Global/XVIA/_workitems/edit/1339123 |
+```
+
+Item único: linha `#NNNN — Título — <URL completa>`.
 
 ## Activity — obrigatório quando criar Task
 
