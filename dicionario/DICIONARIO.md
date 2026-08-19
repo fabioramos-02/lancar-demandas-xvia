@@ -2,19 +2,24 @@
 
 Gerado por `python -m src.xvia export` a partir do Epic **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **133 itens**.
+Total: **154 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 91 |
-| Product Backlog Item | 34 |
-| Feature | 7 |
+| Task | 109 |
+| Product Backlog Item | 36 |
+| Feature | 8 |
 | Epic | 1 |
 
 ## 1. Árvore
 
 ```
 Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
+  Feature                #1338538  SmartPass  [New]
+    Product Backlog Item   #1338539  [SGD] - Integração dos Sistemas ao SSO  [Approved]
+      Task                   #1338540  [SGD] - Integrar sistemas ao SmartPass no ambiente de Desenvolvimento  [To Do]
+      Task                   #1338541  [SGD] - Integrar sistemas ao SmartPass no ambiente de Homologação  [To Do]
+      Task                   #1338542  [SGD] - Integrar sistemas ao SmartPass no ambiente de Produção  [To Do]
   Feature                #1335829  [CDI] Aplicativo  [New]
     Product Backlog Item   #1335836  [SAÚDE] Cartão de doador de sangue  [New]
       Task                   #1336137  Documento de especificação do serviço  [To Do]
@@ -112,19 +117,35 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
     Product Backlog Item   #1337823  [SGD] - Avaliação do Serviço  [New]
     Product Backlog Item   #1337789  [SGD] - Cadastros Básicos  [New]
       Task                   #1337952  Lançar Usuários do CMS  [To Do]
+      Task                   #1338530  [SGD] - Criar documento de cadastro de Unidades  [Done]
+      Task                   #1338528  [SGD] - Criar documento de cadastro de Órgãos  [Done]
+      Task                   #1338532  [SGD] Criar documento de cadastro de Categorias  [Done]
+      Task                   #1338537  [SGD] Criar documento de cadastro de Páginas Portal  [To Do]
     Product Backlog Item   #1337812  [SGD] - Cartas de Serviços  [New]
+      Task                   #1338536  [SGD] - Criar documento de cadastro de cartas de serviço  [To Do]
     Product Backlog Item   #1337850  [SGD] - Sistema de Gestão de Conteúdo  [New]
     Product Backlog Item   #1337728  [SGD] Design System  [New]
   Feature                #1335830  [CDI] Portal  [New]
     Product Backlog Item   #1337838  [SGD] -  Central de Notificações  [New]
     Product Backlog Item   #1337831  [SGD] - Fale Conosco  [New]
+      Task                   #1338563  [SGD] - Analisar páginas de Secretarias e Órgãos  [Done]
+      Task                   #1338565  [SGD] - Criar documento de cadastro do Fale Conosco  [Done]
+      Task                   #1338564  [SGD] - Levantar Fale Conosco em sites WordPress  [Done]
+      Task                   #1338562  [SGD] - Realizar benchmark de Fale Conosco em portais estaduais  [Done]
     Product Backlog Item   #1337783  [SGD] - Portal  Logado  - Meu painel  [New]
+      Task                   #1338559  [SGD] - Analisar funcionalidades existentes para trazer no Meu Painel  [To Do]
+      Task                   #1338560  [SGD] - Consolidar proposta de estrutura do Meu Painel  [To Do]
+      Task                   #1338557  [SGD] - Pesquisar funcionalidades necessárias para o Meu Painel  [To Do]
+      Task                   #1338561  [SGD] - Validar com a Duda  [To Do]
+      Task                   #1338555  [SGD] Realizar benchmark mais atualizado  [In Progress]
     Product Backlog Item   #1337784  [SGD] - Portal Não Logado  [New]
       Task                   #1337827  [SGD] - Protótipos (Templates)  [To Do]
     Product Backlog Item   #1337731  [SGD] - Termo de Consentimento - LGPD  [New]
   Feature                #1337854  [CS] Orquestrador  [New]
   Feature                #1337852  [CS] X-Flows  [New]
   Feature                #1337851  [CS] X-Forms  [New]
+    Product Backlog Item   #1338015  [SGD] - Levantamento de Formulários  [New]
+      Task                   #1338401  [SGD] - Listar Formulários  [Done]
   Feature                #1336205  [INFRA] Instalação e configuração dos ambientes  [New]
     Product Backlog Item   #1336225  CMS  [New]
       Task                   #1336222  Ambiente de desenvolvimento  [To Do]
@@ -153,7 +174,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 14 | Product Backlog Item, Task | [SGD] Levantamento de orgãos |
+| `[SGD]` | 34 | Product Backlog Item, Task | [SGD] Levantamento de orgãos |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
 | `[CDI]` | 3 | Feature | [CDI] Aplicativo |
@@ -199,3 +220,6 @@ Itens fora do padrão. A correção é manual e consciente — o CLI sinaliza, n
 | 1335173 | Product Backlog Item | [SGD] Levantamento de orgãos | prefixo SGD fora do padrão `[SGD] - ` |
 | 1336978 | Product Backlog Item | [SGD] Analisar banco do MS Digital | prefixo SGD fora do padrão `[SGD] - ` |
 | 1337728 | Product Backlog Item | [SGD] Design System | prefixo SGD fora do padrão `[SGD] - ` |
+| 1338532 | Task | [SGD] Criar documento de cadastro de Categorias | prefixo SGD fora do padrão `[SGD] - ` |
+| 1338537 | Task | [SGD] Criar documento de cadastro de Páginas Portal | prefixo SGD fora do padrão `[SGD] - ` |
+| 1338555 | Task | [SGD] Realizar benchmark mais atualizado | prefixo SGD fora do padrão `[SGD] - ` |
