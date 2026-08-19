@@ -1,0 +1,6 @@
+.env
+*.token
+*.pat
+__pycache__/
+*.pyc
+.pytest_cache/

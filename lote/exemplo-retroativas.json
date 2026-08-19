@@ -1,0 +1,37 @@
+[
+  {
+    "chave": "pbi-avaliacao",
+    "tipo": "PBI",
+    "pai": 1336102,
+    "sgd": true,
+    "titulo": "Avaliação do Serviço",
+    "estado": "New",
+    "esforco": 8,
+    "data_original": "23-06-2026",
+    "descricao": "Publicar o componente de avaliação do serviço no CMS.\n\n**Por quê**\nO cidadão precisa dizer se o serviço resolveu, e hoje não existe canal para isso dentro do portal.\n\n**Critérios de aceitação**\n- O componente aparece ao fim de cada página de serviço.\n- A nota é gravada com o identificador do serviço e a data.\n- O resultado aparece no painel da SGD.",
+    "links": [
+      "https://www.setdig.ms.gov.br/"
+    ],
+    "anexos": []
+  },
+  {
+    "chave": "task-mapear",
+    "tipo": "Task",
+    "pai_ref": "pbi-avaliacao",
+    "titulo": "Mapear as telas onde a avaliação aparece",
+    "estado": "To Do",
+    "esforco": 4,
+    "data_original": "23-06-2026",
+    "descricao": "Listar as páginas de serviço que recebem o componente.\n\n**Critérios de aceitação**\n- Lista das telas com o caminho de cada uma.\n- Telas fora do escopo justificadas."
+  },
+  {
+    "chave": "task-integrar",
+    "tipo": "Task",
+    "pai_ref": "pbi-avaliacao",
+    "titulo": "Integrar a avaliação com o painel da SGD",
+    "estado": "To Do",
+    "esforco": 6,
+    "responsavel": "maycon",
+    "descricao": "Enviar as notas coletadas para o painel da SGD.\n\n**Critérios de aceitação**\n- A nota chega ao painel em até um dia.\n- Falha de envio fica registrada em log."
+  }
+]
