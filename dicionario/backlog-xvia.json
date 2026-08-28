@@ -5197,6 +5197,48 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Participar do ponto de controle semanal do Projeto MS. </div><div><b>Por quê</b> </div><div>O ponto de controle é onde o andamento da sprint é conferido e os bloqueios da semana são levantados. </div><div><b>Quando</b> </div><div>24/08/2026, das 7h30 às 8h30 (Cuiabá). Exceção à série recorrente. Organizador: Maycon Renato Lisboa (X-VIA). </div><div><b>Participantes</b> </div><ul><li>Maycon Renato Lisboa (X-VIA) — organizador </li><li>Fabio Ramos (SEGOV) </li><li>Daniele Lins Ichiy (SEGOV) </li><li>Glaucia Oliveira (SEGOV) </li><li>Brenda Braga (X-VIA) — opcional </li><li>Maria Eduarda Delgado (SEGOV) — opcional </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Andamento da sprint está registrado. </li><li>Bloqueios saem com responsável. </li><li>Ata anexada ao PBI 1339795. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://meet.google.com/ish-vgtb-wqm\">https://meet.google.com/ish-vgtb-wqm</a> </li> </ul><div><b>Demanda original:</b> 24-08-2026 </div>"
+    },
+    {
+      "id": 1342116,
+      "tipo": "Product Backlog Item",
+      "titulo": "[SGD] - Novas seções do BI centralizado — ecossistema digital e comparativo de canais",
+      "estado": "Done",
+      "pai_id": 1336997,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Incluir no BI centralizado duas seções novas: os números do ecossistema digital do Estado e a comparação de uso entre o aplicativo e o portal. </div><div><b>Por quê</b> </div><div>As duas seções nasceram de pedidos da área: faltava no painel a visão de quantos sistemas já estão integrados ao Gov.BR e faltava um lugar único para comparar o tamanho dos dois canais de atendimento. </div><div><b>Critérios de aceitação</b> </div><ul><li>As duas seções estão publicadas e abrem em <a href=\"https://bi-setdig.vercel.app/analytics/portal-ms.\">https://bi-setdig.vercel.app/analytics/portal-ms.</a> </li><li>Os números batem com a fonte de cada indicador. </li><li>Quem abre o painel entende o que cada número mede sem precisar perguntar. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://bi-setdig.vercel.app/analytics/portal-ms\">https://bi-setdig.vercel.app/analytics/portal-ms</a> </li> </ul>"
+    },
+    {
+      "id": 1342117,
+      "tipo": "Task",
+      "titulo": "[SGD] - Incluir os dados do ecossistema digital no BI centralizado",
+      "estado": "Done",
+      "pai_id": 1342116,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Publicar no BI centralizado a seção com os números do ecossistema digital do Estado. </div><div><b>Por quê</b> </div><div>Ariane pediu que o BI centralizado mostrasse o ecossistema digital, não só o uso do portal. Sem isso, o avanço da integração ao Gov.BR não aparecia em lugar nenhum do painel. </div><div><b>Números publicados</b> </div><ul><li>Sistemas integrados ao Gov.BR: 56 (34 em produção, 42 no total). </li><li>Sistemas com Assinador Gov.BR: 16. </li><li>Formulários digitais no FormFlow: 14 serviços com formulário publicado. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Os três indicadores aparecem na aba de ecossistema digital do painel. </li><li>Cada número traz a legenda do que ele conta. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://bi-setdig.vercel.app/analytics/portal-ms\">https://bi-setdig.vercel.app/analytics/portal-ms</a> </li> </ul><div><b>Demanda original:</b> 28-08-2026 </div>"
+    },
+    {
+      "id": 1342118,
+      "tipo": "Task",
+      "titulo": "[SGD] - Criar a seção comparativa de uso do aplicativo e do portal no BI centralizado",
+      "estado": "Done",
+      "pai_id": 1342116,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Publicar no BI centralizado a seção que compara quanta gente usa o aplicativo MS Digital e quanta usa o portal na internet. </div><div><b>Por quê</b> </div><div>Duda pediu a quantidade de usuários dos dois canais. Os dados existiam separados, em sistemas de medição diferentes, e ninguém conseguia comparar o tamanho de um com o do outro. </div><div><b>Números publicados</b> </div><ul><li>Pessoas no aplicativo MS Digital: 368.532 cadastradas no total. </li><li>Pessoas no portal: 326.392 cidadãos com acesso registrado. </li><li>Acessos ao aplicativo no período: 238.498 pessoas. </li><li>Acessos ao portal no período: 2.822.319 visitantes únicos. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>A seção mostra os dois canais lado a lado. </li><li>Está escrito no painel que os dois números não se somam: a mesma pessoa pode usar os dois canais e a medição de cada um vem de sistema diferente. </li><li>A seção lista os serviços mais acessados em cada canal. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://bi-setdig.vercel.app/analytics/portal-ms\">https://bi-setdig.vercel.app/analytics/portal-ms</a> </li> </ul><div><b>Demanda original:</b> semana de 24 a 28-08-2026 </div>"
     }
   ]
 }

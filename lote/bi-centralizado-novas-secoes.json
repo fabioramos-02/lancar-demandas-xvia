@@ -1,0 +1,43 @@
+[
+  {
+    "chave": "pbi",
+    "tipo": "PBI",
+    "pai": 1336997,
+    "sgd": true,
+    "titulo": "Novas seções do BI centralizado — ecossistema digital e comparativo de canais",
+    "estado": "Done",
+    "links": [
+      "https://bi-setdig.vercel.app/analytics/portal-ms"
+    ],
+    "descricao": "Incluir no BI centralizado duas seções novas: os números do ecossistema digital do Estado e a comparação de uso entre o aplicativo e o portal.\n\n**Por quê**\nAs duas seções nasceram de pedidos da área: faltava no painel a visão de quantos sistemas já estão integrados ao Gov.BR e faltava um lugar único para comparar o tamanho dos dois canais de atendimento.\n\n**Critérios de aceitação**\n- As duas seções estão publicadas e abrem em https://bi-setdig.vercel.app/analytics/portal-ms.\n- Os números batem com a fonte de cada indicador.\n- Quem abre o painel entende o que cada número mede sem precisar perguntar.",
+    "id": 1342116
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Incluir os dados do ecossistema digital no BI centralizado",
+    "estado": "Done",
+    "activity": "Development",
+    "data_original": "28-08-2026",
+    "links": [
+      "https://bi-setdig.vercel.app/analytics/portal-ms"
+    ],
+    "descricao": "Publicar no BI centralizado a seção com os números do ecossistema digital do Estado.\n\n**Por quê**\nAriane pediu que o BI centralizado mostrasse o ecossistema digital, não só o uso do portal. Sem isso, o avanço da integração ao Gov.BR não aparecia em lugar nenhum do painel.\n\n**Números publicados**\n- Sistemas integrados ao Gov.BR: 56 (34 em produção, 42 no total).\n- Sistemas com Assinador Gov.BR: 16.\n- Formulários digitais no FormFlow: 14 serviços com formulário publicado.\n\n**Critérios de aceitação**\n- Os três indicadores aparecem na aba de ecossistema digital do painel.\n- Cada número traz a legenda do que ele conta.",
+    "pai": 1342116,
+    "id": 1342117
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Criar a seção comparativa de uso do aplicativo e do portal no BI centralizado",
+    "estado": "Done",
+    "activity": "Development",
+    "data_original": "semana de 24 a 28-08-2026",
+    "links": [
+      "https://bi-setdig.vercel.app/analytics/portal-ms"
+    ],
+    "descricao": "Publicar no BI centralizado a seção que compara quanta gente usa o aplicativo MS Digital e quanta usa o portal na internet.\n\n**Por quê**\nDuda pediu a quantidade de usuários dos dois canais. Os dados existiam separados, em sistemas de medição diferentes, e ninguém conseguia comparar o tamanho de um com o do outro.\n\n**Números publicados**\n- Pessoas no aplicativo MS Digital: 368.532 cadastradas no total.\n- Pessoas no portal: 326.392 cidadãos com acesso registrado.\n- Acessos ao aplicativo no período: 238.498 pessoas.\n- Acessos ao portal no período: 2.822.319 visitantes únicos.\n\n**Critérios de aceitação**\n- A seção mostra os dois canais lado a lado.\n- Está escrito no painel que os dois números não se somam: a mesma pessoa pode usar os dois canais e a medição de cada um vem de sistema diferente.\n- A seção lista os serviços mais acessados em cada canal.",
+    "pai": 1342116,
+    "id": 1342118
+  }
+]

@@ -2,12 +2,12 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **371 itens**.
+Total: **374 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 235 |
-| Product Backlog Item | 102 |
+| Task | 237 |
+| Product Backlog Item | 103 |
 | Feature | 32 |
 | Epic | 2 |
 
@@ -44,6 +44,9 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1335219  [SGD] - Analisar Transparência  [Done]
       Task                   #1335176  [SGD] - Analisar Trânsito  [Done]
       Task                   #1335727  [SGD] - Analisar Turismo  [Done]
+    Product Backlog Item   #1342116  [SGD] - Novas seções do BI centralizado — ecossistema digital e comparativo de canais  [Done]
+      Task                   #1342118  [SGD] - Criar a seção comparativa de uso do aplicativo e do portal no BI centralizado  [Done]
+      Task                   #1342117  [SGD] - Incluir os dados do ecossistema digital no BI centralizado  [Done]
     Product Backlog Item   #1338574  [SGD] - Pesquisa e definição do aplicativo de serviços  [New]
       Task                   #1338581  [SGD] - Analisar funcionalidades necessárias para o aplicativo  [To Do]
       Task                   #1338582  [SGD] - Criar apresentação para a Duda  [To Do]
@@ -391,7 +394,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 193 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 196 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
