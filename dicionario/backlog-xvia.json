@@ -3628,7 +3628,7 @@
       "responsavel": "Daniele Lins Ichiy <SEGOV\\dichiy>",
       "esforco": null,
       "restante": null,
-      "descricao": "<li>Empresário ↔ Contribuinte&nbsp;<span></span> </li><li>Empresário ↔ Agronegócio&nbsp; </li><li>Agronegócio ↔ Contribuinte&nbsp; </li><li>Contribuinte ↔ Condutor&nbsp; </li><li>Família ↔ Estudante&nbsp; </li><li>Família ↔ Saúde&nbsp; </li><li><br> </li><li><br> </li>"
+      "descricao": "<li>Empresário ↔ Contribuinte&nbsp;<span></span> </li><li>Empresário ↔ Agronegócio&nbsp; </li><li>Agronegócio ↔ Contribuinte&nbsp; </li><li>Contribuinte ↔ Condutor&nbsp; </li><li>Família ↔ Estudante&nbsp; </li><li>Família ↔ Saúde&nbsp; </li><li><br> </li><li>Qual o melhor nome para Contribuinte e Beneficiário? </li><li>- Contribuinte: Finanças </li><li>- Beneficiário: Assistência Social </li><li><br> </li>"
     },
     {
       "id": 1340276,
@@ -5239,6 +5239,48 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Publicar no BI centralizado a seção que compara quanta gente usa o aplicativo MS Digital e quanta usa o portal na internet. </div><div><b>Por quê</b> </div><div>Duda pediu a quantidade de usuários dos dois canais. Os dados existiam separados, em sistemas de medição diferentes, e ninguém conseguia comparar o tamanho de um com o do outro. </div><div><b>Números publicados</b> </div><ul><li>Pessoas no aplicativo MS Digital: 368.532 cadastradas no total. </li><li>Pessoas no portal: 326.392 cidadãos com acesso registrado. </li><li>Acessos ao aplicativo no período: 238.498 pessoas. </li><li>Acessos ao portal no período: 2.822.319 visitantes únicos. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>A seção mostra os dois canais lado a lado. </li><li>Está escrito no painel que os dois números não se somam: a mesma pessoa pode usar os dois canais e a medição de cada um vem de sistema diferente. </li><li>A seção lista os serviços mais acessados em cada canal. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://bi-setdig.vercel.app/analytics/portal-ms\">https://bi-setdig.vercel.app/analytics/portal-ms</a> </li> </ul><div><b>Demanda original:</b> semana de 24 a 28-08-2026 </div>"
+    },
+    {
+      "id": 1342295,
+      "tipo": "Task",
+      "titulo": "[SGD] - Obter com o Maycon os dados do sistema para o formulário do relay SMTP",
+      "estado": "Done",
+      "pai_id": 1341609,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Pedir à X-VIA os dados do Smartpass Login que a Infraestrutura exige no formulário de liberação do relay SMTP. </div><div><b>Por quê</b> </div><div>A Infraestrutura só libera o relay com o formulário preenchido, e as informações do sistema são de quem o desenvolve, não da SGD. </div><div><b>O que veio</b> </div><ul><li>Sistema: Smartpass Login, com suporte a SSL/TLS e a autenticação. </li><li>Remetente de envio: naoresponda@ms.gov.br. </li><li>Responsável pelo sistema: Everaldo Pessoa (SEFAZ). </li><li>Envia e-mail para domínios externos: sim. </li><li>Ambientes: uma solicitação separada para cada um (desenvolvimento/homologação e produção). </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>O formulário está completo, sem campo em branco. </li><li>A resposta do Maycon está anexada ao PBI. </li> </ul><div><b>Demanda original:</b> 24-08-2026 </div>"
+    },
+    {
+      "id": 1342296,
+      "tipo": "Task",
+      "titulo": "[SGD] - Alinhar com a Infraestrutura o caminho para solicitar o relay SMTP",
+      "estado": "Done",
+      "pai_id": 1341609,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Descobrir com a equipe de Infraestrutura quem responde pelo relay SMTP e por onde a solicitação tem que entrar. </div><div><b>Por quê</b> </div><div>Não estava claro para quem mandar nem em qual sistema abrir. Sem isso, o pedido ia parar na fila errada e voltar. </div><div><b>O que ficou definido</b> </div><ul><li>Responsável pela EDS: Gerson Gauna, alinhado pelo Mattermost. </li><li>Servidor de relay a usar: smtpsistema.ms.gov.br. </li><li>Quem tem perfil de analista abre direto no GLPI; quem não tem usa o autoatendimento (<a href=\"https://www.autoatendimento.ms.gov.br/solicitacao-de-acesso/%29\">https://www.autoatendimento.ms.gov.br/solicitacao-de-acesso/)</a> e cola o formulário no campo de observação. </li><li>A aplicação precisa ser configurada para usar o smtpsistema.ms.gov.br. </li><li>As credenciais são geradas pela Infraestrutura e enviadas no próprio incidente, junto com um exemplo de conexão. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Está definido quem recebe a solicitação e por qual canal. </li><li>O formato exigido do formulário está conhecido. </li> </ul><div><b>Demanda original:</b> 28-08-2026 </div>"
+    },
+    {
+      "id": 1342297,
+      "tipo": "Task",
+      "titulo": "[SGD] - Abrir o chamado de acesso ao relay SMTP no GLPI",
+      "estado": "Done",
+      "pai_id": 1341609,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Registrar no GLPI a solicitação de acesso ao relay SMTP para o Smartpass Login, com o formulário preenchido. </div><div><b>Por quê</b> </div><div>O chamado é o que formaliza o pedido junto à Infraestrutura e é por ele que as credenciais do relay voltam. </div><div><b>Chamado</b> </div><ul><li>Número: 0266856. </li><li>Título: Solicitar o acesso ao relay SMTP. </li><li>Aberto em 28/08/2026, às 14h32, direto no GLPI (perfil de analista) e já atribuído à equipe responsável. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>O chamado está registrado e atribuído. </li><li>O formulário do sistema foi junto na solicitação. </li> </ul><div><b>Pendente</b> </div><div>Aguardando a Infraestrutura devolver as credenciais do relay no próprio chamado. Falta ainda a solicitação do segundo ambiente. </div><div><b>Demanda original:</b> 28-08-2026 </div>"
     }
   ]
 }

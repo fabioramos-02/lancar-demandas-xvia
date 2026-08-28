@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **374 itens**.
+Total: **377 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 237 |
+| Task | 240 |
 | Product Backlog Item | 103 |
 | Feature | 32 |
 | Epic | 2 |
@@ -160,6 +160,9 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1342004  Utilização da API do Portal MS  [In Progress]
   Feature                #1340868  [SGD] - Gestão de acessos externos  [In Progress]
     Product Backlog Item   #1341609  [SGD] - Acesso ao relay SMTP  [New]
+      Task                   #1342297  [SGD] - Abrir o chamado de acesso ao relay SMTP no GLPI  [Done]
+      Task                   #1342296  [SGD] - Alinhar com a Infraestrutura o caminho para solicitar o relay SMTP  [Done]
+      Task                   #1342295  [SGD] - Obter com o Maycon os dados do sistema para o formulário do relay SMTP  [Done]
       Task                   #1341665  [SGD] - Validar dados enviados pela XVia  [Done]
   Feature                #1333696  [SGD] - Instalação e configuração de ambientes  [In Progress]
     Product Backlog Item   #1340794  [SGD] - Acessos e ambientes do contrato X-VIA  [Done]
@@ -394,7 +397,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 196 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 199 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |

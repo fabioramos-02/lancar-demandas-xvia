@@ -1,0 +1,35 @@
+[
+  {
+    "tipo": "Task",
+    "pai": 1341609,
+    "titulo": "Obter com o Maycon os dados do sistema para o formulário do relay SMTP",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "24-08-2026",
+    "anexos": [
+      "C:/Users/framos/Pictures/Screenshots/Captura de tela 2026-08-28 144803.png"
+    ],
+    "descricao": "Pedir à X-VIA os dados do Smartpass Login que a Infraestrutura exige no formulário de liberação do relay SMTP.\n\n**Por quê**\nA Infraestrutura só libera o relay com o formulário preenchido, e as informações do sistema são de quem o desenvolve, não da SGD.\n\n**O que veio**\n- Sistema: Smartpass Login, com suporte a SSL/TLS e a autenticação.\n- Remetente de envio: naoresponda@ms.gov.br.\n- Responsável pelo sistema: Everaldo Pessoa (SEFAZ).\n- Envia e-mail para domínios externos: sim.\n- Ambientes: uma solicitação separada para cada um (desenvolvimento/homologação e produção).\n\n**Critérios de aceitação**\n- O formulário está completo, sem campo em branco.\n- A resposta do Maycon está anexada ao PBI.",
+    "id": 1342295
+  },
+  {
+    "tipo": "Task",
+    "pai": 1341609,
+    "titulo": "Alinhar com a Infraestrutura o caminho para solicitar o relay SMTP",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "28-08-2026",
+    "descricao": "Descobrir com a equipe de Infraestrutura quem responde pelo relay SMTP e por onde a solicitação tem que entrar.\n\n**Por quê**\nNão estava claro para quem mandar nem em qual sistema abrir. Sem isso, o pedido ia parar na fila errada e voltar.\n\n**O que ficou definido**\n- Responsável pela EDS: Gerson Gauna, alinhado pelo Mattermost.\n- Servidor de relay a usar: smtpsistema.ms.gov.br.\n- Quem tem perfil de analista abre direto no GLPI; quem não tem usa o autoatendimento (https://www.autoatendimento.ms.gov.br/solicitacao-de-acesso/) e cola o formulário no campo de observação.\n- A aplicação precisa ser configurada para usar o smtpsistema.ms.gov.br.\n- As credenciais são geradas pela Infraestrutura e enviadas no próprio incidente, junto com um exemplo de conexão.\n\n**Critérios de aceitação**\n- Está definido quem recebe a solicitação e por qual canal.\n- O formato exigido do formulário está conhecido.",
+    "id": 1342296
+  },
+  {
+    "tipo": "Task",
+    "pai": 1341609,
+    "titulo": "Abrir o chamado de acesso ao relay SMTP no GLPI",
+    "estado": "Done",
+    "activity": "Deployment",
+    "data_original": "28-08-2026",
+    "descricao": "Registrar no GLPI a solicitação de acesso ao relay SMTP para o Smartpass Login, com o formulário preenchido.\n\n**Por quê**\nO chamado é o que formaliza o pedido junto à Infraestrutura e é por ele que as credenciais do relay voltam.\n\n**Chamado**\n- Número: 0266856.\n- Título: Solicitar o acesso ao relay SMTP.\n- Aberto em 28/08/2026, às 14h32, direto no GLPI (perfil de analista) e já atribuído à equipe responsável.\n\n**Critérios de aceitação**\n- O chamado está registrado e atribuído.\n- O formulário do sistema foi junto na solicitação.\n\n**Pendente**\nAguardando a Infraestrutura devolver as credenciais do relay no próprio chamado. Falta ainda a solicitação do segundo ambiente.",
+    "id": 1342297
+  }
+]
