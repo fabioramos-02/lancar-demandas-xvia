@@ -118,8 +118,10 @@ class Tfs:
             saida.extend(self.pedir("GET", "wit/workitems", params=params).get("value", []))
         return saida
 
-    def work_item(self, item_id):
-        return self.pedir("GET", f"wit/workitems/{item_id}")
+    def work_item(self, item_id, expandir=None):
+        """expandir='relations' traz os links de hierarquia junto."""
+        params = {"$expand": expandir} if expandir else None
+        return self.pedir("GET", f"wit/workitems/{item_id}", params=params)
 
     def criar(self, tipo, patch):
         return self.pedir(

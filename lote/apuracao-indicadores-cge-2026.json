@@ -1,0 +1,60 @@
+[
+  {
+    "chave": "pbi-apuracao",
+    "tipo": "PBI",
+    "pai": 1336979,
+    "sgd": true,
+    "titulo": "Apuração dos indicadores de cartas de serviço 2026.1 e 2026.2",
+    "estado": "Done",
+    "data_original": "25-08-2026",
+    "descricao": "Atender a solicitação da CGE com a quantidade de cartas de serviço atualizadas e o índice de satisfação dos dois períodos de apuração de 2026.\n\n**Por quê**\nA CGE usa esses números para atualizar e acompanhar os indicadores do Estado.\n\n**Períodos apurados**\n- Apuração 2026.1: janeiro a abril de 2026.\n- Apuração 2026.2: maio a agosto de 2026.\n\n**Critérios de aceitação**\n- Relatórios e planilhas das duas apurações extraídos e anexados neste item.\n- Resposta enviada por e-mail à CGE com os arquivos dos dois períodos.\n- Print do envio anexado como evidência.",
+    "anexos": [
+      "C:/Users/framos/Downloads/periodo janeiro-abril/Apuração 2026.pdf",
+      "C:/Users/framos/Downloads/periodo janeiro-abril/Avaliação da Informação da Carta de Serviço(c1481899-7d8c-42a5-802d-7bcd3228e68b).xlsx",
+      "C:/Users/framos/Downloads/periodo janeiro-abril/Avaliação dos Serviço(eafd6da1-96be-443c-a96a-b93a57cc346b) (1).xlsx",
+      "C:/Users/framos/Downloads/periodo janeiro-abril/Comentários da Avaliação dos Serviços(d19dd561-f975-44b0-b89f-f25c3b7efc64).xlsx",
+      "C:/Users/framos/Downloads/periodo maio-agosto/Apuração 2026.pdf",
+      "C:/Users/framos/Downloads/periodo maio-agosto/Avaliação da Informação da Carta de Serviço(c1481899-7d8c-42a5-802d-7bcd3228e68b).xlsx",
+      "C:/Users/framos/Downloads/periodo maio-agosto/Avaliação dos Serviço(eafd6da1-96be-443c-a96a-b93a57cc346b).xlsx",
+      "C:/Users/framos/Downloads/periodo maio-agosto/Comentários da Avaliação dos Serviços(d19dd561-f975-44b0-b89f-f25c3b7efc64).xlsx",
+      "C:/Users/framos/Downloads/relatorio_cge.pdf",
+      "C:/Users/framos/Downloads/2026-08-25T15-05_export.csv",
+      "C:/Users/framos/Downloads/satsifacao 2026-08-25T15-05_export.csv",
+      "C:/Users/framos/Pictures/Screenshots/Captura de tela 2026-08-25 152514.png"
+    ],
+    "id": 1340871
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi-apuracao",
+    "titulo": "Extrair os dados de cartas atualizadas e de satisfação das apurações 2026.1 e 2026.2",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "25-08-2026",
+    "descricao": "Extrair do relatório a quantidade de cartas de serviço atualizadas e o índice de satisfação de cada período.\n\n**Critérios de aceitação**\n- Dados separados por período: janeiro a abril e maio a agosto de 2026.\n- Arquivos de origem guardados no PBI pai.",
+    "pai": 1340871,
+    "id": 1340872
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi-apuracao",
+    "titulo": "Elaborar a resposta com os números das duas apurações",
+    "estado": "Done",
+    "activity": "Documentation",
+    "data_original": "25-08-2026",
+    "descricao": "Organizar os números extraídos no formato que a CGE pediu.\n\n**Critérios de aceitação**\n- Resposta cobre os dois períodos de apuração.\n- Cada número aponta para o arquivo que o comprova.",
+    "pai": 1340871,
+    "id": 1340873
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi-apuracao",
+    "titulo": "Enviar o material das apurações por e-mail à CGE",
+    "estado": "Done",
+    "activity": "Documentation",
+    "data_original": "25-08-2026",
+    "descricao": "Enviar por e-mail o relatório e as planilhas das apurações 2026.1 e 2026.2 para a CGE.\n\n**Critérios de aceitação**\n- E-mail enviado com todos os arquivos dos dois períodos.\n- Print do envio anexado no PBI pai como evidência.",
+    "pai": 1340871,
+    "id": 1340874
+  }
+]

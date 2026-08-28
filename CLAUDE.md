@@ -1,7 +1,14 @@
 # lancar-demandas-xvia — instruções do projeto
 
 CLI que lança demandas no backlog **XVIA** do TFS on-prem (`tfs.sgi.ms.gov.br/tfs/Global/XVIA`),
-projeto Scrum, Epic raiz **1335269 — Implantação - Plataforma X-VIA**.
+projeto Scrum. Dois épicos raiz convivem:
+
+| Epic | Título | De quem é |
+|---|---|---|
+| **1333593** | `[SGD] - Documentação PGD-MS` | **nosso** — toda Feature do time SGD nasce aqui |
+| 1335269 | `Implantação - Plataforma X-VIA` | implantação da plataforma, tocada pelos outros times |
+
+`export` puxa os dois de uma vez. Ver <https://tfs.sgi.ms.gov.br/tfs/Global/XVIA/_workitems/edit/1333593>.
 
 ## Antes de sugerir onde encaixar qualquer demanda
 
@@ -22,10 +29,17 @@ Epic  <-  Feature  <-  Product Backlog Item  <-  Task
 
 O CLI aborta se o pai for do tipo errado. Task nunca pendura direto em Feature.
 
+**Feature nova do time SGD vai sob o Epic 1333593.** Não sob o 1335269 — lá ficam as Features
+de implantação da plataforma (`[CDI]`, `[CS]`, `[INFRA]`, `[IA]`), que não são nossas. A chefia
+já criou boa parte das Features do épico SGD; antes de criar uma nova, confira no dicionário se
+já existe (`[SGD] - Portal`, `[SGD] - Cartas de Serviços`, `[SGD] - Aplicativo MS Digital`,
+`[SGD] - Design System`, `[SGD] - Autenticação SSO`, …) e pendure o PBI na existente.
+
 ## Regras de lançamento
 
 | Regra | Valor |
 |---|---|
+| Título de Feature do time SGD | `[SGD] - Título` (passar `--sgd`); pai = Epic **1333593** |
 | Título de PBI criado pelo SGD | `[SGD] - Título` (padrão — nós somos SGD, sempre passar `--sgd`) |
 | Título de Task filha de PBI SGD | herda `[SGD] - Título` automaticamente (CLI aplica) |
 | Título de Task — forma | verbo no infinitivo (`Integrar…`, `Levantar…`, `Configurar…`), nunca só substantivo ou nome de ambiente |
@@ -34,8 +48,9 @@ O CLI aborta se o pai for do tipo errado. Task nunca pendura direto em Feature.
 | Responsável de PBI e Task | `fabio` |
 | Estado inicial de PBI | `Approved` (padrão do CLI — SGD já triou; nasce liberado pra puxar) |
 | Estado inicial de Task | `To Do` (ou `Done` se lançamento retroativo — ver regra abaixo) |
+| Transição de estado | o TFS só aceita o estado inicial do tipo na criação; o CLI cria e transiciona por PATCH |
 | Activity (Task) | obrigatório — `Deployment` \| `Design` \| `Development` \| `Documentation` \| `Requirements` \| `Testing` |
-| Area / Iteration | `XVIA` |
+| Area / Iteration | **herdadas do pai** pelo CLI (o épico SGD usa `XVIA\SGD` + `XVIA\Sprint 1`); só passar `--area`/`--iteration` para divergir de propósito |
 
 Responsáveis vivem em `dicionario/pessoas.json` (apelido → identidade), preenchido por `quem`.
 Nunca hardcode identidade no código.
@@ -82,11 +97,91 @@ Como identificar retroativo:
 - Referência a arquivos/repos que já existem no disco com o material.
 - Uso do `--data-original` no CLI ou entrada em `lote/*.json`.
 
-**Anexos em Task retroativa vão no PBI pai.** Quando a Task nasce `Done` (retroativa), qualquer artefato/anexo/evidência é vinculado ao **PBI** (agregador da entrega), nunca na Task. Motivo: o PBI é o cartão que os stakeholders abrem; artefato disperso em Task fechada some do radar. Se houver várias Tasks retroativas sob o mesmo PBI, todos os anexos ficam concentrados no PBI. Em Task prospectiva (`To Do`), o anexo pode ir na própria Task quando é insumo daquela etapa específica.
+**Anexos em Task retroativa vão no PBI pai — o CLI força isso.** Quando a Task nasce `Done` (retroativa), qualquer artefato/anexo/evidência é vinculado ao **PBI** (agregador da entrega), nunca na Task. Vale tanto para `--anexo` no `novo`/`lote` quanto para `xvia anexar <id-da-task>`, que redireciona e avisa. Motivo: o PBI é o cartão que os stakeholders abrem; artefato disperso em Task fechada some do radar. Se houver várias Tasks retroativas sob o mesmo PBI, todos os anexos ficam concentrados no PBI. Em Task prospectiva (`To Do`), o anexo pode ir na própria Task quando é insumo daquela etapa específica.
+
+## Evidência visual — print e foto sempre viram anexo
+
+Print, screenshot, foto de tela, recorte de e-mail ou de conversa que o usuário mandar **é anexo
+do work item**, não só texto na descrição. Nunca lançar a demanda e deixar a imagem no chat.
+
+Onde pendura: mesma regra do anexo retroativo. Task `Done` manda para o **PBI pai**; Task
+`To Do` pode segurar o próprio anexo quando a imagem é insumo daquela etapa. O CLI já força.
+
+```bash
+python -m src.xvia anexar <id> print1.png print2.png --apply
+```
+
+Imagem colada no chat **não é arquivo** — o CLI só sobe o que existe em disco. Quando o usuário
+colar print, pedir o caminho ou combinar uma pasta de despejo antes de criar o item.
+
+**Nunca anexar imagem com credencial.** Print com usuário e senha, token ou chave não sobe:
+o work item é lido por todo o time e vira vazamento permanente. Pedir a versão tarjada, ou
+registrar só a referência (número do chamado) e deixar a credencial no cofre de senha.
 
 ## Saída ao usuário — sempre com link
 
 Toda vez que um work item for criado ou atualizado, o retorno no chat inclui o link clicável do item (`https://tfs.sgi.ms.gov.br/tfs/Global/XVIA/_workitems/edit/<id>`), não só o id. Vale para PBI, Task, Feature, comentário, anexo — qualquer ação que aponte para um item específico. Formato preferido: tabela `| # | Título | Link |` ou linha `#NNNN — Título — <URL>`.
+
+## Comentário na Discussion — o CLI não faz, é PATCH direto
+
+Não existe `xvia comentar`. Comentário vai por PATCH em `System.History`, usando o cliente:
+
+```python
+from src.tfs import Tfs
+Tfs().atualizar(<id>, [{"op": "add", "path": "/fields/System.History", "value": html}])
+```
+
+O valor é HTML (`<div>` por parágrafo), não texto puro. Conferir depois em
+`GET wit/workitems/<id>/updates`, campo `System.History.newValue`.
+
+**Menção só notifica com o GUID de identidade.** `pessoas.json` guarda `DOMINIO\usuario`
+(serve para `AssignedTo`), que **não** funciona em menção — vira texto morto, sem
+notificação. O markup exigido é:
+
+```html
+<a href="#" data-vss-mention="version:2.0,GUID">@Nome Completo</a>
+```
+
+GUIDs já resolvidos:
+
+| Apelido | Nome no TFS | GUID |
+|---|---|---|
+| maycon | Maycon Renato de Andrade Lisboa | `0211f0fa-3489-4854-a265-31d70628aea5` |
+
+Para resolver um GUID novo, varrer os membros dos times — o comando `quem` descarta o `id`,
+então é consulta direta:
+
+```python
+t = Tfs()
+for tm in t.pedir("GET", "projects/XVIA/teams", no_projeto=False)["value"]:
+    r = t.pedir("GET", f"projects/XVIA/teams/{tm['id']}/members", no_projeto=False)
+    # m["identity"]["id"] é o GUID; m["identity"]["displayName"] é o nome da menção
+```
+
+Comentário de alinhamento ou divergência vai no **PBI**, não na Task — mesma lógica do
+anexo: o PBI é o cartão que os stakeholders abrem.
+
+## Área e sprint — `sincronizar` conserta quem escapou
+
+Item criado fora do CLI (ou antes da herança de área/sprint existir) nasce na raiz
+`XVIA` e some do quadro da sprint. O `sincronizar` devolve esses itens para debaixo
+do pai, de cima para baixo. Só mexe em `AreaPath` e `IterationPath` — não toca em
+título, estado, responsável ou descrição.
+
+```bash
+python -m src.xvia sincronizar            # dry-run: lista o que mudaria
+python -m src.xvia sincronizar --apply    # escreve
+```
+
+Padrão é só o Epic **1333593** (SGD). O 1335269 é dos outros times — passar `--epic`
+para incluí-lo é decisão consciente.
+
+**Subárea é refinamento, não erro.** Item em `XVIA\SGD\Interno` sob um pai em
+`XVIA\SGD` fica como está e propaga o próprio caminho para os filhos. Só entra no
+plano quem está FORA do ramo do pai (raiz `XVIA` ou outro ramo).
+
+Rodar em dry-run depois de cada lote grande. Se acusar diferença, ou o pai mudou de
+sprint ou alguém criou item fora do CLI.
 
 ## O que o CLI não faz — por design
 

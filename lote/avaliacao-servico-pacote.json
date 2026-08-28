@@ -1,0 +1,80 @@
+[
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Definir o que coletar do cidadão na avaliação",
+    "estado": "Done",
+    "activity": "Requirements",
+    "descricao": "Definir quais informações a avaliação pede ao cidadão e quais ficam de fora.\n\n**Por quê**\nPedir demais afasta o cidadão e cria risco de dado sensível sem necessidade. Pedir de menos deixa a avaliação sem uso de gestão.\n\n**Critérios de aceitação**\n- Lista do que coletar, com o motivo de cada campo.\n- Campos obrigatórios e opcionais separados.\n- O que não coletar está registrado.",
+    "links": [
+      "https://fabioramos-02.github.io/avaliacao-de-servicos/04-cidadao/o-que-coletar/"
+    ],
+    "id": 1340786
+  },
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Elaborar a proposta de modelo de avaliação",
+    "estado": "Done",
+    "activity": "Design",
+    "descricao": "Montar o modelo de avaliação proposto para o Portal de Serviços do MS.\n\n**Por quê**\nO comparativo de modelos e o benchmark precisam virar uma proposta única, aplicável ao portal, em vez de ficarem como estudo solto.\n\n**Critérios de aceitação**\n- Modelo proposto descrito: pergunta principal, escala e momento da coleta.\n- Campos qualificadores e campo aberto definidos.\n- Justificativa da escolha frente aos modelos comparados.",
+    "links": [
+      "https://fabioramos-02.github.io/avaliacao-de-servicos/05-proposta/modelo-proposto/"
+    ],
+    "id": 1340787
+  },
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Definir a estratégia de validação da proposta",
+    "estado": "Done",
+    "activity": "Requirements",
+    "descricao": "Definir como a proposta de avaliação será validada antes de virar implementação.\n\n**Por quê**\nModelo que vai direto para produção sem validação vira retrabalho. É preciso saber quem valida, com que critério e em que ordem.\n\n**Critérios de aceitação**\n- Etapas de validação descritas.\n- Responsáveis por cada validação identificados.\n- Critério de aprovação definido.",
+    "links": [
+      "https://fabioramos-02.github.io/avaliacao-de-servicos/06-validacao/estrategia/"
+    ],
+    "id": 1340788
+  },
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Consolidar a conclusão e a recomendação do estudo",
+    "estado": "Done",
+    "activity": "Documentation",
+    "descricao": "Fechar o estudo com a recomendação de qual modelo adotar e por quê.\n\n**Por quê**\nSem uma recomendação escrita, o estudo não sustenta decisão: cada leitor tira uma conclusão diferente do mesmo material.\n\n**Critérios de aceitação**\n- Recomendação registrada, com o fundamento.\n- Alternativas descartadas e o motivo de cada descarte.\n- Próximos passos indicados.",
+    "links": [
+      "https://fabioramos-02.github.io/avaliacao-de-servicos/07-conclusao/recomendacao/"
+    ],
+    "id": 1340789
+  },
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Escrever a especificação TO BE da avaliação de serviço",
+    "estado": "Done",
+    "activity": "Documentation",
+    "descricao": "Escrever a especificação TO BE da avaliação de serviço, pronta para implementação.\n\n**Por quê**\nA recomendação precisa virar especificação: o que coletar, como apresentar, como triar comentário e quais painéis existem. Sem isso a equipe de desenvolvimento não tem o que construir.\n\n**Critérios de aceitação**\n- Escopos de coleta, apresentação, triagem e painéis descritos.\n- Regras de negócio da coleta registradas.\n- Pendências abertas listadas.",
+    "links": [
+      "https://fabioramos-02.github.io/avaliacao-de-servicos/08-to-be/avaliacao-de-servico-to-be/"
+    ],
+    "id": 1340790
+  },
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Apresentar o pacote de entrega da avaliação de serviço",
+    "estado": "To Do",
+    "activity": "Documentation",
+    "descricao": "Apresentar o pacote de entrega da avaliação de serviço para os envolvidos.\n\n**Por quê**\nO estudo está pronto e publicado, mas ninguém decide sobre o que não conhece. A apresentação é o que transforma o material em decisão.\n\n**Critérios de aceitação**\n- Apresentação realizada com os envolvidos.\n- Dúvidas e objeções registradas.\n- Encaminhamentos definidos.",
+    "id": 1340791
+  },
+  {
+    "tipo": "Task",
+    "pai": 1337823,
+    "titulo": "Formalizar o envio do pacote de entrega em PDF para a equipe X-VIA",
+    "estado": "To Do",
+    "activity": "Documentation",
+    "descricao": "Enviar o pacote de entrega da avaliação de serviço em PDF para a equipe da X-VIA, por e-mail.\n\n**Por quê**\nA X-VIA vai implementar a avaliação. O envio formal em PDF deixa registro de o que foi entregue e quando.\n\n**Critérios de aceitação**\n- Pacote exportado em PDF.\n- E-mail enviado à equipe da X-VIA, com cópia para os envolvidos.\n- Data do envio registrada nesta task.",
+    "id": 1340792
+  }
+]

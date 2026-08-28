@@ -88,7 +88,7 @@ Se o usuário narra trabalho **já feito** ("eu fiz", "levantei", "documentei", 
 
 - **Todas as Tasks nascem `--estado Done`** (herda para as filhas do PBI).
 - PBI segue padrão `Approved` (do CLI). Se o trabalho todo já está pronto, marcar o PBI também como `--estado Done`.
-- **Anexos/artefatos vão no PBI, não na Task.** Task retroativa é `Done` e fica "fechada" no radar — artefato disperso lá some. Concentrar tudo no PBI, que é o cartão que os stakeholders abrem.
+- **Anexos/artefatos vão no PBI, não na Task — o CLI força.** Task retroativa é `Done` e fica "fechada" no radar; artefato disperso lá some. `destino_dos_anexos()` manda o material para o PBI pai, e `xvia anexar <id-da-task-done>` redireciona sozinho, imprimindo o aviso e o link do PBI.
 - Se possível, passar `--data-original DD-MM-YYYY` quando o usuário sabe a data em que fez o trabalho.
 
 Prospectivo (padrão): PBI = `Approved`, Task = `To Do`. Anexo pode ir na própria Task quando é insumo específico daquela etapa.
@@ -143,6 +143,10 @@ Regras de inferência (aplicar por ordem — primeira que casa vence):
 | nenhum casou | **perguntar via AskUserQuestion** — nunca chutar |
 
 Passe `--activity <Valor>` ao criar Task. O CLI aborta se faltar.
+
+## Estado na criação
+
+O TFS recusa `State` que não seja o inicial do tipo no POST (`HTTP 400 — not in the list of supported values`). O CLI contorna: cria no estado inicial e transiciona por PATCH. Passar `--estado Done` funciona normalmente — o item termina `Done`.
 
 ## O que este skill NÃO faz
 

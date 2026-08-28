@@ -13,7 +13,11 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 
 from src.xvia import (  # noqa: E402
     PBI, Erro, _criar_item, montar_descricao, montar_patch, normalizar_tipo,
-    normalizar_titulo, resolver_responsavel, texto_para_html, validar_estado,
+    destino_dos_anexos, ids_sob, normalizar_titulo, pai_nas_relacoes,
+    sob,
+    planejar_sincronizacao,
+    rebaixar_para_estado_inicial, resolver_responsavel,
+    texto_para_html, validar_estado,
     validar_pai, validar_atividade,
 )
 
@@ -196,9 +200,13 @@ def test_activity_nao_aceito_fora_de_task():
 
 class _FakeTfs:
     """Mock enxuto: só o que _criar_item chama em dry-run."""
-    def __init__(self, pai_titulo, pai_tipo=PBI):
-        self._pai = {"fields": {"System.WorkItemType": pai_tipo,
-                                "System.Title": pai_titulo}}
+    def __init__(self, pai_titulo, pai_tipo=PBI, area=None, iteration=None):
+        campos = {"System.WorkItemType": pai_tipo, "System.Title": pai_titulo}
+        if area:
+            campos["System.AreaPath"] = area
+        if iteration:
+            campos["System.IterationPath"] = iteration
+        self._pai = {"fields": campos}
 
     def work_item(self, _id):
         return self._pai
@@ -252,3 +260,150 @@ def test_html_escapa_entrada_e_monta_lista():
 def test_html_transforma_url_em_link():
     saida = texto_para_html("- https://exemplo.gov.br/a")
     assert '<a href="https://exemplo.gov.br/a">' in saida
+
+
+def test_rebaixa_estado_nao_criavel_e_devolve_alvo():
+    patch = montar_patch(tipo="Task", titulo="Levantar X",
+                         estado="Done", atividade="Requirements")
+    assert rebaixar_para_estado_inicial(patch, "Task") == "Done"
+    estado = next(o["value"] for o in patch if o["path"] == "/fields/System.State")
+    assert estado == "To Do"
+
+
+def test_nao_rebaixa_quando_alvo_ja_e_o_inicial():
+    patch = montar_patch(tipo="Task", titulo="Levantar X",
+                         estado="To Do", atividade="Requirements")
+    assert rebaixar_para_estado_inicial(patch, "Task") is None
+
+
+# -------------------------------------------------------- destino dos anexos
+
+def test_task_retroativa_manda_anexo_para_o_pbi_pai():
+    assert destino_dos_anexos("Task", "Done", 1336978, 1338838) == 1336978
+
+
+def test_task_prospectiva_segura_o_proprio_anexo():
+    assert destino_dos_anexos("Task", "To Do", 1336978, 1338838) == 1338838
+
+
+def test_pbi_concluido_nao_redireciona_para_a_feature():
+    assert destino_dos_anexos(PBI, "Done", 1335829, 1336978) == 1336978
+
+
+def test_pai_nas_relacoes_le_o_link_de_hierarquia():
+    item = {"relations": [
+        {"rel": "AttachedFile", "url": "https://tfs/_apis/wit/attachments/abc"},
+        {"rel": "System.LinkTypes.Hierarchy-Reverse",
+         "url": "https://tfs.sgi.ms.gov.br/tfs/Global/_apis/wit/workItems/1336978"},
+    ]}
+    assert pai_nas_relacoes(item) == 1336978
+
+
+def test_pai_nas_relacoes_sem_pai():
+    assert pai_nas_relacoes({}) is None
+    assert pai_nas_relacoes({"relations": []}) is None
+
+
+# ------------------------------------------------- área e sprint herdadas do pai
+
+def _campo(patch, nome):
+    return next(p["value"] for p in patch if p["path"] == f"/fields/{nome}")
+
+
+def test_item_herda_area_e_sprint_do_pai():
+    tfs = _FakeTfs("[SGD] - Cartas de Serviços", area="XVIA\SGD",
+                   iteration="XVIA\Sprint 1")
+    patch, _ = _criar_item(
+        tfs, {"tipo": "Task", "titulo": "Levantar X", "pai": 1336979,
+              "activity": "Requirements"}, aplicar=False)
+    assert _campo(patch, "System.AreaPath") == "XVIA\SGD"
+    assert _campo(patch, "System.IterationPath") == "XVIA\Sprint 1"
+
+
+def test_spec_vence_a_heranca_do_pai():
+    tfs = _FakeTfs("[SGD] - Cartas de Serviços", area="XVIA\SGD")
+    patch, _ = _criar_item(
+        tfs, {"tipo": "Task", "titulo": "Levantar X", "pai": 1336979,
+              "activity": "Requirements", "area": "XVIA"}, aplicar=False)
+    assert _campo(patch, "System.AreaPath") == "XVIA"
+
+
+def test_sem_pai_cai_no_padrao():
+    patch = montar_patch(tipo="Epic", titulo="Novo épico")
+    assert _campo(patch, "System.AreaPath") == "XVIA"
+    assert _campo(patch, "System.IterationPath") == "XVIA"
+
+
+# ------------------------------------------ sincronização de área e sprint
+
+def _item(id_, pai, area, iteration):
+    return {"id": id_, "titulo": f"item {id_}", "pai_id": pai,
+            "area": area, "iteration": iteration}
+
+
+def test_sincronizar_so_lista_quem_diverge():
+    itens = [
+        _item(1, None, "XVIA\SGD", "XVIA\Sprint 1"),
+        _item(2, 1, "XVIA\SGD", "XVIA\Sprint 1"),   # já certo
+        _item(3, 1, "XVIA", "XVIA"),                  # os dois campos errados
+    ]
+    assert planejar_sincronizacao(itens, [1]) == [
+        (3, "XVIA\SGD", "XVIA\Sprint 1")]
+
+
+def test_sincronizar_propaga_o_valor_corrigido_para_o_neto():
+    """Neto herda o valor NOVO do pai, não o que está gravado no pai errado."""
+    itens = [
+        _item(1, None, "XVIA\SGD", "XVIA\Sprint 1"),
+        _item(2, 1, "XVIA", "XVIA"),
+        _item(3, 2, "XVIA", "XVIA"),
+    ]
+    assert planejar_sincronizacao(itens, [1]) == [
+        (2, "XVIA\SGD", "XVIA\Sprint 1"),
+        (3, "XVIA\SGD", "XVIA\Sprint 1"),
+    ]
+
+
+def test_sincronizar_ignora_o_que_nao_pendura_na_raiz():
+    itens = [
+        _item(1, None, "XVIA\SGD", "XVIA\Sprint 1"),
+        _item(9, None, "XVIA", "XVIA"),      # outro épico
+        _item(10, 9, "XVIA", "XVIA"),
+    ]
+    assert planejar_sincronizacao(itens, [1]) == []
+
+
+def test_sincronizar_backlog_alinhado_nao_gera_plano():
+    itens = [_item(1, None, "XVIA\SGD", "XVIA\Sprint 1"),
+             _item(2, 1, "XVIA\SGD", "XVIA\Sprint 1")]
+    assert planejar_sincronizacao(itens, [1]) == []
+
+
+def test_ids_sob_desce_a_arvore_inteira():
+    pais = {2: 1, 3: 2, 4: 1, 99: 50}
+    assert sorted(ids_sob([1], pais)) == [1, 2, 3, 4]
+
+
+def test_subarea_e_refinamento_e_nao_e_achatada():
+    """`SGD\\Interno` sob `SGD` é de propósito — sync não pode apagar."""
+    itens = [
+        _item(1, None, "XVIA\\SGD", "XVIA\\Sprint 1"),
+        _item(2, 1, "XVIA\\SGD\\Interno", "XVIA\\Sprint 1"),
+        _item(3, 2, "XVIA", "XVIA"),   # neto na raiz: herda o Interno do pai
+    ]
+    assert planejar_sincronizacao(itens, [1]) == [
+        (3, "XVIA\\SGD\\Interno", "XVIA\\Sprint 1")]
+
+
+def test_ramo_irmao_nao_conta_como_refinamento():
+    itens = [_item(1, None, "XVIA\\SGD", "XVIA\\Sprint 1"),
+             _item(2, 1, "XVIA\\CDI", "XVIA\\Sprint 1")]
+    assert planejar_sincronizacao(itens, [1]) == [
+        (2, "XVIA\\SGD", "XVIA\\Sprint 1")]
+
+
+def test_sob_nao_casa_prefixo_parcial():
+    assert sob("XVIA\\SGD", "XVIA\\SGD")
+    assert sob("XVIA\\SGD\\Interno", "XVIA\\SGD")
+    assert not sob("XVIA\\SGDX", "XVIA\\SGD")
+    assert not sob("XVIA", "XVIA\\SGD")

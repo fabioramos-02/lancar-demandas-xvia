@@ -1,7 +1,8 @@
 # lancar-demandas-xvia
 
 Dicionário de dados do backlog **XVIA** e CLI para lançar demandas no TFS on-prem
-(`tfs.sgi.ms.gov.br/tfs/Global/XVIA`, Epic raiz `1335269`).
+(`tfs.sgi.ms.gov.br/tfs/Global/XVIA`, Epics raiz `1333593` — SGD, onde nossas Features
+nascem — e `1335269` — implantação da plataforma).
 
 Resolve duas coisas: dar visibilidade da estrutura real do backlog (pra pessoas e pro Claude)
 e padronizar o lançamento de Feature / PBI / Task, inclusive retroativo com material anexado.
@@ -91,6 +92,7 @@ suas Tasks numa só passada. O pai precisa aparecer antes dos filhos no arquivo.
 |---|---|
 | `quem <nome> [--salvar-como <apelido>]` | Resolve identidade para `AssignedTo` |
 | `export [--epic <id>]` | Gera o dicionário de dados |
+| `sincronizar [--epic <id>] [--apply]` | Devolve item fora da área/sprint do pai |
 | `novo --tipo --titulo [...] [--apply]` | Cria um work item |
 | `lote <arquivo.json> [--apply]` | Cria vários (retroativas) |
 | `anexar <id> <arquivos...> [--apply]` | Sobe anexos num work item |

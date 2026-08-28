@@ -1,0 +1,50 @@
+[
+  {
+    "tipo": "Task",
+    "pai": 1340794,
+    "titulo": "Abrir chamado de configuração dos ambientes GDI e Azure do contrato",
+    "estado": "Done",
+    "activity": "Deployment",
+    "descricao": "Abrir chamado para configurar o ambiente GDI e definir o ambiente Azure do contrato X-VIA.\n\n**Por quê**\nA equipe do contrato precisa de ambiente próprio para trabalhar. O chamado também pedia a liberação de acesso ao fiscal do contrato e o provisionamento da lista de usuários.\n\n**Critérios de aceitação**\n- Chamado aberto com as demandas de GDI, Azure e acesso do fiscal.\n- Lista de usuários para provisionamento enviada no chamado.",
+    "data_original": "22-06-2026",
+    "id": 1340795
+  },
+  {
+    "tipo": "Task",
+    "pai": 1340794,
+    "titulo": "Configurar o contrato da X-VIA no GDI e no TFS",
+    "estado": "Done",
+    "activity": "Deployment",
+    "descricao": "Cadastrar o contrato da X-VIA nas aplicações de gestão, com os colaboradores vinculados.\n\n**Por quê**\nSem o contrato cadastrado não há onde lançar atividade nem a quem vinculá-la. É o que destrava o registro de demanda da equipe.\n\n**Critérios de aceitação**\n- Contrato 004/2026 cadastrado nas aplicações SCP e Azure DevOps/TFS.\n- Colaboradores da X-VIA cadastrados.\n- Usuário de acompanhamento das atividades criado.\n\nAtendido pelo chamado 0191978. Credenciais de acesso não ficam registradas aqui: guardar em cofre de senha.",
+    "id": 1340796
+  },
+  {
+    "tipo": "Task",
+    "pai": 1340794,
+    "titulo": "Solicitar a criação dos usuários do contrato no GDI",
+    "estado": "Done",
+    "activity": "Deployment",
+    "descricao": "Solicitar ao setor responsável a criação dos usuários do contrato X-VIA no GDI.\n\n**Por quê**\nA primeira solicitação foi para o G09, que não atende o GDI, e não chegou ao setor correto. Foi preciso refazer o pedido e corrigir as contas informadas.\n\n**Critérios de aceitação**\n- Solicitação enviada ao setor responsável pelo GDI.\n- Contas do Maycon, da Brenda e da Aylime confirmadas e corrigidas.",
+    "data_original": "21-08-2026",
+    "id": 1340797
+  },
+  {
+    "tipo": "Task",
+    "pai": 1340794,
+    "titulo": "Liberar a permissão do login do Maycon no GDI",
+    "estado": "Done",
+    "activity": "Deployment",
+    "descricao": "Liberar a permissão de acesso do login do Maycon no GDI.\n\n**Por quê**\nO Maycon precisa do GDI para atuar na gestão de demanda do contrato. Sem a permissão o usuário existe mas não acessa.\n\n**Critérios de aceitação**\n- Login do Maycon com permissão liberada.\n- Acesso confirmado pelo próprio Maycon.",
+    "data_original": "21-08-2026",
+    "id": 1340798
+  },
+  {
+    "tipo": "Task",
+    "pai": 1340794,
+    "titulo": "Vincular as atividades do TFS à UST do contrato X-VIA",
+    "estado": "Done",
+    "activity": "Deployment",
+    "descricao": "Amarrar as atividades registradas no TFS à UST correspondente do contrato.\n\n**Por quê**\nA medição do contrato usa UST. Sem o vínculo entre a atividade registrada e a UST, não dá para medir o que foi entregue.\n\n**Critérios de aceitação**\n- Atividades do TFS vinculadas à UST.\n- Vínculo conferido em pelo menos uma atividade registrada.",
+    "id": 1340799
+  }
+]

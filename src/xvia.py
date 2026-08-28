@@ -3,6 +3,7 @@
 Comandos:
     quem    resolve identidades e grava dicionario/pessoas.json
     export  puxa a árvore do épico e gera o dicionário de dados
+    sincronizar  alinha área e sprint dos filhos ao pai (dry-run por padrão)
     novo    cria um work item (dry-run por padrão)
     lote    cria vários a partir de um JSON (demandas retroativas)
     anexar  sobe arquivo como anexo de um work item
@@ -26,7 +27,11 @@ JSON_BACKLOG = DICIONARIO / "backlog-xvia.json"
 MD_DICIONARIO = DICIONARIO / "DICIONARIO.md"
 JSON_PESSOAS = DICIONARIO / "pessoas.json"
 
-EPICO_PADRAO = 1335269
+# Dois épicos convivem no projeto XVIA. As Features do time SGD nascem no
+# épico da SGD; o de implantação da plataforma é tocado pelos outros times.
+EPICO_SGD = 1333593
+EPICO_PLATAFORMA = 1335269
+EPICOS_PADRAO = [EPICO_SGD, EPICO_PLATAFORMA]
 AREA_PADRAO = "XVIA"
 ITERATION_PADRAO = "XVIA"
 
@@ -46,6 +51,9 @@ ESTADOS_VALIDOS = {
     "Task": {"To Do", "In Progress", "Done", "Removed"},
 }
 ESTADO_PADRAO = {"Epic": "New", "Feature": "New", PBI: "Approved", "Task": "To Do"}
+# O TFS só aceita o estado inicial do tipo no POST de criação; o resto exige
+# transição por PATCH. Sem isso, Task retroativa (Done) morre com HTTP 400.
+ESTADO_INICIAL = {"Epic": "New", "Feature": "New", PBI: "New", "Task": "To Do"}
 
 ATIVIDADES_TASK = {
     "Deployment", "Design", "Development",
@@ -168,6 +176,98 @@ def validar_atividade(tipo, atividade):
     return None
 
 
+def destino_dos_anexos(tipo, estado, pai_id, item_id=None):
+    """Onde o anexo é pendurado. Task retroativa manda o material para o PBI pai.
+
+    Task que nasce Done já entra fechada: artefato preso nela some do radar.
+    O PBI é o cartão que os stakeholders abrem, então é lá que o material fica
+    concentrado. Task prospectiva (To Do) segura o próprio anexo, que é insumo
+    daquela etapa.
+    """
+    if tipo == "Task" and estado == "Done" and pai_id:
+        return pai_id
+    return item_id
+
+
+def pai_nas_relacoes(item):
+    """Id do pai a partir das relations de um work item, ou None."""
+    for rel in item.get("relations") or []:
+        if rel.get("rel") == "System.LinkTypes.Hierarchy-Reverse":
+            return int(rel["url"].rstrip("/").rsplit("/", 1)[-1])
+    return None
+
+
+def indexar_filhos(itens):
+    """{pai_id: [filho_id, ...]} a partir de uma lista de itens com pai_id."""
+    filhos = defaultdict(list)
+    for i in itens:
+        if i.get("pai_id"):
+            filhos[i["pai_id"]].append(i["id"])
+    return filhos
+
+
+def ids_sob(epics, pais):
+    """Ids que pendura nos épicos, a partir do mapa {filho: pai} do TFS."""
+    filhos = defaultdict(list)
+    for filho, pai in pais.items():
+        filhos[pai].append(filho)
+    ids, fila = list(epics), list(epics)
+    while fila:
+        atual = fila.pop()
+        for f in filhos.get(atual, []):
+            ids.append(f)
+            fila.append(f)
+    return ids
+
+
+def sob(valor, do_pai):
+    """O caminho está dentro do do pai? Subárea/sub-sprint é refinamento válido."""
+    return valor == do_pai or valor.startswith(do_pai + "\\")
+
+
+def planejar_sincronizacao(itens, raizes):
+    r"""Quem precisa de PATCH para voltar para debaixo da área/sprint do pai.
+
+    Devolve [(id, area, iteration)] de cima para baixo. Só entra no plano quem
+    está FORA do caminho do pai — item na raiz `XVIA` ou em outro ramo. Quem
+    refinou (`XVIA\SGD\Interno` sob `XVIA\SGD`) fica como está e propaga o
+    próprio valor para os filhos; achatar isso apagaria a subárea de propósito.
+    """
+    por_id = {i["id"]: i for i in itens}
+    filhos = indexar_filhos(itens)
+    plano = []
+    fila = [(r, por_id[r]["area"], por_id[r]["iteration"])
+            for r in raizes if r in por_id]
+    while fila:
+        atual, area, iteration = fila.pop(0)
+        for fid in sorted(filhos.get(atual, [])):
+            f = por_id[fid]
+            nova_area = f["area"] if sob(f["area"], area) else area
+            nova_iter = (f["iteration"] if sob(f["iteration"], iteration)
+                         else iteration)
+            if nova_area != f["area"] or nova_iter != f["iteration"]:
+                plano.append((fid, nova_area, nova_iter))
+            fila.append((fid, nova_area, nova_iter))
+    return plano
+
+
+def rebaixar_para_estado_inicial(patch, tipo):
+    """Reescreve o patch para o item nascer no estado inicial do tipo.
+
+    Devolve o estado alvo quando houve rebaixamento (a transição precisa de um
+    PATCH depois da criação) ou None quando o alvo já era o inicial.
+    """
+    inicial = ESTADO_INICIAL[tipo]
+    for op in patch:
+        if op.get("path") == "/fields/System.State":
+            alvo = op["value"]
+            if alvo == inicial:
+                return None
+            op["value"] = inicial
+            return alvo
+    return None
+
+
 def montar_patch(*, tipo, titulo, pai_id=None, descricao="", responsavel=None,
                  estado=None, area=AREA_PADRAO, iteration=ITERATION_PADRAO,
                  esforco=None, tags=None, atividade=None, base=BASE):
@@ -264,19 +364,10 @@ def cmd_quem(args):
 
 def cmd_export(args):
     tfs = Tfs()
+    epics = args.epic or EPICOS_PADRAO
     pais = tfs.arvore_de_links()
-
-    filhos = defaultdict(list)
-    for filho, pai in pais.items():
-        filhos[pai].append(filho)
-
-    # BFS a partir do épico — só o que pendura nele entra no dicionário
-    ids, fila = [args.epic], [args.epic]
-    while fila:
-        atual = fila.pop()
-        for f in filhos.get(atual, []):
-            ids.append(f)
-            fila.append(f)
+    # só o que pendura nos épicos entra no dicionário
+    ids = ids_sob(epics, pais)
 
     brutos = tfs.work_items(ids, campos=CAMPOS_EXPORT)
     itens = []
@@ -300,14 +391,64 @@ def cmd_export(args):
 
     DICIONARIO.mkdir(exist_ok=True)
     JSON_BACKLOG.write_text(
-        json.dumps({"epic": args.epic, "itens": itens}, ensure_ascii=False, indent=2),
+        json.dumps({"epics": epics, "itens": itens}, ensure_ascii=False, indent=2),
         encoding="utf-8")
-    MD_DICIONARIO.write_text(gerar_dicionario(args.epic, itens), encoding="utf-8")
+    MD_DICIONARIO.write_text(gerar_dicionario(epics, itens), encoding="utf-8")
     print(f"[OK] {len(itens)} itens -> {JSON_BACKLOG.name} + {MD_DICIONARIO.name}")
     return 0
 
 
-def gerar_dicionario(epic_id, itens):
+CAMPOS_SINCRONIZAR = [
+    "System.Id", "System.WorkItemType", "System.Title",
+    "System.AreaPath", "System.IterationPath",
+]
+
+
+def cmd_sincronizar(args):
+    """Alinha área e sprint ao pai. Não toca em título, estado ou responsável."""
+    tfs = Tfs()
+    epics = args.epic or [EPICO_SGD]
+    pais = tfs.arvore_de_links()
+    itens = [{
+        "id": b["id"],
+        "titulo": b.get("fields", {}).get("System.Title", ""),
+        "pai_id": pais.get(b["id"]),
+        "area": b.get("fields", {}).get("System.AreaPath", ""),
+        "iteration": b.get("fields", {}).get("System.IterationPath", ""),
+    } for b in tfs.work_items(ids_sob(epics, pais), campos=CAMPOS_SINCRONIZAR)]
+
+    plano = planejar_sincronizacao(itens, epics)
+    if not plano:
+        print("[OK] nada a sincronizar — área e sprint já batem com o pai.")
+        return 0
+
+    por_id = {i["id"]: i for i in itens}
+    for item_id, area, iteration in plano:
+        i = por_id[item_id]
+        print(f"#{item_id}  {i['titulo']}")
+        if i["area"] != area:
+            print(f"    area       {i['area'] or '(vazia)'}  ->  {area}")
+        if i["iteration"] != iteration:
+            print(f"    iteration  {i['iteration'] or '(vazia)'}  ->  {iteration}")
+        print(f"    {BASE}/{tfs.projeto}/_workitems/edit/{item_id}")
+        if args.apply:
+            tfs.atualizar(item_id, [
+                {"op": "add", "path": "/fields/System.AreaPath", "value": area},
+                {"op": "add", "path": "/fields/System.IterationPath",
+                 "value": iteration},
+            ])
+
+    if args.apply:
+        print(f"\n{len(plano)} item(ns) sincronizado(s). "
+              "Rode `export` para atualizar o dicionário.")
+    else:
+        print(f"\n{len(plano)} item(ns) seriam alterados.  "
+              "[DRY-RUN — nada foi escrito]\nRode de novo com --apply.")
+    return 0
+
+
+def gerar_dicionario(epics, itens):
+    epics = [epics] if isinstance(epics, int) else list(epics)
     por_id = {i["id"]: i for i in itens}
     filhos = defaultdict(list)
     for i in itens:
@@ -317,8 +458,9 @@ def gerar_dicionario(epic_id, itens):
     linhas = [
         "# Dicionário de dados — Backlog XVIA",
         "",
-        f"Gerado por `python -m src.xvia export` a partir do Epic **{epic_id}**. "
-        "Não editar à mão — as alterações são sobrescritas.",
+        "Gerado por `python -m src.xvia export` a partir dos Epics "
+        + ", ".join(f"**{e}**" for e in epics)
+        + ". Não editar à mão — as alterações são sobrescritas.",
         "",
         f"Total: **{len(itens)} itens**.",
         "",
@@ -338,7 +480,8 @@ def gerar_dicionario(epic_id, itens):
         for f in sorted(filhos.get(item_id, []), key=lambda x: por_id[x]["titulo"]):
             desenhar(f, nivel + 1)
 
-    desenhar(epic_id)
+    for e in epics:
+        desenhar(e)
     linhas += ["```", "", "## 2. Prefixos em uso", ""]
 
     prefixos = defaultdict(list)
@@ -397,7 +540,7 @@ def gerar_dicionario(epic_id, itens):
         esperado = PAI_ESPERADO.get(i["tipo"])
         if esperado and pai and pai["tipo"] != esperado:
             divergentes.append((i, f"pai é {pai['tipo']}, esperado {esperado}"))
-        if esperado and not pai and i["id"] != epic_id:
+        if esperado and not pai and i["id"] not in epics:
             divergentes.append((i, f"órfão — deveria estar sob um {esperado}"))
     if divergentes:
         linhas += ["| Id | Tipo | Título | Problema |", "|---|---|---|---|"]
@@ -418,6 +561,7 @@ def _criar_item(tfs, spec, aplicar):
 
     tipo_do_pai = None
     titulo_do_pai = ""
+    campos_pai = {}
     if pai_id:
         pai = tfs.work_item(pai_id)
         campos_pai = pai.get("fields", {})
@@ -442,17 +586,37 @@ def _criar_item(tfs, spec, aplicar):
             spec.get("descricao", ""), spec.get("links"), spec.get("data_original")),
         responsavel=resolver_responsavel(tipo, spec.get("responsavel")),
         estado=spec.get("estado"),
-        area=spec.get("area", AREA_PADRAO),
-        iteration=spec.get("iteration", ITERATION_PADRAO),
+        # herda a área e a sprint do pai: o épico SGD vive em XVIA\SGD +
+        # XVIA\Sprint 1, e item nascendo na raiz some do quadro do time
+        area=spec.get("area") or campos_pai.get("System.AreaPath") or AREA_PADRAO,
+        iteration=(spec.get("iteration") or campos_pai.get("System.IterationPath")
+                   or ITERATION_PADRAO),
         esforco=spec.get("esforco"),
         tags=spec.get("tags"),
         atividade=spec.get("activity") or spec.get("atividade"),
     )
+    estado_final = next(
+        op["value"] for op in patch if op["path"] == "/fields/System.State")
+    estado_alvo = rebaixar_para_estado_inicial(patch, tipo)
+    anexos = spec.get("anexos") or []
+
     if not aplicar:
+        if anexos:
+            destino = destino_dos_anexos(tipo, estado_final, pai_id)
+            onde = f"PBI pai #{destino}" if destino else "o próprio item criado"
+            print(f"[DRY-RUN] {len(anexos)} anexo(s) iriam para {onde}.")
         return patch, None
+
     criado = tfs.criar(tipo, patch)
-    for caminho in spec.get("anexos", []) or []:
-        tfs.anexar(criado["id"], caminho)
+    if estado_alvo:
+        criado = tfs.atualizar(criado["id"], [
+            {"op": "add", "path": "/fields/System.State", "value": estado_alvo}])
+    destino = destino_dos_anexos(tipo, estado_final, pai_id, criado["id"])
+    for caminho in anexos:
+        tfs.anexar(destino, caminho)
+    if anexos and destino != criado["id"]:
+        print(f"[ANEXADO] {len(anexos)} arquivo(s) no PBI pai #{destino}")
+        print(f"          {BASE}/{tfs.projeto}/_workitems/edit/{destino}")
     return patch, criado
 
 
@@ -520,13 +684,25 @@ def cmd_anexar(args):
     for caminho in args.arquivos:
         if not pathlib.Path(caminho).is_file():
             raise Erro(f"arquivo não encontrado: {caminho}")
+
+    item = tfs.work_item(args.id, expandir="relations")
+    campos = item.get("fields", {})
+    destino = destino_dos_anexos(
+        campos.get("System.WorkItemType"), campos.get("System.State"),
+        pai_nas_relacoes(item), args.id)
+    if destino != args.id:
+        print(f"[REDIRECIONADO] #{args.id} é Task concluída — o material vai "
+              f"para o PBI pai #{destino}, que é o cartão que fica visível.")
+
     if not args.apply:
-        print(f"[DRY-RUN] anexaria em #{args.id}: {', '.join(args.arquivos)}")
+        print(f"[DRY-RUN] anexaria em #{destino}: {', '.join(args.arquivos)}")
+        print(f"          {BASE}/{tfs.projeto}/_workitems/edit/{destino}")
         print("Rode de novo com --apply.")
         return 0
     for caminho in args.arquivos:
-        tfs.anexar(args.id, caminho, comentario=args.comentario or "")
-        print(f"[ANEXADO] {caminho} -> #{args.id}")
+        tfs.anexar(destino, caminho, comentario=args.comentario or "")
+        print(f"[ANEXADO] {caminho} -> #{destino}")
+    print(f"          {BASE}/{tfs.projeto}/_workitems/edit/{destino}")
     return 0
 
 
@@ -544,8 +720,16 @@ def montar_parser():
     q.set_defaults(func=cmd_quem)
 
     e = sub.add_parser("export", help="gera o dicionário de dados do épico")
-    e.add_argument("--epic", type=int, default=EPICO_PADRAO)
+    e.add_argument("--epic", type=int, action="append",
+                   help=f"repetível; padrão: {' e '.join(str(x) for x in EPICOS_PADRAO)}")
     e.set_defaults(func=cmd_export)
+
+    s_ = sub.add_parser(
+        "sincronizar", help="alinha área e sprint dos filhos ao pai")
+    s_.add_argument("--epic", type=int, action="append",
+                    help=f"repetível; padrão: {EPICO_SGD} (só o épico do SGD)")
+    s_.add_argument("--apply", action="store_true", help="escreve de fato no TFS")
+    s_.set_defaults(func=cmd_sincronizar)
 
     n = sub.add_parser("novo", help="cria um work item")
     n.add_argument("--tipo", required=True, help="Epic | Feature | PBI | Task")
