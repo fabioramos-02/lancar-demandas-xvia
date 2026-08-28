@@ -1,0 +1,12 @@
+[
+  {
+    "tipo": "Task",
+    "pai": 1341609,
+    "titulo": "Receber as credenciais do relay SMTP pelo chamado 0266856",
+    "estado": "Done",
+    "activity": "Deployment",
+    "data_original": "28-08-2026",
+    "descricao": "Registrar o encerramento do chamado 0266856, pelo qual a Infraestrutura entregou as credenciais do relay SMTP.\n\n**Por quê**\nO Smartpass Login precisa do relay para enviar e-mail. Sem as credenciais, a integração não sai do lugar.\n\n**O que a Infraestrutura entregou**\n- Servidor de relay: smtpsistema.ms.gov.br.\n- Porta: 587, com STARTTLS.\n- Exige usuário autenticado.\n- Remetente: naoresponda@ms.gov.br.\n- Um par de usuário e senha para produção e outro para homologação.\n- A equipe testou o envio antes de entregar e confirmou que funcionou.\n- Veio junto um exemplo de configuração da conexão.\n\n**Onde estão as credenciais**\nAs senhas não ficam registradas aqui. Elas estão no chamado 0266856 e devem ser guardadas no cofre de senha da equipe. Cartão de backlog é lido por todo o time e não é lugar de senha.\n\n**Critérios de aceitação**\n- O chamado está encerrado.\n- Os parâmetros de conexão estão registrados: servidor, porta, segurança e remetente.\n- As senhas estão no cofre, e não neste cartão nem em anexo.\n\n**O que falta**\n- Configurar o Smartpass Login para usar o smtpsistema.ms.gov.br nos dois ambientes.\n- Trocar as senhas entregues: elas circularam fora do cofre. Pedir a substituição pelo próprio chamado 0266856.",
+    "id": 1342524
+  }
+]

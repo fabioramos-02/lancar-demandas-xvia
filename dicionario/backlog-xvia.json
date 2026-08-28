@@ -3488,7 +3488,7 @@
       "responsavel": "Bruno Degan Bento <FAZENDA\\bbento>",
       "esforco": null,
       "restante": null,
-      "descricao": "<div><img src=\"https://tfs.sgi.ms.gov.br/tfs/Global/d3c03117-3906-41aa-8699-bc7d92976c44/_apis/wit/attachments/52f3e922-1a3e-4ca1-912f-82e9dd4b7e13?fileName=image.png\" alt=Image><br> </div>"
+      "descricao": "<div>Avaliar a API do Portal MS no contexto do CMS de Notícias. </div><div><b>Por quê</b> </div><div>A API em <a href=\"https://admin.ms.gov.br/api/cms/servicos_all/\">https://admin.ms.gov.br/api/cms/servicos_all/</a> já é usada para levar os serviços em destaque do Portal MS aos sites em WordPress. Antes de construir algo novo, é preciso saber o que ela já resolve. </div><div><b>Atenção: assunto duplicado</b> </div><div>Este cartão está no épico da plataforma, e o mesmo assunto tem dois cartões no épico do SGD: </div><ul><li>PBI 1342005, na Feature [SGD] - Gestão de Notícias, para a avaliação técnica da API. </li><li>PBI 1342485, para o acesso e a autenticação. </li> </ul><div>Antes de trabalhar aqui, alinhe com o Maycon qual dos cartões fica. Trabalho repetido em dois épicos gera retrabalho e devolutiva em duplicidade. </div><div><b>Critérios de aceitação</b> </div><ul><li>Está definido qual cartão concentra o assunto. </li><li>Se este for o escolhido, os outros são encerrados; se não, este é encerrado. </li> </ul><div><b>Imagem abaixo:</b> já estava neste cartão, preservada. </div><div><img src=\"https://tfs.sgi.ms.gov.br/tfs/Global/d3c03117-3906-41aa-8699-bc7d92976c44/_apis/wit/attachments/52f3e922-1a3e-4ca1-912f-82e9dd4b7e13?fileName=image.png\" alt=Image><br> </div>"
     },
     {
       "id": 1340260,
@@ -5154,7 +5154,7 @@
       "responsavel": "Bruno Degan Bento <FAZENDA\\bbento>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Avaliar a API do Portal MS e dizer se ela serve para a nova plataforma. </div><div><b>Por quê</b> </div><div>A API em <a href=\"https://admin.ms.gov.br/api/cms/servicos_all/\">https://admin.ms.gov.br/api/cms/servicos_all/</a> é o que hoje leva os serviços em destaque do Portal MS para os sites feitos em WordPress. A Glaucia pediu que a X-VIA avalie se dá para usar, integrar ou reaproveitar esses recursos na plataforma nova. </div><div><b>O que a API entrega hoje</b> </div><ul><li>Uma listagem de 1.228 serviços, com órgão, categoria e se o serviço é digital, agendável ou online. </li><li>Segundo o Bruno Bento, a API tem outras funcionalidades já prontas, mas o uso atual está restrito à importação dos serviços em destaque. </li> </ul><div><b>Onde o assunto está registrado</b> </div><ul><li>Este cartão trata da avaliação técnica da API. </li><li>O acesso e a autenticação estão no PBI 1342485. </li><li>O mesmo assunto tem um cartão no épico da plataforma, o PBI 1340259, sob a Feature [CDI] CMS Notícias. Vale alinhar com o Maycon qual dos dois fica. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Está respondido se a API serve para a nova plataforma. </li><li>As funcionalidades que hoje não são usadas foram avaliadas, não só a importação dos destaques. </li><li>A devolutiva foi dada a quem pediu a avaliação. </li> </ul>"
     },
     {
       "id": 1342054,
@@ -5365,6 +5365,20 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Enviar o e-mail que formaliza a autorização da Glaucia para o uso temporário da chave de acesso à API do Portal MS. </div><div><b>Por quê</b> </div><div>A autorização foi dada em reunião. Sem registro escrito, quem usa a chave fica sem respaldo e quem autorizou fica sem rastro da decisão. </div><div><b>Critérios de aceitação</b> </div><ul><li>O e-mail registra quem autorizou, quando, para quem, para qual endereço da API e por quanto tempo. </li><li>O e-mail não traz a chave escrita no corpo nem em anexo. O Bruno orientou por escrito que o token não deve ser compartilhado por e-mail. </li><li>O e-mail diz por qual canal direto a chave é entregue. </li><li>O e-mail deixa registrado que o pedido de chaves próprias por ambiente segue em aberto junto à Infraestrutura. </li><li>Vai com cópia para as mesmas pessoas da conversa de 25/08/2026. </li> </ul>"
+    },
+    {
+      "id": 1342524,
+      "tipo": "Task",
+      "titulo": "[SGD] - Receber as credenciais do relay SMTP pelo chamado 0266856",
+      "estado": "Done",
+      "pai_id": 1341609,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Registrar o encerramento do chamado 0266856, pelo qual a Infraestrutura entregou as credenciais do relay SMTP. </div><div><b>Por quê</b> </div><div>O Smartpass Login precisa do relay para enviar e-mail. Sem as credenciais, a integração não sai do lugar. </div><div><b>O que a Infraestrutura entregou</b> </div><ul><li>Servidor de relay: smtpsistema.ms.gov.br. </li><li>Porta: 587, com STARTTLS. </li><li>Exige usuário autenticado. </li><li>Remetente: naoresponda@ms.gov.br. </li><li>Um par de usuário e senha para produção e outro para homologação. </li><li>A equipe testou o envio antes de entregar e confirmou que funcionou. </li><li>Veio junto um exemplo de configuração da conexão. </li> </ul><div><b>Onde estão as credenciais</b> </div><div>As senhas não ficam registradas aqui. Elas estão no chamado 0266856 e devem ser guardadas no cofre de senha da equipe. Cartão de backlog é lido por todo o time e não é lugar de senha. </div><div><b>Critérios de aceitação</b> </div><ul><li>O chamado está encerrado. </li><li>Os parâmetros de conexão estão registrados: servidor, porta, segurança e remetente. </li><li>As senhas estão no cofre, e não neste cartão nem em anexo. </li> </ul><div><b>O que falta</b> </div><ul><li>Configurar o Smartpass Login para usar o smtpsistema.ms.gov.br nos dois ambientes. </li><li>Trocar as senhas entregues: elas circularam fora do cofre. Pedir a substituição pelo próprio chamado 0266856. </li> </ul><div><b>Demanda original:</b> 28-08-2026 </div>"
     }
   ]
 }
