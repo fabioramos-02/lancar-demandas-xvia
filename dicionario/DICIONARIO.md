@@ -2,12 +2,12 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **377 itens**.
+Total: **383 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 240 |
-| Product Backlog Item | 103 |
+| Task | 245 |
+| Product Backlog Item | 104 |
 | Feature | 32 |
 | Epic | 2 |
 
@@ -95,7 +95,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
     Product Backlog Item   #1337823  [SGD] - Avaliação do Serviço  [Approved]
       Task                   #1340427  [SGD] - Aguardar decisão sobre como trazer o cidadão de volta ao portal para avaliar  [To Do]
       Task                   #1340791  [SGD] - Apresentar o pacote de entrega da avaliação de serviço  [To Do]
-      Task                   #1340411  [SGD] - Atualizar a especificação TO BE com as decisões de escopo e identificação  [To Do]
+      Task                   #1340411  [SGD] - Atualizar a especificação TO BE com as decisões de escopo e identificação  [Done]
       Task                   #1340789  [SGD] - Consolidar a conclusão e a recomendação do estudo  [Done]
       Task                   #1338572  [SGD] - Consolidar evidências, fontes e notas de pesquisa  [Done]
       Task                   #1340788  [SGD] - Definir a estratégia de validação da proposta  [Done]
@@ -158,6 +158,12 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
   Feature                #1340870  [SGD] - Gestão de Notícias  [In Progress]
     Product Backlog Item   #1342005  Interação API  [Approved]
       Task                   #1342004  Utilização da API do Portal MS  [In Progress]
+    Product Backlog Item   #1342485  [SGD] - Autenticação e acesso à API do Portal MS  [Approved]
+      Task                   #1342488  [SGD] - Alinhar com a EDS a geração do token de acesso à API  [Done]
+      Task                   #1342490  [SGD] - Formalizar por e-mail o repasse da chave de acesso à API  [To Do]
+      Task                   #1342487  [SGD] - Levantar com a Infraestrutura quem emite o token da API  [Done]
+      Task                   #1342489  [SGD] - Obter da Glaucia a autorização para repassar a chave de acesso à X-VIA  [Done]
+      Task                   #1342486  [SGD] - Testar o endpoint da API do Portal MS no Postman  [Done]
   Feature                #1340868  [SGD] - Gestão de acessos externos  [In Progress]
     Product Backlog Item   #1341609  [SGD] - Acesso ao relay SMTP  [New]
       Task                   #1342297  [SGD] - Abrir o chamado de acesso ao relay SMTP no GLPI  [Done]
@@ -397,7 +403,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 199 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 205 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |

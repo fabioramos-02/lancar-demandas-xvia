@@ -3628,7 +3628,7 @@
       "responsavel": "Daniele Lins Ichiy <SEGOV\\dichiy>",
       "esforco": null,
       "restante": null,
-      "descricao": "<li>Empresário ↔ Contribuinte&nbsp;<span></span> </li><li>Empresário ↔ Agronegócio&nbsp; </li><li>Agronegócio ↔ Contribuinte&nbsp; </li><li>Contribuinte ↔ Condutor&nbsp; </li><li>Família ↔ Estudante&nbsp; </li><li>Família ↔ Saúde&nbsp; </li><li><br> </li><li>Qual o melhor nome para Contribuinte e Beneficiário? </li><li>- Contribuinte: Finanças </li><li>- Beneficiário: Assistência Social </li><li><br> </li>"
+      "descricao": "<li>Empresário ↔ Contribuinte&nbsp;<span></span> </li><li>Empresário ↔ Agronegócio&nbsp; </li><li>Agronegócio ↔ Contribuinte&nbsp; </li><li>Contribuinte ↔ Condutor&nbsp; </li><li>Família ↔ Estudante&nbsp; </li><li>Família ↔ Saúde&nbsp; </li><li><br> </li><li>Qual o melhor nome para Contribuinte e Beneficiário? </li><li>- Contribuinte: Finanças </li><li>- Beneficiário: Benefícios sociais </li><li><br> </li>"
     },
     {
       "id": 1340276,
@@ -3732,7 +3732,7 @@
       "id": 1340411,
       "tipo": "Task",
       "titulo": "[SGD] - Atualizar a especificação TO BE com as decisões de escopo e identificação",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1337823,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -5281,6 +5281,90 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Registrar no GLPI a solicitação de acesso ao relay SMTP para o Smartpass Login, com o formulário preenchido. </div><div><b>Por quê</b> </div><div>O chamado é o que formaliza o pedido junto à Infraestrutura e é por ele que as credenciais do relay voltam. </div><div><b>Chamado</b> </div><ul><li>Número: 0266856. </li><li>Título: Solicitar o acesso ao relay SMTP. </li><li>Aberto em 28/08/2026, às 14h32, direto no GLPI (perfil de analista) e já atribuído à equipe responsável. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>O chamado está registrado e atribuído. </li><li>O formulário do sistema foi junto na solicitação. </li> </ul><div><b>Pendente</b> </div><div>Aguardando a Infraestrutura devolver as credenciais do relay no próprio chamado. Falta ainda a solicitação do segundo ambiente. </div><div><b>Demanda original:</b> 28-08-2026 </div>"
+    },
+    {
+      "id": 1342485,
+      "tipo": "Product Backlog Item",
+      "titulo": "[SGD] - Autenticação e acesso à API do Portal MS",
+      "estado": "Approved",
+      "pai_id": 1340870,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Conseguir acesso autenticado à API do Portal MS para que a X-VIA possa avaliar o reaproveitamento dela na nova plataforma. </div><div><b>Por quê</b> </div><div>A Glaucia encaminhou à X-VIA a avaliação da API que hoje leva os serviços em destaque do Portal MS para os sites em WordPress. A avaliação parou na porta: a API exige token e não estava claro quem emite esse token. </div><div><b>Onde o assunto está registrado</b> </div><ul><li>Este cartão trata do acesso e da autenticação. </li><li>A avaliação técnica da API está no PBI 1342005, na mesma Feature. </li><li>O mesmo assunto tem um cartão no épico da plataforma, o PBI 1340259, sob a Feature [CDI] CMS Notícias. Vale alinhar com o Maycon qual dos dois fica. </li> </ul><div><b>Situação</b> </div><div>A Glaucia autorizou o repasse da chave pessoal do Fabio para o Maycon, para destravar a avaliação agora, e pediu que tudo ficasse registrado aqui como respaldo. Falta formalizar o repasse por e-mail. O caminho definitivo continua sendo a Infraestrutura emitir chaves próprias da X-VIA, uma para cada ambiente. </div><div><b>Critérios de aceitação</b> </div><ul><li>A trilha do pedido de acesso está registrada, com quem foi consultado e o que cada um respondeu. </li><li>As evidências do teste da API estão anexadas a este cartão. </li><li>O repasse da chave está formalizado por e-mail, com a autorização e o escopo. </li><li>Nenhuma chave de acesso aparece escrita neste cartão ou nos anexos. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://admin.ms.gov.br/api/cms/servicos_all/\">https://admin.ms.gov.br/api/cms/servicos_all/</a> </li> </ul>"
+    },
+    {
+      "id": 1342486,
+      "tipo": "Task",
+      "titulo": "[SGD] - Testar o endpoint da API do Portal MS no Postman",
+      "estado": "Done",
+      "pai_id": 1342485,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Conferir se o endereço da API informado pelo Bruno responde e o que ele devolve. </div><div><b>Por quê</b> </div><div>Ao abrir o endereço no navegador, a resposta era de erro. Sem saber se o problema era o endereço ou a falta de autenticação, a avaliação não avançava. </div><div><b>O que o teste mostrou</b> </div><ul><li>Com o cabeçalho de autorização, a chamada GET devolve 200 OK: 700 KB e 1.228 serviços, com órgão, categoria e se o serviço é digital, agendável ou online. </li><li>Sem o cabeçalho, a API responde que as credenciais de autenticação não foram fornecidas. Ou seja, o endereço está certo; falta o token. </li><li>O ambiente de homologação usa o mesmo caminho com o prefixo hom. no início da URL, e também exige token. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Está comprovado que o endereço responde. </li><li>A resposta da API está anexada ao cartão como evidência. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://admin.ms.gov.br/api/cms/servicos_all/\">https://admin.ms.gov.br/api/cms/servicos_all/</a> </li> </ul><div><b>Demanda original:</b> 25-08-2026 </div>"
+    },
+    {
+      "id": 1342487,
+      "tipo": "Task",
+      "titulo": "[SGD] - Levantar com a Infraestrutura quem emite o token da API",
+      "estado": "Done",
+      "pai_id": 1342485,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Descobrir com a equipe de Infraestrutura quem emite o token de acesso à API do Portal MS. </div><div><b>Por quê</b> </div><div>O Bruno orientou que o token não pode ser compartilhado por e-mail e que a equipe deve pedir chaves próprias, separadas para homologação e produção, a quem mantém a API. Faltava saber quem é esse responsável. </div><div><b>O que ficou definido</b> </div><ul><li>Reunião com o Caio, da Infraestrutura. </li><li>O Caio encaminhou o assunto para a EDS: a emissão do token não é da equipe dele. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Está identificada a área que responde pela emissão do token. </li> </ul><div><b>Demanda original:</b> semana de 25 a 28-08-2026 </div>"
+    },
+    {
+      "id": 1342488,
+      "tipo": "Task",
+      "titulo": "[SGD] - Alinhar com a EDS a geração do token de acesso à API",
+      "estado": "Done",
+      "pai_id": 1342485,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Procurar a EDS para entender como se gera um token de acesso à API do Portal MS. </div><div><b>Por quê</b> </div><div>A Infraestrutura encaminhou o assunto para a EDS. Sem uma chave emitida por quem responde pela API, a X-VIA não consegue avaliar a integração. </div><div><b>O que a EDS respondeu</b> </div><div>A analista Nathalia respondeu pelo Mattermost que o token é o próprio login e que as aplicações só geram token quando a pessoa termina a autenticação, não de forma avulsa. </div><div><b>Por que isso não resolveu</b> </div><div>A resposta trata do token de sessão de quem faz login, não da chave de serviço que a API do CMS exige no cabeçalho de autorização. São coisas diferentes: a chamada da API não tem pessoa logada. O pedido seguiu sem solução por essa via. </div><div><b>Critérios de aceitação</b> </div><ul><li>A resposta da EDS está registrada e anexada. </li><li>Está claro que a emissão da chave de serviço continua em aberto. </li> </ul><div><b>Demanda original:</b> 27 e 28-08-2026 </div>"
+    },
+    {
+      "id": 1342489,
+      "tipo": "Task",
+      "titulo": "[SGD] - Obter da Glaucia a autorização para repassar a chave de acesso à X-VIA",
+      "estado": "Done",
+      "pai_id": 1342485,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Levar à Glaucia a decisão sobre repassar a chave pessoal de acesso à API para a X-VIA, já que a emissão de uma chave própria não avançou. </div><div><b>Por quê</b> </div><div>A avaliação pedida pela Glaucia estava parada por falta de acesso. As duas saídas eram esperar a emissão de chaves próprias ou usar uma chave já existente, com autorização de quem responde pela área. </div><div><b>O que foi decidido</b> </div><ul><li>A Glaucia autorizou o repasse da chave pessoal do Fabio ao Maycon, como medida temporária para destravar a avaliação. </li><li>Pediu que toda a trilha ficasse registrada no TFS como respaldo da decisão. </li><li>Fica valendo a orientação do Bruno: o caminho correto é a Infraestrutura emitir chaves próprias da X-VIA, uma para homologação e outra para produção. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>A autorização está registrada com data e quem autorizou. </li><li>O caráter temporário da medida está escrito. </li> </ul><div><b>Demanda original:</b> 28-08-2026 </div>"
+    },
+    {
+      "id": 1342490,
+      "tipo": "Task",
+      "titulo": "[SGD] - Formalizar por e-mail o repasse da chave de acesso à API",
+      "estado": "To Do",
+      "pai_id": 1342485,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Enviar o e-mail que formaliza a autorização da Glaucia para o uso temporário da chave de acesso à API do Portal MS. </div><div><b>Por quê</b> </div><div>A autorização foi dada em reunião. Sem registro escrito, quem usa a chave fica sem respaldo e quem autorizou fica sem rastro da decisão. </div><div><b>Critérios de aceitação</b> </div><ul><li>O e-mail registra quem autorizou, quando, para quem, para qual endereço da API e por quanto tempo. </li><li>O e-mail não traz a chave escrita no corpo nem em anexo. O Bruno orientou por escrito que o token não deve ser compartilhado por e-mail. </li><li>O e-mail diz por qual canal direto a chave é entregue. </li><li>O e-mail deixa registrado que o pedido de chaves próprias por ambiente segue em aberto junto à Infraestrutura. </li><li>Vai com cópia para as mesmas pessoas da conversa de 25/08/2026. </li> </ul>"
     }
   ]
 }

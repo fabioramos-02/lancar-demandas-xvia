@@ -1,0 +1,78 @@
+[
+  {
+    "chave": "pbi",
+    "tipo": "PBI",
+    "pai": 1340870,
+    "sgd": true,
+    "titulo": "Autenticação e acesso à API do Portal MS",
+    "estado": "Approved",
+    "links": [
+      "https://admin.ms.gov.br/api/cms/servicos_all/"
+    ],
+    "descricao": "Conseguir acesso autenticado à API do Portal MS para que a X-VIA possa avaliar o reaproveitamento dela na nova plataforma.\n\n**Por quê**\nA Glaucia encaminhou à X-VIA a avaliação da API que hoje leva os serviços em destaque do Portal MS para os sites em WordPress. A avaliação parou na porta: a API exige token e não estava claro quem emite esse token.\n\n**Onde o assunto está registrado**\n- Este cartão trata do acesso e da autenticação.\n- A avaliação técnica da API está no PBI 1342005, na mesma Feature.\n- O mesmo assunto tem um cartão no épico da plataforma, o PBI 1340259, sob a Feature [CDI] CMS Notícias. Vale alinhar com o Maycon qual dos dois fica.\n\n**Situação**\nA Glaucia autorizou o repasse da chave pessoal do Fabio para o Maycon, para destravar a avaliação agora, e pediu que tudo ficasse registrado aqui como respaldo. Falta formalizar o repasse por e-mail. O caminho definitivo continua sendo a Infraestrutura emitir chaves próprias da X-VIA, uma para cada ambiente.\n\n**Critérios de aceitação**\n- A trilha do pedido de acesso está registrada, com quem foi consultado e o que cada um respondeu.\n- As evidências do teste da API estão anexadas a este cartão.\n- O repasse da chave está formalizado por e-mail, com a autorização e o escopo.\n- Nenhuma chave de acesso aparece escrita neste cartão ou nos anexos.",
+    "id": 1342485
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Testar o endpoint da API do Portal MS no Postman",
+    "estado": "Done",
+    "activity": "Testing",
+    "data_original": "25-08-2026",
+    "links": [
+      "https://admin.ms.gov.br/api/cms/servicos_all/"
+    ],
+    "anexos": [
+      "C:/Users/framos/Downloads/resposta da API.json"
+    ],
+    "descricao": "Conferir se o endereço da API informado pelo Bruno responde e o que ele devolve.\n\n**Por quê**\nAo abrir o endereço no navegador, a resposta era de erro. Sem saber se o problema era o endereço ou a falta de autenticação, a avaliação não avançava.\n\n**O que o teste mostrou**\n- Com o cabeçalho de autorização, a chamada GET devolve 200 OK: 700 KB e 1.228 serviços, com órgão, categoria e se o serviço é digital, agendável ou online.\n- Sem o cabeçalho, a API responde que as credenciais de autenticação não foram fornecidas. Ou seja, o endereço está certo; falta o token.\n- O ambiente de homologação usa o mesmo caminho com o prefixo hom. no início da URL, e também exige token.\n\n**Critérios de aceitação**\n- Está comprovado que o endereço responde.\n- A resposta da API está anexada ao cartão como evidência.",
+    "pai": 1342485,
+    "id": 1342486
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Levantar com a Infraestrutura quem emite o token da API",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "semana de 25 a 28-08-2026",
+    "descricao": "Descobrir com a equipe de Infraestrutura quem emite o token de acesso à API do Portal MS.\n\n**Por quê**\nO Bruno orientou que o token não pode ser compartilhado por e-mail e que a equipe deve pedir chaves próprias, separadas para homologação e produção, a quem mantém a API. Faltava saber quem é esse responsável.\n\n**O que ficou definido**\n- Reunião com o Caio, da Infraestrutura.\n- O Caio encaminhou o assunto para a EDS: a emissão do token não é da equipe dele.\n\n**Critérios de aceitação**\n- Está identificada a área que responde pela emissão do token.",
+    "pai": 1342485,
+    "id": 1342487
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Alinhar com a EDS a geração do token de acesso à API",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "27 e 28-08-2026",
+    "anexos": [
+      "C:/Users/framos/Pictures/Screenshots/Captura de tela 2026-08-28 160313.png"
+    ],
+    "descricao": "Procurar a EDS para entender como se gera um token de acesso à API do Portal MS.\n\n**Por quê**\nA Infraestrutura encaminhou o assunto para a EDS. Sem uma chave emitida por quem responde pela API, a X-VIA não consegue avaliar a integração.\n\n**O que a EDS respondeu**\nA analista Nathalia respondeu pelo Mattermost que o token é o próprio login e que as aplicações só geram token quando a pessoa termina a autenticação, não de forma avulsa.\n\n**Por que isso não resolveu**\nA resposta trata do token de sessão de quem faz login, não da chave de serviço que a API do CMS exige no cabeçalho de autorização. São coisas diferentes: a chamada da API não tem pessoa logada. O pedido seguiu sem solução por essa via.\n\n**Critérios de aceitação**\n- A resposta da EDS está registrada e anexada.\n- Está claro que a emissão da chave de serviço continua em aberto.",
+    "pai": 1342485,
+    "id": 1342488
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Obter da Glaucia a autorização para repassar a chave de acesso à X-VIA",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "28-08-2026",
+    "descricao": "Levar à Glaucia a decisão sobre repassar a chave pessoal de acesso à API para a X-VIA, já que a emissão de uma chave própria não avançou.\n\n**Por quê**\nA avaliação pedida pela Glaucia estava parada por falta de acesso. As duas saídas eram esperar a emissão de chaves próprias ou usar uma chave já existente, com autorização de quem responde pela área.\n\n**O que foi decidido**\n- A Glaucia autorizou o repasse da chave pessoal do Fabio ao Maycon, como medida temporária para destravar a avaliação.\n- Pediu que toda a trilha ficasse registrada no TFS como respaldo da decisão.\n- Fica valendo a orientação do Bruno: o caminho correto é a Infraestrutura emitir chaves próprias da X-VIA, uma para homologação e outra para produção.\n\n**Critérios de aceitação**\n- A autorização está registrada com data e quem autorizou.\n- O caráter temporário da medida está escrito.",
+    "pai": 1342485,
+    "id": 1342489
+  },
+  {
+    "tipo": "Task",
+    "pai_ref": "pbi",
+    "titulo": "Formalizar por e-mail o repasse da chave de acesso à API",
+    "estado": "To Do",
+    "activity": "Documentation",
+    "descricao": "Enviar o e-mail que formaliza a autorização da Glaucia para o uso temporário da chave de acesso à API do Portal MS.\n\n**Por quê**\nA autorização foi dada em reunião. Sem registro escrito, quem usa a chave fica sem respaldo e quem autorizou fica sem rastro da decisão.\n\n**Critérios de aceitação**\n- O e-mail registra quem autorizou, quando, para quem, para qual endereço da API e por quanto tempo.\n- O e-mail não traz a chave escrita no corpo nem em anexo. O Bruno orientou por escrito que o token não deve ser compartilhado por e-mail.\n- O e-mail diz por qual canal direto a chave é entregue.\n- O e-mail deixa registrado que o pedido de chaves próprias por ambiente segue em aberto junto à Infraestrutura.\n- Vai com cópia para as mesmas pessoas da conversa de 25/08/2026.",
+    "pai": 1342485,
+    "id": 1342490
+  }
+]
