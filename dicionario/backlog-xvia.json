@@ -5356,7 +5356,7 @@
       "id": 1342490,
       "tipo": "Task",
       "titulo": "[SGD] - Formalizar por e-mail o repasse da chave de acesso à API",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1342485,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -5364,7 +5364,7 @@
       "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
       "esforco": null,
       "restante": null,
-      "descricao": "<div>Enviar o e-mail que formaliza a autorização da Glaucia para o uso temporário da chave de acesso à API do Portal MS. </div><div><b>Por quê</b> </div><div>A autorização foi dada em reunião. Sem registro escrito, quem usa a chave fica sem respaldo e quem autorizou fica sem rastro da decisão. </div><div><b>Critérios de aceitação</b> </div><ul><li>O e-mail registra quem autorizou, quando, para quem, para qual endereço da API e por quanto tempo. </li><li>O e-mail não traz a chave escrita no corpo nem em anexo. O Bruno orientou por escrito que o token não deve ser compartilhado por e-mail. </li><li>O e-mail diz por qual canal direto a chave é entregue. </li><li>O e-mail deixa registrado que o pedido de chaves próprias por ambiente segue em aberto junto à Infraestrutura. </li><li>Vai com cópia para as mesmas pessoas da conversa de 25/08/2026. </li> </ul>"
+      "descricao": "<div>Enviar o e-mail que formaliza a autorização da Glaucia para o uso temporário da chave de acesso à API do Portal MS. </div><div><b>Por quê</b> </div><div>A autorização foi dada em reunião. Sem registro escrito, quem usa a chave fica sem respaldo e quem autorizou fica sem rastro da decisão. </div><div><b>Critérios de aceitação</b> </div><ul><li>O e-mail registra quem autorizou, quando, para quem, para qual endereço da API e por quanto tempo. </li><li>O e-mail não traz a chave escrita no corpo nem em anexo. O Bruno orientou por escrito que o token não deve ser compartilhado por e-mail. </li><li>O e-mail diz por qual canal direto a chave é entregue. </li><li>O e-mail deixa registrado que o pedido de chaves próprias por ambiente segue em aberto junto à Infraestrutura. </li><li>Vai com cópia para as mesmas pessoas da conversa de 25/08/2026. </li> </ul><div><b>Feito em 28/08/2026</b> </div><div>E-mail enviado ao Maycon às 16h25, com cópia para o Bruno, a Glaucia e a Daniele, no mesmo assunto da conversa de 25/08: Re: Utilização da API do Portal MS. </div><div>O e-mail registra a autorização da Glaucia, aponta o endereço da API e deixa a chave fora do corpo: o texto diz que fica à disposição para enviar o Authorization Api-Key, sem escrever o valor dela. Segue a orientação do Bruno de não compartilhar token por e-mail. </div><div>O print do e-mail enviado está anexado ao PBI pai. </div><div><b>O que ainda falta</b> </div><ul><li>Combinar com o Maycon por qual canal direto a chave é entregue. </li><li>Trocar a chave antes de repassar: ela circulou fora do cofre. </li><li>O pedido de chaves próprias da X-VIA, uma por ambiente, segue em aberto na Infraestrutura. </li> </ul>"
     },
     {
       "id": 1342524,
