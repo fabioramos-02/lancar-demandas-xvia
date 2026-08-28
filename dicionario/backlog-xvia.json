@@ -2807,7 +2807,7 @@
     {
       "id": 1338555,
       "tipo": "Task",
-      "titulo": "[SGD] Realizar benchmark mais atualizado",
+      "titulo": "[SGD] - Realizar benchmark mais atualizado",
       "estado": "Done",
       "pai_id": 1337783,
       "area": "XVIA\\SGD",
@@ -3269,7 +3269,7 @@
     {
       "id": 1339560,
       "tipo": "Task",
-      "titulo": "[SGD] Validar nome para novo app",
+      "titulo": "[SGD] - Validar nome para novo app",
       "estado": "To Do",
       "pai_id": 1338574,
       "area": "XVIA\\SGD",
@@ -3479,7 +3479,7 @@
     {
       "id": 1340259,
       "tipo": "Product Backlog Item",
-      "titulo": "[SGD] API do Portal MS",
+      "titulo": "[SGD] - API do Portal MS",
       "estado": "New",
       "pai_id": 1340258,
       "area": "XVIA",
@@ -5155,6 +5155,48 @@
       "esforco": null,
       "restante": null,
       "descricao": ""
+    },
+    {
+      "id": 1342054,
+      "tipo": "Task",
+      "titulo": "[SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades",
+      "estado": "Done",
+      "pai_id": 1339795,
+      "area": "XVIA\\SGD\\Interno",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Participar da reunião de alinhamento sobre os requisitos e as funcionalidades da plataforma X-VIA. </div><div><b>Por quê</b> </div><div>A SGD e a X-VIA precisam do mesmo entendimento do que a plataforma tem que entregar antes de o desenvolvimento seguir. </div><div><b>Quando</b> </div><div>27/08/2026, das 10h às 11h (Cuiabá). Organizador: Maycon Renato Lisboa (X-VIA). </div><div><b>Participantes</b> </div><ul><li>Maycon Renato Lisboa (X-VIA) — organizador </li><li>Leonardo Siqueira (X-VIA) </li><li>Brenda Braga (X-VIA) </li><li>Fabio Ramos (SEGOV) </li><li>Daniele Lins Ichiy (SEGOV) </li><li>Glaucia Oliveira (SEGOV) </li><li>E. Pessoa (Fazenda) </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Requisitos e funcionalidades discutidos estão registrados. </li><li>Pendências saem com responsável e prazo. </li><li>Ata anexada ao PBI 1339795. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://meet.google.com/eoo-idbr-qyz\">https://meet.google.com/eoo-idbr-qyz</a> </li> </ul><div><b>Demanda original:</b> 27-08-2026 </div>"
+    },
+    {
+      "id": 1342055,
+      "tipo": "Task",
+      "titulo": "[SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)",
+      "estado": "Done",
+      "pai_id": 1339795,
+      "area": "XVIA\\SGD\\Interno",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Participar do benchmark do assistente virtual Lis, de Pernambuco, para avaliar o que serve ao Mato Grosso do Sul. </div><div><b>Por quê</b> </div><div>Antes de definir o assistente virtual do Estado, vale ver o que já funciona em outro governo e o que custou para chegar lá. </div><div><b>Quando</b> </div><div>27/08/2026, das 14h às 15h (Cuiabá). Organizador: Maycon Renato Lisboa (X-VIA). </div><div><b>Participantes</b> </div><ul><li>Maycon Renato Lisboa (X-VIA) — organizador </li><li>Leonardo Siqueira (X-VIA) </li><li>Caio Rocha (X-VIA) </li><li>Eudes Roger (X-VIA) </li><li>Brenda Braga (X-VIA) — opcional </li><li>Fabio Ramos (SEGOV) </li><li>Maria Eduarda Delgado (SEGOV) </li><li>Daniele Lins Ichiy (SEGOV) </li><li>Glaucia Oliveira (SEGOV) </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Pontos fortes e limitações do Lis estão registrados. </li><li>Está claro o que dá para reaproveitar no MS e o que não serve. </li><li>Ata anexada ao PBI 1339795. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://meet.google.com/fey-gtwr-anu\">https://meet.google.com/fey-gtwr-anu</a> </li> </ul><div><b>Demanda original:</b> 27-08-2026 </div>"
+    },
+    {
+      "id": 1342056,
+      "tipo": "Task",
+      "titulo": "[SGD] - 24/08/2026 - Ponto de controle do Projeto MS",
+      "estado": "Done",
+      "pai_id": 1339795,
+      "area": "XVIA\\SGD\\Interno",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Participar do ponto de controle semanal do Projeto MS. </div><div><b>Por quê</b> </div><div>O ponto de controle é onde o andamento da sprint é conferido e os bloqueios da semana são levantados. </div><div><b>Quando</b> </div><div>24/08/2026, das 7h30 às 8h30 (Cuiabá). Exceção à série recorrente. Organizador: Maycon Renato Lisboa (X-VIA). </div><div><b>Participantes</b> </div><ul><li>Maycon Renato Lisboa (X-VIA) — organizador </li><li>Fabio Ramos (SEGOV) </li><li>Daniele Lins Ichiy (SEGOV) </li><li>Glaucia Oliveira (SEGOV) </li><li>Brenda Braga (X-VIA) — opcional </li><li>Maria Eduarda Delgado (SEGOV) — opcional </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Andamento da sprint está registrado. </li><li>Bloqueios saem com responsável. </li><li>Ata anexada ao PBI 1339795. </li> </ul><div><b>Material</b> </div><ul><li><a href=\"https://meet.google.com/ish-vgtb-wqm\">https://meet.google.com/ish-vgtb-wqm</a> </li> </ul><div><b>Demanda original:</b> 24-08-2026 </div>"
     }
   ]
 }

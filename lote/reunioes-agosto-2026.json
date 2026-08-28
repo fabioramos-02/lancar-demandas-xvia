@@ -1,0 +1,41 @@
+[
+  {
+    "tipo": "Task",
+    "pai": 1339795,
+    "titulo": "27/08/2026 - Alinhamento de requisitos e funcionalidades",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "27-08-2026",
+    "links": [
+      "https://meet.google.com/eoo-idbr-qyz"
+    ],
+    "descricao": "Participar da reunião de alinhamento sobre os requisitos e as funcionalidades da plataforma X-VIA.\n\n**Por quê**\nA SGD e a X-VIA precisam do mesmo entendimento do que a plataforma tem que entregar antes de o desenvolvimento seguir.\n\n**Quando**\n27/08/2026, das 10h às 11h (Cuiabá). Organizador: Maycon Renato Lisboa (X-VIA).\n\n**Participantes**\n- Maycon Renato Lisboa (X-VIA) — organizador\n- Leonardo Siqueira (X-VIA)\n- Brenda Braga (X-VIA)\n- Fabio Ramos (SEGOV)\n- Daniele Lins Ichiy (SEGOV)\n- Glaucia Oliveira (SEGOV)\n- E. Pessoa (Fazenda)\n\n**Critérios de aceitação**\n- Requisitos e funcionalidades discutidos estão registrados.\n- Pendências saem com responsável e prazo.\n- Ata anexada ao PBI 1339795.",
+    "id": 1342054
+  },
+  {
+    "tipo": "Task",
+    "pai": 1339795,
+    "titulo": "27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "27-08-2026",
+    "links": [
+      "https://meet.google.com/fey-gtwr-anu"
+    ],
+    "descricao": "Participar do benchmark do assistente virtual Lis, de Pernambuco, para avaliar o que serve ao Mato Grosso do Sul.\n\n**Por quê**\nAntes de definir o assistente virtual do Estado, vale ver o que já funciona em outro governo e o que custou para chegar lá.\n\n**Quando**\n27/08/2026, das 14h às 15h (Cuiabá). Organizador: Maycon Renato Lisboa (X-VIA).\n\n**Participantes**\n- Maycon Renato Lisboa (X-VIA) — organizador\n- Leonardo Siqueira (X-VIA)\n- Caio Rocha (X-VIA)\n- Eudes Roger (X-VIA)\n- Brenda Braga (X-VIA) — opcional\n- Fabio Ramos (SEGOV)\n- Maria Eduarda Delgado (SEGOV)\n- Daniele Lins Ichiy (SEGOV)\n- Glaucia Oliveira (SEGOV)\n\n**Critérios de aceitação**\n- Pontos fortes e limitações do Lis estão registrados.\n- Está claro o que dá para reaproveitar no MS e o que não serve.\n- Ata anexada ao PBI 1339795.",
+    "id": 1342055
+  },
+  {
+    "tipo": "Task",
+    "pai": 1339795,
+    "titulo": "24/08/2026 - Ponto de controle do Projeto MS",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "24-08-2026",
+    "links": [
+      "https://meet.google.com/ish-vgtb-wqm"
+    ],
+    "descricao": "Participar do ponto de controle semanal do Projeto MS.\n\n**Por quê**\nO ponto de controle é onde o andamento da sprint é conferido e os bloqueios da semana são levantados.\n\n**Quando**\n24/08/2026, das 7h30 às 8h30 (Cuiabá). Exceção à série recorrente. Organizador: Maycon Renato Lisboa (X-VIA).\n\n**Participantes**\n- Maycon Renato Lisboa (X-VIA) — organizador\n- Fabio Ramos (SEGOV)\n- Daniele Lins Ichiy (SEGOV)\n- Glaucia Oliveira (SEGOV)\n- Brenda Braga (X-VIA) — opcional\n- Maria Eduarda Delgado (SEGOV) — opcional\n\n**Critérios de aceitação**\n- Andamento da sprint está registrado.\n- Bloqueios saem com responsável.\n- Ata anexada ao PBI 1339795.",
+    "id": 1342056
+  }
+]

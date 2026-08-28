@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **368 itens**.
+Total: **371 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 232 |
+| Task | 235 |
 | Product Backlog Item | 102 |
 | Feature | 32 |
 | Epic | 2 |
@@ -52,7 +52,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1338576  [SGD] - Levantar o objetivo do aplicativo  [Done]
       Task                   #1338577  [SGD] - Realizar benchmark de aplicativos governamentais  [Done]
       Task                   #1338580  [SGD] - Validar com a Duda  [Done]
-      Task                   #1339560  [SGD] Validar nome para novo app  [To Do]
+      Task                   #1339560  [SGD] - Validar nome para novo app  [To Do]
     Product Backlog Item   #1340894  [SGD] - Workshop  [New]
       Task                   #1341846  [SGD] - Analisar dinâmicas  [To Do]
       Task                   #1341847  [SGD] - Montar roteiro  [To Do]
@@ -195,10 +195,10 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1338560  [SGD] - Consolidar proposta de estrutura do Meu Painel  [Done]
       Task                   #1340771  [SGD] - Documentar   [To Do]
       Task                   #1338557  [SGD] - Pesquisar funcionalidades necessárias para o Meu Painel  [Done]
+      Task                   #1338555  [SGD] - Realizar benchmark mais atualizado  [Done]
       Task                   #1340276  [SGD] - Validar com os órgãos sobre cada dashboard do perfil associado  [To Do]
       Task                   #1340270  [SGD] - Verificar acessibilidade do painel em side bar/ top bar  [Done]
       Task                   #1340272  [SGD] - Verificar separação de Solicitação e Agendamento  [To Do]
-      Task                   #1338555  [SGD] Realizar benchmark mais atualizado  [Done]
     Product Backlog Item   #1337784  [SGD] - Portal Não Logado  [New]
       Task                   #1337827  [SGD] - Protótipos (Templates)  [To Do]
     Product Backlog Item   #1340687  [SGD] - PostHog como camada complementar de analytics  [Approved]
@@ -224,6 +224,9 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1341941  24/08/2026 - Status da Sprint, Integração Gov.br, Estruturação do CMS, Fallback do Smart Pass, Liberação de Acessos e Próximos Passos  [Done]
       Task                   #1339796  27/08/2026 - Ajustes de Navegação, Templates e Carta de Serviços do Portal Único (Plataforma X-VIA)  [Done]
       Task                   #1339809  30/06/2026 - Consumo do Design System e compatibilização com a XVIA  [Done]
+      Task                   #1342056  [SGD] - 24/08/2026 - Ponto de controle do Projeto MS  [Done]
+      Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
+      Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
   Feature                #1340898  [SGD] - Serviços Vitrines  [In Progress]
     Product Backlog Item   #1341311  Monitoramento de preenchimento  [New]
       Task                   #1341743  Monitoramento AEM  [In Progress]
@@ -350,7 +353,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
     Product Backlog Item   #1340262  [SGD]  [New]
     Product Backlog Item   #1340263  [SGD]  [New]
     Product Backlog Item   #1340264  [SGD]  [New]
-    Product Backlog Item   #1340259  [SGD] API do Portal MS  [New]
+    Product Backlog Item   #1340259  [SGD] - API do Portal MS  [New]
   Feature                #1337854  [CS] Orquestrador  [New]
   Feature                #1337852  [CS] X-Flows  [New]
   Feature                #1337851  [CS] X-Forms  [New]
@@ -388,7 +391,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 190 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 193 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
@@ -434,9 +437,6 @@ Itens fora do padrão. A correção é manual e consciente — o CLI sinaliza, n
 
 | Id | Tipo | Título | Problema |
 |---|---|---|---|
-| 1338555 | Task | [SGD] Realizar benchmark mais atualizado | prefixo SGD fora do padrão `[SGD] - ` |
-| 1339560 | Task | [SGD] Validar nome para novo app | prefixo SGD fora do padrão `[SGD] - ` |
-| 1340259 | Product Backlog Item | [SGD] API do Portal MS | prefixo SGD fora do padrão `[SGD] - ` |
 | 1340260 | Product Backlog Item | [SGD] | prefixo SGD fora do padrão `[SGD] - ` |
 | 1340261 | Product Backlog Item | [SGD] | prefixo SGD fora do padrão `[SGD] - ` |
 | 1340262 | Product Backlog Item | [SGD] | prefixo SGD fora do padrão `[SGD] - ` |
