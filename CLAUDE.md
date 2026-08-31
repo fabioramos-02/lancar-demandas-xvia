@@ -161,6 +161,28 @@ for tm in t.pedir("GET", "projects/XVIA/teams", no_projeto=False)["value"]:
 Comentário de alinhamento ou divergência vai no **PBI**, não na Task — mesma lógica do
 anexo: o PBI é o cartão que os stakeholders abrem.
 
+## Task fechada sem comentário é task sem contexto
+
+**Nenhuma Task vai para `Done` sem um comentário de fechamento na própria Task.** Vale
+tanto para lançamento retroativo quanto para task que fecha no fluxo normal. `Done` sozinho
+não diz o que foi descoberto, e daqui a duas sprints ninguém reconstrói isso.
+
+O comentário responde, em linguagem simples e no passado:
+
+```
+**Fechamento em DD/MM/AAAA.**
+O que foi descoberto ou entregue — o achado concreto, com número, nome ou mensagem de erro.
+Quem respondeu o quê, quando a task dependeu de terceiro.
+Próximo passo, se ficou algum — apontando a task ou o PBI que segue.
+Onde estão as evidências — o PBI que recebeu os anexos.
+```
+
+Duas ou quatro linhas bastam. Se a task fechou porque virou outra coisa, o comentário diz
+qual item assumiu.
+
+Esse comentário é a exceção à regra acima: fechamento vai **na Task**, porque é o registro
+daquela etapa. Alinhamento e divergência continuam no PBI.
+
 ## Área e sprint — `sincronizar` conserta quem escapou
 
 Item criado fora do CLI (ou antes da herança de área/sprint existir) nasce na raiz
