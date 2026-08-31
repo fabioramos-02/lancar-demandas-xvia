@@ -1,0 +1,135 @@
+[
+  {
+    "chave": "pbi-docs-app",
+    "tipo": "PBI",
+    "pai": 1336997,
+    "sgd": true,
+    "titulo": "Levantamento dos documentos disponíveis no aplicativo MS Digital",
+    "estado": "Approved",
+    "data_original": "31-08-2026",
+    "descricao": "Levantar todos os documentos que o aplicativo MS Digital já entrega ao cidadão e registrar o exemplo de cada um.\n\n**Por quê**\nO novo aplicativo precisa saber o que já existe hoje antes de decidir o que leva, o que muda e o que entra de novo. Sem essa lista, corremos o risco de deixar documento para trás na migração.\n\n**Critérios de aceitação**\n- Cada documento do aplicativo tem uma task com o exemplo da carteira.\n- Os documentos que ainda não existem e podem entrar no novo aplicativo estão marcados como oportunidade.\n- As imagens de exemplo não mostram dado pessoal de cidadão.",
+    "id": 1343813
+  },
+  {
+    "chave": "task-cartao-sus",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo do Cartão SUS no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Cartão SUS aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343814
+  },
+  {
+    "chave": "task-vacinacao",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira de Vacinação no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira de Vacinação aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343815
+  },
+  {
+    "chave": "task-doador",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira do Doador no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira do Doador aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343816
+  },
+  {
+    "chave": "task-pesca",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira de Pesca no aplicativo",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira de Pesca aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343817
+  },
+  {
+    "chave": "task-funcional",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira Funcional no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira Funcional aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343818
+  },
+  {
+    "chave": "task-estudante",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira do Estudante no aplicativo",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira do Estudante aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343820
+  },
+  {
+    "chave": "task-desportiva",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira Desportiva no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira Desportiva aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343821
+  },
+  {
+    "chave": "task-ciptea",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da CIPTEA no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como CIPTEA aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343822
+  },
+  {
+    "chave": "task-passe-intermunicipal",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar o exemplo da Carteira Passe Intermunicipal no aplicativo",
+    "estado": "In Progress",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar como Carteira Passe Intermunicipal aparece hoje no aplicativo MS Digital.\n\n**Critérios de aceitação**\n- Exemplo da carteira anexado, com os dados do cidadão tarjados.\n- Campos que aparecem na carteira descritos.",
+    "pai": 1343813,
+    "id": 1343823
+  },
+  {
+    "chave": "task-visitante",
+    "tipo": "Task",
+    "pai_ref": "pbi-docs-app",
+    "titulo": "Levantar a Carteira do Visitante — OPORTUNIDADE para o novo aplicativo",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "tags": [
+      "oportunidade"
+    ],
+    "descricao": "Levantar a Carteira do Visitante como documento novo, que hoje não existe no aplicativo MS Digital e pode entrar no novo aplicativo.\n\n**Por quê**\nA carteira não está na lista de documentos atuais. Entra como oportunidade de ampliação do novo aplicativo.\n\n**Critérios de aceitação**\n- Dono do documento e base de dados identificados.\n- Campos da carteira levantados.\n- Decisão registrada sobre entrar ou não no novo aplicativo.",
+    "pai": 1343813,
+    "id": 1343824
+  }
+]

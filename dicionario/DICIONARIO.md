@@ -2,12 +2,12 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **396 itens**.
+Total: **409 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 256 |
-| Product Backlog Item | 106 |
+| Task | 267 |
+| Product Backlog Item | 108 |
 | Feature | 32 |
 | Epic | 2 |
 
@@ -44,6 +44,17 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1335219  [SGD] - Analisar Transparência  [Done]
       Task                   #1335176  [SGD] - Analisar Trânsito  [Done]
       Task                   #1335727  [SGD] - Analisar Turismo  [Done]
+    Product Backlog Item   #1343813  [SGD] - Levantamento dos documentos disponíveis no aplicativo MS Digital  [Approved]
+      Task                   #1343824  [SGD] - Levantar a Carteira do Visitante — OPORTUNIDADE para o novo aplicativo  [To Do]
+      Task                   #1343822  [SGD] - Levantar o exemplo da CIPTEA no aplicativo  [In Progress]
+      Task                   #1343821  [SGD] - Levantar o exemplo da Carteira Desportiva no aplicativo  [In Progress]
+      Task                   #1343818  [SGD] - Levantar o exemplo da Carteira Funcional no aplicativo  [In Progress]
+      Task                   #1343823  [SGD] - Levantar o exemplo da Carteira Passe Intermunicipal no aplicativo  [In Progress]
+      Task                   #1343817  [SGD] - Levantar o exemplo da Carteira de Pesca no aplicativo  [Done]
+      Task                   #1343815  [SGD] - Levantar o exemplo da Carteira de Vacinação no aplicativo  [In Progress]
+      Task                   #1343816  [SGD] - Levantar o exemplo da Carteira do Doador no aplicativo  [In Progress]
+      Task                   #1343820  [SGD] - Levantar o exemplo da Carteira do Estudante no aplicativo  [Done]
+      Task                   #1343814  [SGD] - Levantar o exemplo do Cartão SUS no aplicativo  [In Progress]
     Product Backlog Item   #1342116  [SGD] - Novas seções do BI centralizado — ecossistema digital e comparativo de canais  [Done]
       Task                   #1342118  [SGD] - Criar a seção comparativa de uso do aplicativo e do portal no BI centralizado  [Done]
       Task                   #1342117  [SGD] - Incluir os dados do ecossistema digital no BI centralizado  [Done]
@@ -253,6 +264,8 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
       Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
   Feature                #1340898  [SGD] - Serviços Vitrines  [In Progress]
+    Product Backlog Item   #1343799  Devolução dos órgãos  [New]
+      Task                   #1343806  AGEPEN Preechido  [Done]
     Product Backlog Item   #1341311  Monitoramento de preenchimento  [New]
       Task                   #1341743  Monitoramento AEM  [Done]
       Task                   #1341336  Monitoramento AGEHAB 27/08  [Done]
@@ -416,7 +429,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 218 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 229 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
