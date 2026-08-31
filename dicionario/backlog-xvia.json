@@ -5454,7 +5454,7 @@
       "id": 1343743,
       "tipo": "Task",
       "titulo": "[SGD] - Obter com o Maycon o IP da máquina e o nome dos bancos",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1343739,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -5491,6 +5491,20 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>A continuidade do acesso depende de decisão da Maria Eduarda ou do Galev depois do incidente nas aplicações da EDS. </div><div><b>Critérios de aceitação</b> </div><ul><li>Decisão registrada com a data e quem decidiu. </li> </ul>"
+    },
+    {
+      "id": 1343782,
+      "tipo": "Task",
+      "titulo": "[SGD] - Abrir o chamado de acesso de leitura ao banco de dados no GLPI",
+      "estado": "Done",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Formalizar no GLPI a solicitação do usuário de leitura no banco de dados para o time da X-VIA. </div><div><b>Critérios de aceitação</b> </div><ul><li>Chamado aberto com o hostname, a porta, os bancos, os colaboradores e os IPs das máquinas. </li><li>Número do chamado registrado no PBI. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
     }
   ]
 }

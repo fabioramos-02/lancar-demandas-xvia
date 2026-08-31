@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **392 itens**.
+Total: **393 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 253 |
+| Task | 254 |
 | Product Backlog Item | 105 |
 | Feature | 32 |
 | Epic | 2 |
@@ -173,11 +173,12 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1342524  [SGD] - Receber as credenciais do relay SMTP pelo chamado 0266856  [Done]
       Task                   #1341665  [SGD] - Validar dados enviados pela XVia  [Done]
     Product Backlog Item   #1343739  [SGD] - Acesso de leitura ao banco da EDS  [Approved]
+      Task                   #1343782  [SGD] - Abrir o chamado de acesso de leitura ao banco de dados no GLPI  [Done]
       Task                   #1343745  [SGD] - Aguardar a decisão da Maria Eduarda ou do Galev sobre os próximos passos  [To Do]
       Task                   #1343744  [SGD] - Levantar com a EDS os impactos do incidente nas aplicações  [To Do]
       Task                   #1343740  [SGD] - Levantar com o Maycon a necessidade de usuário de leitura no banco da EDS  [Done]
       Task                   #1343742  [SGD] - Levantar os dados exigidos pelo DBA para liberar a consulta  [Done]
-      Task                   #1343743  [SGD] - Obter com o Maycon o IP da máquina e o nome dos bancos  [To Do]
+      Task                   #1343743  [SGD] - Obter com o Maycon o IP da máquina e o nome dos bancos  [Done]
       Task                   #1343741  [SGD] - Validar com a equipe de DBA a liberação do usuário de leitura  [Done]
   Feature                #1333696  [SGD] - Instalação e configuração de ambientes  [In Progress]
     Product Backlog Item   #1340794  [SGD] - Acessos e ambientes do contrato X-VIA  [Done]
@@ -412,7 +413,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 214 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 215 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
