@@ -5468,7 +5468,7 @@
       "id": 1343744,
       "tipo": "Task",
       "titulo": "[SGD] - Levantar com a EDS os impactos do incidente nas aplicações",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1343739,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -5505,6 +5505,48 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Formalizar no GLPI a solicitação do usuário de leitura no banco de dados para o time da X-VIA. </div><div><b>Critérios de aceitação</b> </div><ul><li>Chamado aberto com o hostname, a porta, os bancos, os colaboradores e os IPs das máquinas. </li><li>Número do chamado registrado no PBI. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343789,
+      "tipo": "Product Backlog Item",
+      "titulo": "[SGD] - Falha no carregamento de municípios no formulário da carteirinha de estudante",
+      "estado": "Approved",
+      "pai_id": 1340897,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Restabelecer a lista de municípios no formulário da carteirinha de estudante. </div><div><b>Por quê</b> </div><div>O campo Município do formulário aparece vazio, com a mensagem &quot;No options&quot;. A chamada ao endpoint de municípios do integrador em homologação responde 404. Segundo a EDS, houve uma mudança no N8N: a API que antes respondia normalmente passou a devolver 404. Sem a lista, o cidadão não consegue concluir o pedido da carteirinha. </div><div><b>Critérios de aceitação</b> </div><ul><li>A causa da mudança no N8N está identificada e registrada. </li><li>O endpoint de municípios do integrador volta a responder com a lista. </li><li>O campo Município carrega as opções no formulário. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343790,
+      "tipo": "Task",
+      "titulo": "[SGD] - Levantar com a EDS a causa da falha no carregamento de municípios",
+      "estado": "Done",
+      "pai_id": 1343789,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Acionar a EDS sobre o campo Município vazio no formulário da carteirinha de estudante. </div><div><b>Critérios de aceitação</b> </div><ul><li>Retorno da EDS registrado: mudança no N8N fez a API passar a responder 404. </li><li>Pontos de verificação indicados pela EDS registrados. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343791,
+      "tipo": "Task",
+      "titulo": "[SGD] - Verificar com a Infraestrutura a alteração no N8N e os eventos dos pods no Argo",
+      "estado": "In Progress",
+      "pai_id": 1343789,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Checar com o time de Infraestrutura o que mudou no N8N e olhar os eventos dos pods do projeto k1086-integrador-front no Argo. </div><div><b>Critérios de aceitação</b> </div><ul><li>Resposta da Infraestrutura sobre a alteração no N8N registrada. </li><li>Eventos dos pods do k1086-integrador-front verificados no Argo. </li><li>Causa do 404 no endpoint de municípios identificada. </li> </ul>"
     }
   ]
 }

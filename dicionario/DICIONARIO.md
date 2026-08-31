@@ -2,12 +2,12 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **393 itens**.
+Total: **396 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 254 |
-| Product Backlog Item | 105 |
+| Task | 256 |
+| Product Backlog Item | 106 |
 | Feature | 32 |
 | Epic | 2 |
 
@@ -156,6 +156,9 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
     Product Backlog Item   #1340876  [SGD] - Onetrust  [New]
     Product Backlog Item   #1340878  [SGD] - Pluggin de Acessibilidade  [New]
   Feature                #1340897  [SGD] - Formulários  [In Progress]
+    Product Backlog Item   #1343789  [SGD] - Falha no carregamento de municípios no formulário da carteirinha de estudante  [Approved]
+      Task                   #1343790  [SGD] - Levantar com a EDS a causa da falha no carregamento de municípios  [Done]
+      Task                   #1343791  [SGD] - Verificar com a Infraestrutura a alteração no N8N e os eventos dos pods no Argo  [In Progress]
   Feature                #1340870  [SGD] - Gestão de Notícias  [In Progress]
     Product Backlog Item   #1342005  Interação API  [Approved]
       Task                   #1342004  Utilização da API do Portal MS  [In Progress]
@@ -175,7 +178,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
     Product Backlog Item   #1343739  [SGD] - Acesso de leitura ao banco da EDS  [Approved]
       Task                   #1343782  [SGD] - Abrir o chamado de acesso de leitura ao banco de dados no GLPI  [Done]
       Task                   #1343745  [SGD] - Aguardar a decisão da Maria Eduarda ou do Galev sobre os próximos passos  [To Do]
-      Task                   #1343744  [SGD] - Levantar com a EDS os impactos do incidente nas aplicações  [To Do]
+      Task                   #1343744  [SGD] - Levantar com a EDS os impactos do incidente nas aplicações  [Done]
       Task                   #1343740  [SGD] - Levantar com o Maycon a necessidade de usuário de leitura no banco da EDS  [Done]
       Task                   #1343742  [SGD] - Levantar os dados exigidos pelo DBA para liberar a consulta  [Done]
       Task                   #1343743  [SGD] - Obter com o Maycon o IP da máquina e o nome dos bancos  [Done]
@@ -413,7 +416,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 215 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 218 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |

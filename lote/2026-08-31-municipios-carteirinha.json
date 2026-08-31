@@ -1,0 +1,36 @@
+[
+  {
+    "chave": "pbi-municipios",
+    "tipo": "PBI",
+    "pai": 1340897,
+    "sgd": true,
+    "titulo": "Falha no carregamento de municípios no formulário da carteirinha de estudante",
+    "estado": "Approved",
+    "data_original": "31-08-2026",
+    "descricao": "Restabelecer a lista de municípios no formulário da carteirinha de estudante.\n\n**Por quê**\nO campo Município do formulário aparece vazio, com a mensagem \"No options\". A chamada ao endpoint de municípios do integrador em homologação responde 404. Segundo a EDS, houve uma mudança no N8N: a API que antes respondia normalmente passou a devolver 404. Sem a lista, o cidadão não consegue concluir o pedido da carteirinha.\n\n**Critérios de aceitação**\n- A causa da mudança no N8N está identificada e registrada.\n- O endpoint de municípios do integrador volta a responder com a lista.\n- O campo Município carrega as opções no formulário.",
+    "id": 1343789
+  },
+  {
+    "chave": "task-eds",
+    "tipo": "Task",
+    "pai_ref": "pbi-municipios",
+    "titulo": "Levantar com a EDS a causa da falha no carregamento de municípios",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Acionar a EDS sobre o campo Município vazio no formulário da carteirinha de estudante.\n\n**Critérios de aceitação**\n- Retorno da EDS registrado: mudança no N8N fez a API passar a responder 404.\n- Pontos de verificação indicados pela EDS registrados.",
+    "pai": 1343789,
+    "id": 1343790
+  },
+  {
+    "chave": "task-infra",
+    "tipo": "Task",
+    "pai_ref": "pbi-municipios",
+    "titulo": "Verificar com a Infraestrutura a alteração no N8N e os eventos dos pods no Argo",
+    "estado": "In Progress",
+    "activity": "Deployment",
+    "descricao": "Checar com o time de Infraestrutura o que mudou no N8N e olhar os eventos dos pods do projeto k1086-integrador-front no Argo.\n\n**Critérios de aceitação**\n- Resposta da Infraestrutura sobre a alteração no N8N registrada.\n- Eventos dos pods do k1086-integrador-front verificados no Argo.\n- Causa do 404 no endpoint de municípios identificada.",
+    "pai": 1343789,
+    "id": 1343791
+  }
+]
