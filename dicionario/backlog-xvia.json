@@ -1562,7 +1562,7 @@
       "id": 1336205,
       "tipo": "Feature",
       "titulo": "[INFRA] Instalação e configuração dos ambientes",
-      "estado": "New",
+      "estado": "In Progress",
       "pai_id": 1335269,
       "area": "XVIA",
       "iteration": "XVIA\\Sprint 1",
@@ -3620,7 +3620,7 @@
       "id": 1340275,
       "tipo": "Task",
       "titulo": "[SGD] - Analisar perfis que estão vinculados",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1337783,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -3648,7 +3648,7 @@
       "id": 1340403,
       "tipo": "Product Backlog Item",
       "titulo": "[SGD] - Analisar uso de biometria no aplicativo",
-      "estado": "Approved",
+      "estado": "Done",
       "pai_id": 1336997,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -3662,7 +3662,7 @@
       "id": 1340404,
       "tipo": "Task",
       "titulo": "[SGD] - Realizar reunião com o Maycon sobre biometria no aplicativo",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1340403,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -3676,7 +3676,7 @@
       "id": 1340405,
       "tipo": "Task",
       "titulo": "[SGD] - Levantar informações sobre biometria em substituição ao login gov.br",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1340403,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -3746,7 +3746,7 @@
       "id": 1340427,
       "tipo": "Task",
       "titulo": "[SGD] - Aguardar decisão sobre como trazer o cidadão de volta ao portal para avaliar",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1337823,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4656,7 +4656,7 @@
       "id": 1341344,
       "tipo": "Task",
       "titulo": "Monitoramento AGEMS 27/08",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4664,7 +4664,7 @@
       "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Não respondeu a mensagem </div>"
     },
     {
       "id": 1341395,
@@ -4726,7 +4726,7 @@
       "id": 1341437,
       "tipo": "Task",
       "titulo": "Monitoramento FCMS 27/08",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4866,7 +4866,7 @@
       "id": 1341669,
       "tipo": "Task",
       "titulo": "Monitoramento PCMS",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4874,13 +4874,13 @@
       "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Não responderam a mensagem </div>"
     },
     {
       "id": 1341672,
       "tipo": "Task",
       "titulo": "Monitoramento PGE",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4888,7 +4888,7 @@
       "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Respostas ao censo em progresso </div>"
     },
     {
       "id": 1341679,
@@ -4936,7 +4936,7 @@
       "id": 1341693,
       "tipo": "Task",
       "titulo": "Monitoramento SEFAZ 27/08",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4944,7 +4944,7 @@
       "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Encaminhei por e-mail. sinalizaram que finalizam essa semana </div>"
     },
     {
       "id": 1341695,
@@ -4964,7 +4964,7 @@
       "id": 1341697,
       "tipo": "Task",
       "titulo": "Monitoramento SES",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -4972,7 +4972,7 @@
       "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Não responderam </div>"
     },
     {
       "id": 1341740,
@@ -4992,7 +4992,7 @@
       "id": 1341743,
       "tipo": "Task",
       "titulo": "Monitoramento AEM",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1341311,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -5000,7 +5000,7 @@
       "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div>Estão finalizando </div>"
     },
     {
       "id": 1341752,
@@ -5042,13 +5042,13 @@
       "responsavel": "Daniele Lins Ichiy <SEGOV\\dichiy>",
       "esforco": null,
       "restante": null,
-      "descricao": "<div>Quais assuntos serão levantados?<br><ul><li>Layout<br> </li><li>Menu </li><li>Nome </li><li>Perfis </li> </ul> </div>"
+      "descricao": "<div>Quais assuntos serão levantados?<br><ul><li>Layout<br> </li><li><span style=\"background-color:rgb(255, 255, 0);\">Menu </span> </li><li><span style=\"background-color:rgb(255, 255, 0);\">Nome</span> </li><li>Perfis <br><br> </li> </ul><div>Para o Menu: Desenhar em um protótipo qual separação seria o ideal para cada participante e discutir </div><div>Para o Nome: levantar todos os nomes possíveis e fazer votação </div> </div>"
     },
     {
       "id": 1341847,
       "tipo": "Task",
       "titulo": "[SGD] - Montar roteiro",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1340894,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -5056,7 +5056,7 @@
       "responsavel": "Daniele Lins Ichiy <SEGOV\\dichiy>",
       "esforco": null,
       "restante": null,
-      "descricao": ""
+      "descricao": "<div><a href=\"https://docs.google.com/document/d/1aTs85J8YsCBLhsXEQlv-m7iOWNDa_vAp9ke4yMR-KJQ/edit?tab=t.0\">https://docs.google.com/document/d/1aTs85J8YsCBLhsXEQlv-m7iOWNDa_vAp9ke4yMR-KJQ/edit?tab=t.0</a><br> </div>"
     },
     {
       "id": 1341941,
@@ -5379,6 +5379,118 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Registrar o encerramento do chamado 0266856, pelo qual a Infraestrutura entregou as credenciais do relay SMTP. </div><div><b>Por quê</b> </div><div>O Smartpass Login precisa do relay para enviar e-mail. Sem as credenciais, a integração não sai do lugar. </div><div><b>O que a Infraestrutura entregou</b> </div><ul><li>Servidor de relay: smtpsistema.ms.gov.br. </li><li>Porta: 587, com STARTTLS. </li><li>Exige usuário autenticado. </li><li>Remetente: naoresponda@ms.gov.br. </li><li>Um par de usuário e senha para produção e outro para homologação. </li><li>A equipe testou o envio antes de entregar e confirmou que funcionou. </li><li>Veio junto um exemplo de configuração da conexão. </li> </ul><div><b>Onde estão as credenciais</b> </div><div>As senhas não ficam registradas aqui. Elas estão no chamado 0266856 e devem ser guardadas no cofre de senha da equipe. Cartão de backlog é lido por todo o time e não é lugar de senha. </div><div><b>Critérios de aceitação</b> </div><ul><li>O chamado está encerrado. </li><li>Os parâmetros de conexão estão registrados: servidor, porta, segurança e remetente. </li><li>As senhas estão no cofre, e não neste cartão nem em anexo. </li> </ul><div><b>O que falta</b> </div><ul><li>Configurar o Smartpass Login para usar o smtpsistema.ms.gov.br nos dois ambientes. </li><li>Trocar as senhas entregues: elas circularam fora do cofre. Pedir a substituição pelo próprio chamado 0266856. </li> </ul><div><b>Demanda original:</b> 28-08-2026 </div>"
+    },
+    {
+      "id": 1343436,
+      "tipo": "Task",
+      "titulo": "[SGD] - Criar apresentação",
+      "estado": "In Progress",
+      "pai_id": 1340894,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Daniele Lins Ichiy <SEGOV\\dichiy>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div><a href=\"https://www.canva.com/design/DAHTlZOHnOU/Oix5_ktLq0diO_AFl0nelQ/edit\">https://www.canva.com/design/DAHTlZOHnOU/Oix5_ktLq0diO_AFl0nelQ/edit</a><br> </div>"
+    },
+    {
+      "id": 1343739,
+      "tipo": "Product Backlog Item",
+      "titulo": "[SGD] - Acesso de leitura ao banco da EDS",
+      "estado": "Approved",
+      "pai_id": 1340868,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Liberar um usuário de consulta no banco de dados da EDS para o time da X-VIA. </div><div><b>Por quê</b> </div><div>O Maycon precisa consultar os dados da EDS para seguir com a integração. O acesso depende da equipe de DBA, que exige informações da máquina que vai consultar. A liberação está parada porque as aplicações da EDS passaram por um incidente de segurança e foram retiradas do ar. </div><div><b>Critérios de aceitação</b> </div><ul><li>O DBA recebe o IP da máquina e o nome dos bancos que serão consultados. </li><li>A decisão da Maria Eduarda ou do Galev sobre seguir com o acesso fica registrada. </li><li>O usuário de leitura é criado e o Maycon confirma que consegue consultar. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343740,
+      "tipo": "Task",
+      "titulo": "[SGD] - Levantar com o Maycon a necessidade de usuário de leitura no banco da EDS",
+      "estado": "Done",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Entender o que o Maycon precisa consultar no banco da EDS. </div><div><b>Critérios de aceitação</b> </div><ul><li>Pedido do Maycon registrado: usuário só de leitura. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343741,
+      "tipo": "Task",
+      "titulo": "[SGD] - Validar com a equipe de DBA a liberação do usuário de leitura",
+      "estado": "Done",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Conversar com o Emanuel Tolentino, da equipe de DBA, para saber se o acesso de consulta pode ser liberado. </div><div><b>Critérios de aceitação</b> </div><ul><li>Resposta da equipe de DBA registrada. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343742,
+      "tipo": "Task",
+      "titulo": "[SGD] - Levantar os dados exigidos pelo DBA para liberar a consulta",
+      "estado": "Done",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Registrar o que a equipe de DBA pede para liberar o acesso de consulta. </div><div><b>Critérios de aceitação</b> </div><ul><li>IP da máquina que vai consultar. </li><li>Nome dos bancos que serão consultados. </li> </ul><div><b>Demanda original:</b> 31-08-2026 </div>"
+    },
+    {
+      "id": 1343743,
+      "tipo": "Task",
+      "titulo": "[SGD] - Obter com o Maycon o IP da máquina e o nome dos bancos",
+      "estado": "To Do",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Pedir ao Maycon os dados que a equipe de DBA exige e repassar para o DBA. </div><div><b>Critérios de aceitação</b> </div><ul><li>IP e nome dos bancos entregues ao DBA. </li> </ul>"
+    },
+    {
+      "id": 1343744,
+      "tipo": "Task",
+      "titulo": "[SGD] - Levantar com a EDS os impactos do incidente nas aplicações",
+      "estado": "To Do",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Descobrir o que aconteceu com as aplicações da EDS e o que isso afeta no nosso escopo. </div><div><b>Por quê</b> </div><div>As aplicações foram retiradas do ar depois de um incidente de segurança e ninguém retornou qual foi o problema. Até agora nenhum impacto no nosso trabalho foi identificado. </div><div><b>Critérios de aceitação</b> </div><ul><li>Resposta da EDS sobre o incidente registrada. </li><li>Lista dos impactos no acesso ao banco, ou confirmação de que não há impacto. </li> </ul>"
+    },
+    {
+      "id": 1343745,
+      "tipo": "Task",
+      "titulo": "[SGD] - Aguardar a decisão da Maria Eduarda ou do Galev sobre os próximos passos",
+      "estado": "To Do",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>A continuidade do acesso depende de decisão da Maria Eduarda ou do Galev depois do incidente nas aplicações da EDS. </div><div><b>Critérios de aceitação</b> </div><ul><li>Decisão registrada com a data e quem decidiu. </li> </ul>"
     }
   ]
 }

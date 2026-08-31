@@ -1,0 +1,82 @@
+[
+  {
+    "chave": "pbi-eds",
+    "tipo": "PBI",
+    "pai": 1340868,
+    "sgd": true,
+    "titulo": "Acesso de leitura ao banco da EDS",
+    "estado": "Approved",
+    "data_original": "31-08-2026",
+    "descricao": "Liberar um usuário de consulta no banco de dados da EDS para o time da X-VIA.\n\n**Por quê**\nO Maycon precisa consultar os dados da EDS para seguir com a integração. O acesso depende da equipe de DBA, que exige informações da máquina que vai consultar. A liberação está parada porque as aplicações da EDS passaram por um incidente de segurança e foram retiradas do ar.\n\n**Critérios de aceitação**\n- O DBA recebe o IP da máquina e o nome dos bancos que serão consultados.\n- A decisão da Maria Eduarda ou do Galev sobre seguir com o acesso fica registrada.\n- O usuário de leitura é criado e o Maycon confirma que consegue consultar.",
+    "id": 1343739
+  },
+  {
+    "chave": "task-necessidade",
+    "tipo": "Task",
+    "pai_ref": "pbi-eds",
+    "titulo": "Levantar com o Maycon a necessidade de usuário de leitura no banco da EDS",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Entender o que o Maycon precisa consultar no banco da EDS.\n\n**Critérios de aceitação**\n- Pedido do Maycon registrado: usuário só de leitura.",
+    "pai": 1343739,
+    "id": 1343740
+  },
+  {
+    "chave": "task-dba",
+    "tipo": "Task",
+    "pai_ref": "pbi-eds",
+    "titulo": "Validar com a equipe de DBA a liberação do usuário de leitura",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Conversar com o Emanuel Tolentino, da equipe de DBA, para saber se o acesso de consulta pode ser liberado.\n\n**Critérios de aceitação**\n- Resposta da equipe de DBA registrada.",
+    "pai": 1343739,
+    "id": 1343741
+  },
+  {
+    "chave": "task-requisitos",
+    "tipo": "Task",
+    "pai_ref": "pbi-eds",
+    "titulo": "Levantar os dados exigidos pelo DBA para liberar a consulta",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "31-08-2026",
+    "descricao": "Registrar o que a equipe de DBA pede para liberar o acesso de consulta.\n\n**Critérios de aceitação**\n- IP da máquina que vai consultar.\n- Nome dos bancos que serão consultados.",
+    "pai": 1343739,
+    "id": 1343742
+  },
+  {
+    "chave": "task-coletar",
+    "tipo": "Task",
+    "pai_ref": "pbi-eds",
+    "titulo": "Obter com o Maycon o IP da máquina e o nome dos bancos",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Pedir ao Maycon os dados que a equipe de DBA exige e repassar para o DBA.\n\n**Critérios de aceitação**\n- IP e nome dos bancos entregues ao DBA.",
+    "pai": 1343739,
+    "id": 1343743
+  },
+  {
+    "chave": "task-impactos",
+    "tipo": "Task",
+    "pai_ref": "pbi-eds",
+    "titulo": "Levantar com a EDS os impactos do incidente nas aplicações",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Descobrir o que aconteceu com as aplicações da EDS e o que isso afeta no nosso escopo.\n\n**Por quê**\nAs aplicações foram retiradas do ar depois de um incidente de segurança e ninguém retornou qual foi o problema. Até agora nenhum impacto no nosso trabalho foi identificado.\n\n**Critérios de aceitação**\n- Resposta da EDS sobre o incidente registrada.\n- Lista dos impactos no acesso ao banco, ou confirmação de que não há impacto.",
+    "pai": 1343739,
+    "id": 1343744
+  },
+  {
+    "chave": "task-decisao",
+    "tipo": "Task",
+    "pai_ref": "pbi-eds",
+    "titulo": "Aguardar a decisão da Maria Eduarda ou do Galev sobre os próximos passos",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "A continuidade do acesso depende de decisão da Maria Eduarda ou do Galev depois do incidente nas aplicações da EDS.\n\n**Critérios de aceitação**\n- Decisão registrada com a data e quem decidiu.",
+    "pai": 1343739,
+    "id": 1343745
+  }
+]
