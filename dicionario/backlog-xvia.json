@@ -3102,7 +3102,7 @@
       "id": 1338589,
       "tipo": "Task",
       "titulo": "[SGD] - Levantar as cartas que precisam ser criadas",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1337812,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
@@ -3110,7 +3110,7 @@
       "responsavel": "Daniele Lins Ichiy <SEGOV\\dichiy>",
       "esforco": null,
       "restante": null,
-      "descricao": "<div><a href=\"https://docs.google.com/spreadsheets/d/1VWotM5XJRxfl6jUQUIIPm7zWTx3V1TMtySsIcg9liVQ/edit?gid=267663466#gid=267663466\">https://docs.google.com/spreadsheets/d/1VWotM5XJRxfl6jUQUIIPm7zWTx3V1TMtySsIcg9liVQ/edit?gid=267663466#gid=267663466</a><br> </div>"
+      "descricao": "<div><a href=\"https://docs.google.com/spreadsheets/d/1VWotM5XJRxfl6jUQUIIPm7zWTx3V1TMtySsIcg9liVQ/edit?gid=267663466#gid=267663466\">https://docs.google.com/spreadsheets/d/1VWotM5XJRxfl6jUQUIIPm7zWTx3V1TMtySsIcg9liVQ/edit?gid=267663466#gid=267663466</a><br> </div><div><br> </div><div>Foi encaminhado para a Laura (CGE) os serviços que tem no MS Digital porém não há carta de serviço </div>"
     },
     {
       "id": 1338601,
@@ -5897,6 +5897,48 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Enviar o pacote de entrega por e-mail ao Maycon, com cópia para o time da SGD. </div><div><b>Critérios de aceitação</b> </div><ul><li>E-mail enviado com os artefatos anexados. </li><li>Evidência do envio anexada no PBI. </li> </ul><div><b>Demanda original:</b> 07-08-2026 </div>"
+    },
+    {
+      "id": 1346353,
+      "tipo": "Product Backlog Item",
+      "titulo": "[SGD] - Restrição de acesso externo aos ambientes de Desenvolvimento e Homologação",
+      "estado": "Approved",
+      "pai_id": 1340868,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Tirar da internet os ambientes de Desenvolvimento e Homologação do Portal PGD-MS. </div><div><b>Por quê</b> </div><div>Hoje os dois ambientes respondem direto na internet. Ambiente que não é de produção não deve ficar aberto para fora: expõe versão em teste e amplia a superfície de ataque. </div><div><b>Ambientes</b> </div><ul><li>Desenvolvimento: <a href=\"https://portal.dev.pgd.ms.gov.br/\">https://portal.dev.pgd.ms.gov.br/</a> </li><li>Homologação: <a href=\"https://portal.hom.pgd.ms.gov.br/\">https://portal.hom.pgd.ms.gov.br/</a> </li><li>Produção continua acessível: <a href=\"https://portal.pgd.ms.gov.br/\">https://portal.pgd.ms.gov.br/</a> </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Desenvolvimento e Homologação deixam de responder pela internet. </li><li>Produção continua no ar, sem alteração. </li><li>O time da X-VIA sabe como passa a acessar os dois ambientes. </li> </ul>"
+    },
+    {
+      "id": 1346354,
+      "tipo": "Task",
+      "titulo": "[SGD] - Abrir o incidente de restrição de acesso externo para a equipe de Infraestrutura",
+      "estado": "In Progress",
+      "pai_id": 1346353,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Registrar o incidente no GLPI pedindo a restrição de acesso externo dos ambientes de Desenvolvimento e Homologação do Portal PGD-MS. </div><div><b>Critérios de aceitação</b> </div><ul><li>Incidente aberto e atribuído à equipe de Infraestrutura (SETDIG &gt; STI &gt; CSI &gt; Infraestrutura). </li><li>Maycon e o time da SGD incluídos como observadores. </li><li>Número do chamado registrado no PBI. </li> </ul>"
+    },
+    {
+      "id": 1346355,
+      "tipo": "Task",
+      "titulo": "[SGD] - Notificar o grupo da X-VIA sobre a restrição de acesso externo",
+      "estado": "To Do",
+      "pai_id": 1346353,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Avisar o grupo da X-VIA quando a restrição for aplicada e explicar como passam a acessar os ambientes. </div><div><b>Critérios de aceitação</b> </div><ul><li>Aviso enviado ao grupo com a data da mudança. </li><li>Forma de acesso aos ambientes informada ao time. </li> </ul>"
     }
   ]
 }

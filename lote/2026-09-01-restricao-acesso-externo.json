@@ -1,0 +1,34 @@
+[
+  {
+    "chave": "pbi-restricao",
+    "tipo": "PBI",
+    "pai": 1340868,
+    "sgd": true,
+    "titulo": "Restrição de acesso externo aos ambientes de Desenvolvimento e Homologação",
+    "estado": "Approved",
+    "descricao": "Tirar da internet os ambientes de Desenvolvimento e Homologação do Portal PGD-MS.\n\n**Por quê**\nHoje os dois ambientes respondem direto na internet. Ambiente que não é de produção não deve ficar aberto para fora: expõe versão em teste e amplia a superfície de ataque.\n\n**Ambientes**\n- Desenvolvimento: https://portal.dev.pgd.ms.gov.br/\n- Homologação: https://portal.hom.pgd.ms.gov.br/\n- Produção continua acessível: https://portal.pgd.ms.gov.br/\n\n**Critérios de aceitação**\n- Desenvolvimento e Homologação deixam de responder pela internet.\n- Produção continua no ar, sem alteração.\n- O time da X-VIA sabe como passa a acessar os dois ambientes.",
+    "id": 1346353
+  },
+  {
+    "chave": "task-incidente",
+    "tipo": "Task",
+    "pai_ref": "pbi-restricao",
+    "titulo": "Abrir o incidente de restrição de acesso externo para a equipe de Infraestrutura",
+    "estado": "In Progress",
+    "activity": "Deployment",
+    "descricao": "Registrar o incidente no GLPI pedindo a restrição de acesso externo dos ambientes de Desenvolvimento e Homologação do Portal PGD-MS.\n\n**Critérios de aceitação**\n- Incidente aberto e atribuído à equipe de Infraestrutura (SETDIG > STI > CSI > Infraestrutura).\n- Maycon e o time da SGD incluídos como observadores.\n- Número do chamado registrado no PBI.",
+    "pai": 1346353,
+    "id": 1346354
+  },
+  {
+    "chave": "task-notificar",
+    "tipo": "Task",
+    "pai_ref": "pbi-restricao",
+    "titulo": "Notificar o grupo da X-VIA sobre a restrição de acesso externo",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Avisar o grupo da X-VIA quando a restrição for aplicada e explicar como passam a acessar os ambientes.\n\n**Critérios de aceitação**\n- Aviso enviado ao grupo com a data da mudança.\n- Forma de acesso aos ambientes informada ao time.",
+    "pai": 1346353,
+    "id": 1346355
+  }
+]

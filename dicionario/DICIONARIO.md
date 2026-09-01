@@ -2,12 +2,12 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **421 itens**.
+Total: **424 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 278 |
-| Product Backlog Item | 109 |
+| Task | 280 |
+| Product Backlog Item | 110 |
 | Feature | 32 |
 | Epic | 2 |
 
@@ -133,7 +133,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1340407  [SGD] - Ajustar a extração do Matomo para rodar por órgão  [Done]
       Task                   #1340409  [SGD] - Comparar usuário único e acesso geral para definir a métrica do painel  [Done]
       Task                   #1338536  [SGD] - Criar documento de cadastro de cartas de serviço  [Done]
-      Task                   #1338589  [SGD] - Levantar as cartas que precisam ser criadas  [To Do]
+      Task                   #1338589  [SGD] - Levantar as cartas que precisam ser criadas  [Done]
       Task                   #1340408  [SGD] - Trazer os acessos da carta junto com os cliques em Acessar serviço  [Done]
     Product Backlog Item   #1336991  [SGD] - Definição da experiência do cidadão  [New]
     Product Backlog Item   #1336988  [SGD] - Definição do processo de avaliação  [New]
@@ -204,6 +204,9 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1343742  [SGD] - Levantar os dados exigidos pelo DBA para liberar a consulta  [Done]
       Task                   #1343743  [SGD] - Obter com o Maycon o IP da máquina e o nome dos bancos  [Done]
       Task                   #1343741  [SGD] - Validar com a equipe de DBA a liberação do usuário de leitura  [Done]
+    Product Backlog Item   #1346353  [SGD] - Restrição de acesso externo aos ambientes de Desenvolvimento e Homologação  [Approved]
+      Task                   #1346354  [SGD] - Abrir o incidente de restrição de acesso externo para a equipe de Infraestrutura  [In Progress]
+      Task                   #1346355  [SGD] - Notificar o grupo da X-VIA sobre a restrição de acesso externo  [To Do]
   Feature                #1333696  [SGD] - Instalação e configuração de ambientes  [In Progress]
     Product Backlog Item   #1340794  [SGD] - Acessos e ambientes do contrato X-VIA  [Done]
       Task                   #1340795  [SGD] - Abrir chamado de configuração dos ambientes GDI e Azure do contrato  [Done]
@@ -441,7 +444,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 240 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 243 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
