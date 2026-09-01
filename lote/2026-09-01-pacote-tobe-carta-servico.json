@@ -1,0 +1,78 @@
+[
+  {
+    "chave": "pbi-tobe",
+    "tipo": "PBI",
+    "pai": 1336979,
+    "sgd": true,
+    "titulo": "Elaborar Pacote de Entrega TO BE da carta de serviço",
+    "estado": "Approved",
+    "descricao": "Montar o pacote de entrega TO BE da carta de serviço e enviar as pendências para a X-VIA.\n\n**Por quê**\nA reunião de pendências do CMS levantou ajustes que ainda não estão na documentação: custos, notificação ao gestor do órgão, nomes dos perfis e motivos de devolução. A X-VIA precisa desse material atualizado para desenvolver.\n\n**Critérios de aceitação**\n- Documentação TO BE da carta de serviço atualizada com as pendências da reunião.\n- Pacote de entrega gerado e enviado à X-VIA com registro do envio.\n- Cada pendência levantada tem resposta ou encaminhamento registrado.",
+    "id": 1346152
+  },
+  {
+    "chave": "task-custos",
+    "tipo": "Task",
+    "pai_ref": "pbi-tobe",
+    "titulo": "Passar o select de custos da carta de serviço",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Entregar à X-VIA a lista de opções do campo de custos da carta de serviço.\n\n**Critérios de aceitação**\n- Opções do select levantadas e validadas.\n- Lista enviada à X-VIA.",
+    "pai": 1346152,
+    "id": 1346153
+  },
+  {
+    "chave": "task-notificacao",
+    "tipo": "Task",
+    "pai_ref": "pbi-tobe",
+    "titulo": "Formalizar o envio da notificação ao gestor do órgão",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Definir e formalizar quando o gestor do órgão recebe notificação e o que a mensagem informa.\n\n**Critérios de aceitação**\n- Momento do envio da notificação definido.\n- Texto da notificação aprovado.\n- Regra formalizada para a X-VIA.",
+    "pai": 1346152,
+    "id": 1346154
+  },
+  {
+    "chave": "task-perfis",
+    "tipo": "Task",
+    "pai_ref": "pbi-tobe",
+    "titulo": "Corrigir e formalizar os termos dos nomes dos perfis",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Acertar os nomes dos perfis usados no CMS e formalizar a lista para a X-VIA.\n\n**Critérios de aceitação**\n- Nome de cada perfil definido, sem termo duplicado ou ambíguo.\n- Lista formalizada para a X-VIA.",
+    "pai": 1346152,
+    "id": 1346155
+  },
+  {
+    "chave": "task-devolucao",
+    "tipo": "Task",
+    "pai_ref": "pbi-tobe",
+    "titulo": "Trazer os valores do filtro de motivo de devolução da carta de serviço",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Levantar os motivos que aparecem no filtro quando uma carta de serviço é devolvida.\n\n**Critérios de aceitação**\n- Lista de motivos de devolução definida.\n- Lista enviada à X-VIA.",
+    "pai": 1346152,
+    "id": 1346156
+  },
+  {
+    "chave": "task-doc",
+    "tipo": "Task",
+    "pai_ref": "pbi-tobe",
+    "titulo": "Atualizar a documentação TO BE da carta de serviço",
+    "estado": "To Do",
+    "activity": "Documentation",
+    "descricao": "Levar para a documentação TO BE as decisões e pendências tratadas na reunião do CMS.\n\n**Critérios de aceitação**\n- Documento TO BE atualizado com custos, notificação ao gestor, nomes dos perfis e motivos de devolução.\n- Versão do documento identificada.",
+    "pai": 1346152,
+    "id": 1346157
+  },
+  {
+    "chave": "task-envio",
+    "tipo": "Task",
+    "pai_ref": "pbi-tobe",
+    "titulo": "Formalizar o envio das pendências para a X-VIA",
+    "estado": "To Do",
+    "activity": "Requirements",
+    "descricao": "Enviar à X-VIA o pacote com a documentação atualizada e as pendências da reunião.\n\n**Critérios de aceitação**\n- E-mail de envio registrado, com os destinatários e a data.\n- Evidência do envio anexada no PBI.",
+    "pai": 1346152,
+    "id": 1346159
+  }
+]

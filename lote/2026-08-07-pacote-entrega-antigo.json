@@ -1,0 +1,35 @@
+[
+  {
+    "chave": "task-gerar",
+    "tipo": "Task",
+    "pai": 1337789,
+    "titulo": "Gerar o pacote de entrega da carta de serviço",
+    "estado": "Done",
+    "activity": "Documentation",
+    "data_original": "07-08-2026",
+    "descricao": "Montar o pacote de entrega com o design das páginas do Portal e a especificação dos módulos da carta de serviço.\n\n**Critérios de aceitação**\n- Documento do pacote de entrega com componentes, regras e campos.\n- Especificação dos módulos Carta de Serviços, Órgãos e Locais de Atendimento e Categorias.\n- Link do Figma com os protótipos das páginas do Portal.",
+    "id": 1346160
+  },
+  {
+    "chave": "task-validar",
+    "tipo": "Task",
+    "pai": 1337789,
+    "titulo": "Validar o pacote de entrega com o time da SGD",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "07-08-2026",
+    "descricao": "Revisar o pacote com o time da SGD antes de enviar à X-VIA.\n\n**Critérios de aceitação**\n- Ajustes apontados pelo time aplicados no material.\n- Time de acordo com o envio.",
+    "id": 1346161
+  },
+  {
+    "chave": "task-formalizar",
+    "tipo": "Task",
+    "pai": 1337789,
+    "titulo": "Formalizar o envio do pacote de entrega da carta de serviço",
+    "estado": "Done",
+    "activity": "Requirements",
+    "data_original": "07-08-2026",
+    "descricao": "Enviar o pacote de entrega por e-mail ao Maycon, com cópia para o time da SGD.\n\n**Critérios de aceitação**\n- E-mail enviado com os artefatos anexados.\n- Evidência do envio anexada no PBI.",
+    "id": 1346162
+  }
+]

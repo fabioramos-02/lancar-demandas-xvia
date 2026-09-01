@@ -2,12 +2,12 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **411 itens**.
+Total: **421 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 269 |
-| Product Backlog Item | 108 |
+| Task | 278 |
+| Product Backlog Item | 109 |
 | Feature | 32 |
 | Epic | 2 |
 
@@ -125,7 +125,10 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1338537  [SGD] - Criar documento de cadastro de Páginas Portal  [To Do]
       Task                   #1338530  [SGD] - Criar documento de cadastro de Unidades  [Done]
       Task                   #1338528  [SGD] - Criar documento de cadastro de Órgãos  [Done]
+      Task                   #1346162  [SGD] - Formalizar o envio do pacote de entrega da carta de serviço  [Done]
+      Task                   #1346160  [SGD] - Gerar o pacote de entrega da carta de serviço  [Done]
       Task                   #1337952  [SGD] - Lançar Usuários do CMS  [To Do]
+      Task                   #1346161  [SGD] - Validar o pacote de entrega com o time da SGD  [Done]
     Product Backlog Item   #1337812  [SGD] - Cartas de Serviços  [New]
       Task                   #1340407  [SGD] - Ajustar a extração do Matomo para rodar por órgão  [Done]
       Task                   #1340409  [SGD] - Comparar usuário único e acesso geral para definir a métrica do painel  [Done]
@@ -135,6 +138,13 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
     Product Backlog Item   #1336991  [SGD] - Definição da experiência do cidadão  [New]
     Product Backlog Item   #1336988  [SGD] - Definição do processo de avaliação  [New]
     Product Backlog Item   #1336992  [SGD] - Definição do uso dos resultados  [New]
+    Product Backlog Item   #1346152  [SGD] - Elaborar Pacote de Entrega TO BE da carta de serviço  [Approved]
+      Task                   #1346157  [SGD] - Atualizar a documentação TO BE da carta de serviço  [To Do]
+      Task                   #1346155  [SGD] - Corrigir e formalizar os termos dos nomes dos perfis  [To Do]
+      Task                   #1346154  [SGD] - Formalizar o envio da notificação ao gestor do órgão  [To Do]
+      Task                   #1346159  [SGD] - Formalizar o envio das pendências para a X-VIA  [To Do]
+      Task                   #1346153  [SGD] - Passar o select de custos da carta de serviço  [To Do]
+      Task                   #1346156  [SGD] - Trazer os valores do filtro de motivo de devolução da carta de serviço  [To Do]
     Product Backlog Item   #1336993  [SGD] - Especificação pacote de entrega  [New]
     Product Backlog Item   #1340879  [SGD] - Integração com Governo Federal  [New]
     Product Backlog Item   #1340884  [SGD] - Migrar Cartas de Serviços  [New]
@@ -260,7 +270,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1341941  24/08/2026 - Status da Sprint, Integração Gov.br, Estruturação do CMS, Fallback do Smart Pass, Liberação de Acessos e Próximos Passos  [Done]
       Task                   #1339796  27/08/2026 - Ajustes de Navegação, Templates e Carta de Serviços do Portal Único (Plataforma X-VIA)  [Done]
       Task                   #1339809  30/06/2026 - Consumo do Design System e compatibilização com a XVIA  [Done]
-      Task                   #1346135  [SGD] - 01/09/2026 - Pendências do CMS  [To Do]
+      Task                   #1346135  [SGD] - 01/09/2026 - Pendências do CMS  [Done]
       Task                   #1342056  [SGD] - 24/08/2026 - Ponto de controle do Projeto MS  [Done]
       Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
       Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
@@ -431,7 +441,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 230 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 240 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
