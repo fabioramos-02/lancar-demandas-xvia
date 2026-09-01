@@ -5729,6 +5729,34 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Levantar a Carteira do Visitante como documento novo, que hoje não existe no aplicativo MS Digital e pode entrar no novo aplicativo. </div><div><b>Por quê</b> </div><div>A carteira não está na lista de documentos atuais. Entra como oportunidade de ampliação do novo aplicativo. </div><div><b>Critérios de aceitação</b> </div><ul><li>Dono do documento e base de dados identificados. </li><li>Campos da carteira levantados. </li><li>Decisão registrada sobre entrar ou não no novo aplicativo. </li> </ul>"
+    },
+    {
+      "id": 1345780,
+      "tipo": "Task",
+      "titulo": "Devolução AEM",
+      "estado": "Done",
+      "pai_id": 1343799,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Bianca Martins Coelho <SEGOV\\bmcoelho>",
+      "esforco": null,
+      "restante": null,
+      "descricao": ""
+    },
+    {
+      "id": 1346135,
+      "tipo": "Task",
+      "titulo": "[SGD] - 01/09/2026 - Pendências do CMS",
+      "estado": "To Do",
+      "pai_id": 1339795,
+      "area": "XVIA\\SGD\\Interno",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Reunião com a X-VIA para tratar as pendências do CMS. </div><div><b>Quando</b> </div><div>1 de setembro de 2026, das 8h45 às 9h30 (horário de Cuiabá). </div><div><b>Onde</b> </div><div>Google Meet: <a href=\"https://meet.google.com/nbs-tkze-zcb\">https://meet.google.com/nbs-tkze-zcb</a> </div><div><b>Quem</b> </div><ul><li>Maycon Renato Lisboa (X-VIA) — organizador </li><li>Kaua Lusvarghi (X-VIA) </li><li>Fabio Ramos (SEGOV) </li><li>Daniele Lins Ichiy (SEGOV) </li><li>Glaucia Oliveira (SEGOV) </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Pendências do CMS levantadas na reunião registradas. </li><li>Responsável e prazo definidos para cada pendência. </li> </ul>"
     }
   ]
 }

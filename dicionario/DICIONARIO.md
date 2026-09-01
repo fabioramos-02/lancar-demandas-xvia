@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **409 itens**.
+Total: **411 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 267 |
+| Task | 269 |
 | Product Backlog Item | 108 |
 | Feature | 32 |
 | Epic | 2 |
@@ -260,12 +260,14 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1341941  24/08/2026 - Status da Sprint, Integração Gov.br, Estruturação do CMS, Fallback do Smart Pass, Liberação de Acessos e Próximos Passos  [Done]
       Task                   #1339796  27/08/2026 - Ajustes de Navegação, Templates e Carta de Serviços do Portal Único (Plataforma X-VIA)  [Done]
       Task                   #1339809  30/06/2026 - Consumo do Design System e compatibilização com a XVIA  [Done]
+      Task                   #1346135  [SGD] - 01/09/2026 - Pendências do CMS  [To Do]
       Task                   #1342056  [SGD] - 24/08/2026 - Ponto de controle do Projeto MS  [Done]
       Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
       Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
   Feature                #1340898  [SGD] - Serviços Vitrines  [In Progress]
     Product Backlog Item   #1343799  Devolução dos órgãos  [New]
       Task                   #1343806  AGEPEN Preechido  [Done]
+      Task                   #1345780  Devolução AEM  [Done]
     Product Backlog Item   #1341311  Monitoramento de preenchimento  [New]
       Task                   #1341743  Monitoramento AEM  [Done]
       Task                   #1341336  Monitoramento AGEHAB 27/08  [Done]
@@ -429,7 +431,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 229 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 230 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
