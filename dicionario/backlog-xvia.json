@@ -5916,7 +5916,7 @@
       "id": 1346354,
       "tipo": "Task",
       "titulo": "[SGD] - Abrir o incidente de restrição de acesso externo para a equipe de Infraestrutura",
-      "estado": "In Progress",
+      "estado": "Done",
       "pai_id": 1346353,
       "area": "XVIA\\SGD",
       "iteration": "XVIA\\Sprint 1",
