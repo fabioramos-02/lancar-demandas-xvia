@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **437 itens**.
+Total: **439 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 281 |
+| Task | 283 |
 | Product Backlog Item | 121 |
 | Feature | 33 |
 | Epic | 2 |
@@ -274,7 +274,9 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1339796  27/08/2026 - Ajustes de Navegação, Templates e Carta de Serviços do Portal Único (Plataforma X-VIA)  [Done]
       Task                   #1339809  30/06/2026 - Consumo do Design System e compatibilização com a XVIA  [Done]
       Task                   #1346135  [SGD] - 01/09/2026 - Pendências do CMS  [Done]
-      Task                   #1346601  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [To Do]
+      Task                   #1346601  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [Done]
+      Task                   #1346605  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [To Do]
+      Task                   #1346606  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [To Do]
       Task                   #1342056  [SGD] - 24/08/2026 - Ponto de controle do Projeto MS  [Done]
       Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
       Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
@@ -457,7 +459,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 244 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 246 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[PORTAL]` | 10 | Product Backlog Item | [Portal] Barra institucional e header público |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
