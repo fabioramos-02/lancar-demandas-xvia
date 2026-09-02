@@ -175,7 +175,7 @@ Quem entra na réplica — **exclusivamente** o time interno SGD/SETDIG, hoje:
 
 | Apelido | Identidade |
 |---|---|
-| `fabio` | `SEGOVramos` |
+| `fabio` | `SEGOV\framos` |
 | `glaucia` | `SEGOV\goliveira` |
 | `daniele` | `SEGOV\dichiy` |
 
