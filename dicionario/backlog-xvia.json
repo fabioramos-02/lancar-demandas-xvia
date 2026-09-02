@@ -6163,6 +6163,20 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Montar o dicionário de dados com as tabelas que a equipe da X-VIA precisa consultar para planejar a migração. </div><div><b>Por quê</b> </div><div>O acesso de leitura ao banco só faz sentido se a X-VIA souber onde os dados estão. O dicionário diz quais tabelas entram na migração, o que cada uma guarda e como elas se ligam. </div><div><b>Como está sendo feito</b> </div><div>Com a ajuda do Everaldo, estruturamos o levantamento das tabelas e a organização do dicionário. O documento está em elaboração. </div><div><b>Critérios de aceitação</b> </div><ul><li>Lista das tabelas que a X-VIA precisa acessar. </li><li>Descrição de cada tabela e dos campos que importam para a migração. </li><li>Relação entre as tabelas registrada. </li><li>Dicionário anexado no PBI. </li> </ul>"
+    },
+    {
+      "id": 1346699,
+      "tipo": "Task",
+      "titulo": "[SGD] - Formalizar o alinhamento do protótipo UX da tela de Avaliação de Serviço com a X-VIA",
+      "estado": "In Progress",
+      "pai_id": 1337823,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Pedir à equipe de UX da X-VIA o alinhamento para construir o protótipo da tela de Avaliação de Serviço. </div><div><b>Por quê</b> </div><div>A especificação TO BE já define o que a tela precisa coletar. Falta a X-VIA desenhar a tela junto com a gente, para o protótipo sair alinhado com o que foi especificado. </div><div><b>Campos mapeados na proposta</b> </div><ul><li>Serviço e órgão — texto do sistema, obrigatório, cabeçalho fixo e não editável. </li><li>Como foi a sua experiência com o serviço? — 5 estrelas com rótulo, obrigatório: Péssima, Ruim, Mais ou menos, Boa, Excelente. </li><li>O que você mais gostou em nosso serviço? — caixas de seleção, até 3, opcional: Fácil de usar, Site funcionou bem, Informações claras, Consegui resolver, Foi rápido, Fácil de encontrar. </li><li>Deixe elogio, sugestão ou crítica — texto livre até 2.000 caracteres, opcional, com contador visível. </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>E-mail de solicitação enviado ao Maycon, com cópia para o time da SGD. </li><li>Definido se o alinhamento será por reunião ou validação assíncrona com o time de UX. </li><li>Retorno da X-VIA registrado. </li> </ul>"
     }
   ]
 }

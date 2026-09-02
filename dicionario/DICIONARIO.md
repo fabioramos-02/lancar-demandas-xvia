@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **440 itens**.
+Total: **441 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 284 |
+| Task | 285 |
 | Product Backlog Item | 121 |
 | Feature | 33 |
 | Epic | 2 |
@@ -116,6 +116,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1340787  [SGD] - Elaborar a proposta de modelo de avaliação  [Done]
       Task                   #1340790  [SGD] - Escrever a especificação TO BE da avaliação de serviço  [Done]
       Task                   #1338571  [SGD] - Fazer benchmark do gov.br e de ferramentas de mercado  [Done]
+      Task                   #1346699  [SGD] - Formalizar o alinhamento do protótipo UX da tela de Avaliação de Serviço com a X-VIA  [In Progress]
       Task                   #1340792  [SGD] - Formalizar o envio do pacote de entrega em PDF para a equipe X-VIA  [To Do]
       Task                   #1338570  [SGD] - Levantar modelos de avaliação de satisfação (NPS, CSAT, CES, SUS)  [Done]
     Product Backlog Item   #1336985  [SGD] - Benchmark de avaliação de serviços  [New]
@@ -460,7 +461,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 247 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 248 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[PORTAL]` | 10 | Product Backlog Item | [Portal] Barra institucional e header público |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
