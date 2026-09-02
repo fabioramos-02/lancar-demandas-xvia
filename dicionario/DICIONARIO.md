@@ -2,13 +2,13 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **424 itens**.
+Total: **437 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 280 |
-| Product Backlog Item | 110 |
-| Feature | 32 |
+| Task | 281 |
+| Product Backlog Item | 121 |
+| Feature | 33 |
 | Epic | 2 |
 
 ## 1. Árvore
@@ -54,7 +54,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1343815  [SGD] - Levantar o exemplo da Carteira de Vacinação no aplicativo  [In Progress]
       Task                   #1343816  [SGD] - Levantar o exemplo da Carteira do Doador no aplicativo  [In Progress]
       Task                   #1343820  [SGD] - Levantar o exemplo da Carteira do Estudante no aplicativo  [Done]
-      Task                   #1343814  [SGD] - Levantar o exemplo do Cartão SUS no aplicativo  [In Progress]
+      Task                   #1343814  [SGD] - Levantar o exemplo do Cartão SUS no aplicativo  [To Do]
     Product Backlog Item   #1342116  [SGD] - Novas seções do BI centralizado — ecossistema digital e comparativo de canais  [Done]
       Task                   #1342118  [SGD] - Criar a seção comparativa de uso do aplicativo e do portal no BI centralizado  [Done]
       Task                   #1342117  [SGD] - Incluir os dados do ecossistema digital no BI centralizado  [Done]
@@ -274,6 +274,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1339796  27/08/2026 - Ajustes de Navegação, Templates e Carta de Serviços do Portal Único (Plataforma X-VIA)  [Done]
       Task                   #1339809  30/06/2026 - Consumo do Design System e compatibilização com a XVIA  [Done]
       Task                   #1346135  [SGD] - 01/09/2026 - Pendências do CMS  [Done]
+      Task                   #1346601  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [To Do]
       Task                   #1342056  [SGD] - 24/08/2026 - Ponto de controle do Projeto MS  [Done]
       Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
       Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
@@ -314,6 +315,18 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
     Product Backlog Item   #1340892  [SGD] - Equipe Setdig  [New]
     Product Backlog Item   #1340893  [SGD] - Órgãos  [New]
 Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
+  Feature                #1346407  Portal  [New]
+    Product Backlog Item   #1346420  Busca de serviços com sugestões conforme o usuário digita  [New]
+    Product Backlog Item   #1346408  [Portal] Barra institucional e header público  [New]
+    Product Backlog Item   #1346427  [Portal] Consultas por categoria  [New]
+    Product Backlog Item   #1346426  [Portal] Divulgação do aplicativo do governo  [New]
+    Product Backlog Item   #1346414  [Portal] Footer institucional  [New]
+    Product Backlog Item   #1346419  [Portal] Hero e busca principal de serviços  [New]
+    Product Backlog Item   #1346411  [Portal] Menu de navegação principal e menu mobile  [New]
+    Product Backlog Item   #1346424  [Portal] Página de conteúdo não encontrado (erro 404)  [New]
+    Product Backlog Item   #1346417  [Portal] Recursos de acessibilidade  [New]
+    Product Backlog Item   #1346421  [Portal] Serviços em Destaque  [New]
+    Product Backlog Item   #1346412  [Portal] Últimas Notícias na Home  [New]
   Feature                #1338538  SmartPass  [New]
     Product Backlog Item   #1338539  [SGD] - Integração dos Sistemas ao SSO  [Approved]
       Task                   #1338540  [SGD] - Integrar sistemas ao SmartPass no ambiente de Desenvolvimento  [To Do]
@@ -394,12 +407,12 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
       Task                   #1336192  Validação de API  [To Do]
   Feature                #1336230  [CDI] CMS Cartas  [In Progress]
     Product Backlog Item   #1336233  Configuração do CMS  [New]
-      Task                   #1336815  Analisar fallback quando GovBR estiver indisponível  [In Progress]
+      Task                   #1336815  Analisar fallback quando GovBR estiver indisponível  [Done]
         Task                   #1341740  Desenvolvimento de proposta login  [In Progress]
       Task                   #1336812  Definir dependências do portal  [In Progress]
       Task                   #1336805  Instalação do CMS  [Done]
-      Task                   #1336813  Integração Smartpass Login com o GovBR de Dev e Hom  [In Progress]
-      Task                   #1336808  Mapeamento das funcionalidades da Plataforma x Escopo  [In Progress]
+      Task                   #1336813  Integração Smartpass Login com o GovBR de Dev e Hom  [Done]
+      Task                   #1336808  Mapeamento das funcionalidades da Plataforma x Escopo  [Done]
   Feature                #1340258  [CDI] CMS Notícias  [In Progress]
     Product Backlog Item   #1340260  [SGD]  [New]
     Product Backlog Item   #1340261  [SGD]  [New]
@@ -444,7 +457,8 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 243 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 244 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[PORTAL]` | 10 | Product Backlog Item | [Portal] Barra institucional e header público |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
 | `[SERVIDOR]` | 6 | Product Backlog Item | [SERVIDOR] Contracheque |
