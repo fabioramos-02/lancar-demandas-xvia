@@ -161,6 +161,34 @@ for tm in t.pedir("GET", "projects/XVIA/teams", no_projeto=False)["value"]:
 Comentário de alinhamento ou divergência vai no **PBI**, não na Task — mesma lógica do
 anexo: o PBI é o cartão que os stakeholders abrem.
 
+## Reunião — uma task por participante do time
+
+Task de reunião vai sob o PBI **#1339795 `[SGD] - Alinhamento Técnico`** (Feature #1339628),
+com título no formato `DD/MM/AAAA - Assunto` (o CLI aplica o prefixo `[SGD]`).
+
+**Toda reunião gera uma task idêntica para cada participante do time interno**, cada uma com
+`--responsavel` da pessoa. Mesmo título, mesma descrição, mesma data — muda só o responsável.
+Reunião é trabalho de todo mundo que sentou nela; uma task só no nome de quem lançou esconde
+as horas das outras.
+
+Quem entra na réplica — **exclusivamente** o time interno SGD/SETDIG, hoje:
+
+| Apelido | Identidade |
+|---|---|
+| `fabio` | `SEGOVramos` |
+| `glaucia` | `SEGOV\goliveira` |
+| `daniele` | `SEGOV\dichiy` |
+
+Participante de fornecedor (X-VIA e afins) **não** recebe task — aparece só na lista de
+participantes, dentro da descrição. Apelido novo entra por `python -m src.xvia quem "<nome>"
+--salvar-como <apelido>`, nunca hardcode.
+
+A descrição é a mesma nas três e traz **quando** (data e hora), **onde** (link da sala) e
+**quem** (todos os participantes, inclusive os de fornecedor, com o órgão de cada um).
+
+Fechamento segue a regra abaixo: cada task recebe o próprio comentário quando a reunião
+acontece.
+
 ## Task fechada sem comentário é task sem contexto
 
 **Nenhuma Task vai para `Done` sem um comentário de fechamento na própria Task.** Vale
