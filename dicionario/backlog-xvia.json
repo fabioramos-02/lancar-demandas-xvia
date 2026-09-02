@@ -3452,7 +3452,7 @@
       "id": 1339814,
       "tipo": "Task",
       "titulo": "10/06/2026 - Reunião de alinhamento TFS",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1339795,
       "area": "XVIA\\SGD\\Interno",
       "iteration": "XVIA\\Sprint 1",
@@ -6126,7 +6126,7 @@
       "id": 1346605,
       "tipo": "Task",
       "titulo": "[SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1339795,
       "area": "XVIA\\SGD\\Interno",
       "iteration": "XVIA\\Sprint 1",
@@ -6140,7 +6140,7 @@
       "id": 1346606,
       "tipo": "Task",
       "titulo": "[SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA",
-      "estado": "To Do",
+      "estado": "Done",
       "pai_id": 1339795,
       "area": "XVIA\\SGD\\Interno",
       "iteration": "XVIA\\Sprint 1",
@@ -6149,6 +6149,20 @@
       "esforco": null,
       "restante": null,
       "descricao": "<div>Reunião interna da SGD para alinhar como os módulos serão apresentados à X-VIA. </div><div><b>Quando</b> </div><div>2 de setembro de 2026, às 9h. </div><div><b>Onde</b> </div><div>Google Meet: <a href=\"https://meet.google.com/vun-txjy-ggu\">https://meet.google.com/vun-txjy-ggu</a> </div><div><b>Quem</b> </div><ul><li>Gláucia Araújo (SETDIG) — convocou </li><li>Daniele Lins Ichiy (SGD) </li><li>Fabio Ramos (SGD) </li> </ul><div><b>Critérios de aceitação</b> </div><ul><li>Definido quem apresenta cada módulo. </li><li>Roteiro e ordem das apresentações combinados. </li><li>Pendências levantadas na reunião registradas. </li> </ul>"
+    },
+    {
+      "id": 1346674,
+      "tipo": "Task",
+      "titulo": "[SGD] - Elaborar o dicionário de dados das tabelas que a X-VIA precisa acessar",
+      "estado": "In Progress",
+      "pai_id": 1343739,
+      "area": "XVIA\\SGD",
+      "iteration": "XVIA\\Sprint 1",
+      "tags": "",
+      "responsavel": "Fabio Willian Lima Ramos <SEGOV\\framos>",
+      "esforco": null,
+      "restante": null,
+      "descricao": "<div>Montar o dicionário de dados com as tabelas que a equipe da X-VIA precisa consultar para planejar a migração. </div><div><b>Por quê</b> </div><div>O acesso de leitura ao banco só faz sentido se a X-VIA souber onde os dados estão. O dicionário diz quais tabelas entram na migração, o que cada uma guarda e como elas se ligam. </div><div><b>Como está sendo feito</b> </div><div>Com a ajuda do Everaldo, estruturamos o levantamento das tabelas e a organização do dicionário. O documento está em elaboração. </div><div><b>Critérios de aceitação</b> </div><ul><li>Lista das tabelas que a X-VIA precisa acessar. </li><li>Descrição de cada tabela e dos campos que importam para a migração. </li><li>Relação entre as tabelas registrada. </li><li>Dicionário anexado no PBI. </li> </ul>"
     }
   ]
 }

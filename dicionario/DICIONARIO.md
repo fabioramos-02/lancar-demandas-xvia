@@ -2,11 +2,11 @@
 
 Gerado por `python -m src.xvia export` a partir dos Epics **1333593**, **1335269**. Não editar à mão — as alterações são sobrescritas.
 
-Total: **439 itens**.
+Total: **440 itens**.
 
 | Tipo | Qtd |
 |---|---|
-| Task | 283 |
+| Task | 284 |
 | Product Backlog Item | 121 |
 | Feature | 33 |
 | Epic | 2 |
@@ -199,6 +199,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
     Product Backlog Item   #1343739  [SGD] - Acesso de leitura ao banco da EDS  [Approved]
       Task                   #1343782  [SGD] - Abrir o chamado de acesso de leitura ao banco de dados no GLPI  [Done]
       Task                   #1343745  [SGD] - Aguardar a decisão da Maria Eduarda ou do Galev sobre os próximos passos  [To Do]
+      Task                   #1346674  [SGD] - Elaborar o dicionário de dados das tabelas que a X-VIA precisa acessar  [In Progress]
       Task                   #1343744  [SGD] - Levantar com a EDS os impactos do incidente nas aplicações  [Done]
       Task                   #1343740  [SGD] - Levantar com o Maycon a necessidade de usuário de leitura no banco da EDS  [Done]
       Task                   #1343742  [SGD] - Levantar os dados exigidos pelo DBA para liberar a consulta  [Done]
@@ -261,7 +262,7 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1339802  02/07/2026 - Design System e Web Components  [Done]
       Task                   #1339804  07/07/2026 - Alinhar o fluxo de trabalho no TFS, a organização do backlog  [Done]
       Task                   #1339799  08/07/2026 - Alinhamento técnico — Transição do Portal MS para a plataforma Xvia  [Done]
-      Task                   #1339814  10/06/2026 - Reunião de alinhamento TFS  [To Do]
+      Task                   #1339814  10/06/2026 - Reunião de alinhamento TFS  [Done]
       Task                   #1341667  11/08/2026 - Alinhamento de escopo, Design System, integrações de sistemas, planejamento de sprints e ferramentas de gestão  [Done]
       Task                   #1341973  13/0//2026 - Mapeamento dos AS IS   [To Do]
       Task                   #1341968  17/08/2026 - Projeto MS (Mapeamento de serviços, CMS, layout interativo, VPN/TFS, integração Gov.br e próximos passos)  [Done]
@@ -275,8 +276,8 @@ Epic                   #1333593  [SGD] - Documentação PGD-MS  [In Progress]
       Task                   #1339809  30/06/2026 - Consumo do Design System e compatibilização com a XVIA  [Done]
       Task                   #1346135  [SGD] - 01/09/2026 - Pendências do CMS  [Done]
       Task                   #1346601  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [Done]
-      Task                   #1346605  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [To Do]
-      Task                   #1346606  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [To Do]
+      Task                   #1346605  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [Done]
+      Task                   #1346606  [SGD] - 02/09/2026 - Alinhamento das apresentações dos módulos para a X-VIA  [Done]
       Task                   #1342056  [SGD] - 24/08/2026 - Ponto de controle do Projeto MS  [Done]
       Task                   #1342054  [SGD] - 27/08/2026 - Alinhamento de requisitos e funcionalidades  [Done]
       Task                   #1342055  [SGD] - 27/08/2026 - Benchmark de assistente virtual (Lis, de Pernambuco)  [Done]
@@ -459,7 +460,7 @@ Epic                   #1335269  Implantação - Plataforma X-VIA  [In Progress]
 
 | Prefixo | Qtd | Tipos | Exemplo |
 |---|---|---|---|
-| `[SGD]` | 246 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
+| `[SGD]` | 247 | Epic, Feature, Product Backlog Item, Task | [SGD] - Documentação PGD-MS |
 | `[PORTAL]` | 10 | Product Backlog Item | [Portal] Barra institucional e header público |
 | `[BI]` | 7 | Product Backlog Item | [BI] Levantamento do banco de dados do MS Digital |
 | `[SAÚDE]` | 6 | Product Backlog Item | [SAÚDE] Cartão de vacinação |
